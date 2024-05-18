@@ -9,12 +9,17 @@ permalink: /resume/
 ## Contact Information
 - **Phone**: [980-297-8331](tel:9802978331)
 - **Email**: [ben.pachter@bellsouth.net](mailto:ben.pachter@bellsouth.net)
-- **Address**: 20615 Sterling Bay Ln W, Apt O, Cornelius, NC 28031
+- **LinkedIn**: [My Profile](https://www.linkedin.com/in/benjamin-pachter-9582bb12b/)
+- **GitHub**: [benjaminpachter.com_repository](https://github.com/bpachter/benjaminpachter.com)
 
-## Directive
-With a passion for the nuances of market mechanics and a forward-thinking approach to BI technologies, my professional journey so far has been anchored in the art of translating complex data into compelling narratives to aid in business management decisions. I seek to continuously refine the alchemy of process optimization and business intelligence through consistently adding to my skillset of emerging tools. My pursuit is to not only reveal the hidden truths within the data, but to deter the ever-increasing noise of modernity through crystal clear presentation of the facts, crafting them into strategies that drive innovation and operational efficiency in the dynamic landscapes of investment and technology. It is here, at the intersection of data science and market intelligence, where I aim to make a tangible impact.
+## My Purpose
+Hey there! Welcome to my corner of the internet where I get to share tidbits of my journey thus far as a Quantitative Data Scientist. I am currently looking for a new team to divert my energy to, so if you are hiring, thank you for being here! If you happen to already have gone through my Resume word document, then you won't find anything new below. I would instead direct you to check out some of the other pages where I have provided deeper insights to my experience, as well as some basic demonstrations! 
 
-**Data Analytics & Visualization**: Expertise in Advanced Excel Modeling, Power Query, and Power BI for financial modeling and interactive dashboards. Skilled in SQL, DAX, and M scripting for ETL data manipulation.
+I’m really just a dude who is passionate about helping business owners and employees alike operate their everyday activities and process-flows in a stressfree manner. Turning raw data into valuable insights is just fun to me! Whether it’s through sophisticated statistical models that make me feel smarter than I am, deep learning neural networks for prediction generation, or just plain old number crunching, I thrive on the challenge of making sense out of datasets of all kinds! Primarily using tools like Python, R, Power Query, and SQL, it has become my passion to tackle complex challenges head-on to uncover new trends and patterns that may significantly influence valuable business decision making.
+
+## Proficiencies
+
+**Data Analytics & Visualization**: Expertise in advanced Excel modeling, Power Query, and Power BI for financial modeling and interactive dashboards. Skilled in SQL, DAX, and M scripting for ETL data manipulation. (See my 'ETL' page for a demonstration).
 
 **Database & Cloud Server Management**: Proficient in SSMS SQL, Salesforce Dev (SOQL, Apex, and Flow Automations), AWS, Google Cloud, and Azure services.
 
@@ -26,6 +31,9 @@ With a passion for the nuances of market mechanics and a forward-thinking approa
 
 
 ## Professional Experience
+
+
+<img src="/NYMT1.png" alt="NYMT" title="NYMT" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 15%;">
 
 ### New York Mortgage Trust
 **Acquisitions Analyst**  
@@ -42,6 +50,8 @@ With a passion for the nuances of market mechanics and a forward-thinking approa
 - Conducted statistical analysis to compare asset performance against market benchmarks for proactive management.
 - Reported broader macroeconomic risks to the executive team and acted as the sole R&D analyst.
 
+<img src="/Deloitte1.gif" alt="Deloitte" title="Deloitte" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 10%;">
+
 ### Deloitte
 **Risk and Financial Advisory Analyst**  
 *Seattle, WA*  
@@ -57,6 +67,8 @@ With a passion for the nuances of market mechanics and a forward-thinking approa
 - Developed commercial real estate analysis reports, providing internal market insights and trend forecasts.
 - Led internal transformation initiatives to restructure legacy Microsoft suite reliance to Power Query/SQL.
 - Provided guidance on Federal Reserve decision making and forecasts in comparison to economic data trends.
+
+<img src="/BMW1.gif" alt="BMW" title="BMW" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 10%;">
 
 ### BMW Manufacturing
 **Supply Chain Planning Co-op**  
@@ -96,6 +108,7 @@ With a passion for the nuances of market mechanics and a forward-thinking approa
 *Mar 2015 – Mar 2018*
 
 ## Personal Life
-Outside of my professional life, I dedicate my time to researching complex options trading strategies, focusing on automating brokerage APIs with machine learning concepts. I actively contribute to online forums like Discord, where I teach retail traders how to apply risk management and discipline to achieve financial independence through options and futures strategies. I also thoroughly enjoy reading whenever I get the chance. The subjects I am most interested in are current and historical economics/geopolitics, code developing, business & trading psychology, and evolutionary biology. When I'm not immersed in these activities, I enjoy spending time with my loving fiancé and our three cats in our cozy apartment. I also love mountain overlanding, hiking, exploring new local hangout spots - generally anything that feels like an adventure!
+Outside of my professional life, I dedicate my time to researching complex options trading strategies, focusing on automating brokerage APIs with machine learning concepts. I actively contribute to online forums like Discord, where I teach retail traders how to apply risk management and discipline to achieve financial independence through options and futures strategies. I also thoroughly enjoy reading whenever I get the chance. The subjects I am most interested in are current and historical economics/geopolitics, code developing, business & trading psychology, and evolutionary biology. When I'm not immersed in these activities, I enjoy spending time with my loving fiancé and our three cats in our cozy apartment. I also love mountain overlanding, hiking, exploring new local hangout spots -  anything that feels like an adventure!
 
-[LinkedIn](https://www.linkedin.com/in/yourprofile)
+Thank you for being here, and remember,
+<img src="/Excelent1.gif" alt="Thanks!" title="Thanks!" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 100%;">

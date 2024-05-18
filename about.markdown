@@ -4,14 +4,6 @@ title: Skillset
 permalink: /skillset/
 ---
 
-# Benjamin Pachter
-
-## Contact Information
-- **Phone**: [980-297-8331](tel:9802978331)
-- **Email**: [ben.pachter@bellsouth.net](mailto:ben.pachter@bellsouth.net)
-- **LinkedIn**: [My Profile](https://www.linkedin.com/in/benjamin-pachter-9582bb12b/)
-- **GitHub**: [benjaminpachter.com_repository](https://github.com/bpachter/benjaminpachter.com)
-
 ## Profile:
 
 - **Data Analytics & Visualization**:
