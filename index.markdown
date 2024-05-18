@@ -1,6 +1,7 @@
 ---
 layout: home
 title: Contact Me
+permalink: /
 ---
 
 I’d love to hear from you! Whether you have questions, opportunities, or just want to connect, feel free to reach out using any of the methods below.
@@ -10,7 +11,7 @@ I’d love to hear from you! Whether you have questions, opportunities, or just 
 - **Phone**: [980-297-8331](tel:9802978331)
 - **Email**: [ben.pachter@bellsouth.net](mailto:ben.pachter@bellsouth.net)
 - **LinkedIn**: [My Proflile](https://www.linkedin.com/in/benjamin-pachter-9582bb12b/)
-
+- **GitHub**: [benjaminpachter.com_repository](https://github.com/bpachter/benjaminpachter.com)
 
 ## Contact Form
 

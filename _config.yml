@@ -10,8 +10,8 @@ markdown: kramdown
 
 # Navigation links
 header_pages:
-  - index.md
-  - about.md
+  - index.markdown
+  - about.markdown
   - resume.md
   - macro.md
   - micro.md
