@@ -143,31 +143,10 @@ The record-high rates (so far) were enough to cause a slowdown in consumer lendi
 
 During this period, the U.S. economy faced large rises in producer prices that were caused from producer-side inflation rather than the demand-driven consumer-side inflation. We saw a deathly combination of stagnant economic growth with high unemployment and rising prices. Inflation was exacerbated by the loose monetary policies of the late 1960s, which had been implemented to finance the Vietnam War and domestic social programs without raising taxes. Additionally, the collapse of the Bretton Woods system in the early 1970s led to the devaluation of the U.S. dollar, further fueling inflation​ (SJSU)​.
 
-Consumers and businesses alike struggled during this recession. Investment spending plummeted, affecting everything from residential construction to business inventories. High inflation rates eroded purchasing power, making everyday goods more expensive. Unemployment rose, and economic uncertainty became pervasive. The Federal Reserve's initial response was to tighten monetary policy, but this only deepened the recession without curbing inflation significantly. It wasn't until Paul Volcker became Fed Chairman in 1979 and implemented aggressive interest rate hikes that inflation was brought under control, albeit at the cost of another recession in the early 1980s​ (Federal Reserve History)​ .
+Consumers and businesses alike struggled during this recession. Investment spending plummeted, affecting everything from residential construction to business inventories. High inflation rates eroded purchasing power, making everyday goods more expensive. Unemployment rose, and economic uncertainty became pervasive. The Federal Reserve's initial response was to tighten monetary policy, but this only deepened the recession without curbing inflation significantly. It wasn't until Paul Volcker became Fed Chairman in 1979 and implemented aggressive interest rate hikes that inflation was brought under control, albeit at the cost of another recession in the early 1980s​​.
+
+
+Continue...
 
 
 
-
-
-
-
-
-Monetary Policy:
-
-The Federal Reserve's initial monetary policy in the late 1960s and early 1970s was expansionary, aiming to maintain low unemployment. However, it failed to control inflation, resulting in a persistent increase in prices.
-The Fed, under Paul Volcker's leadership from 1979, took aggressive measures to combat inflation by significantly raising interest rates. This policy eventually controlled inflation but caused a severe recession in the early 1980s.
-Wage-Price Spirals:
-
-High inflation led to higher wage demands, increasing production costs for businesses. Businesses passed these costs onto consumers, creating a cycle of wage and price increases.
-Global Economic Conditions:
-
-The breakdown of the Bretton Woods system in 1971, which ended the convertibility of the US dollar to gold, led to currency instability and contributed to inflation.
-Fiscal Policy and Government Spending:
-
-Government spending, particularly related to the Vietnam War and Great Society programs, increased the federal budget deficit, adding to inflationary pressures.
-Supply-Side Constraints:
-
-Reduced productivity growth and increased raw material costs, beyond just oil, contributed to the inflationary environment.
-
-
-<iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1o1Dx&width=900&height=525" scrolling="no" frameborder="0" style="overflow:hidden; width:900px; height:525px;" allowTransparency="true" loading="lazy"></iframe>
