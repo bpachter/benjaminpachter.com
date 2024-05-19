@@ -33,7 +33,7 @@ I’m really just a dude who is passionate about helping business owners and emp
 ## Professional Experience
 
 
-<img src="/NYMT1.png" alt="NYMT" title="NYMT" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 15%;">
+<img src="/images/NYMT1.png" alt="NYMT" title="NYMT" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 15%;">
 
 ### New York Mortgage Trust
 **Acquisitions Analyst**  
@@ -50,7 +50,7 @@ I’m really just a dude who is passionate about helping business owners and emp
 - Conducted statistical analysis to compare asset performance against market benchmarks for proactive management.
 - Reported broader macroeconomic risks to the executive team and acted as the sole R&D analyst.
 
-<img src="/Deloitte1.gif" alt="Deloitte" title="Deloitte" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 10%;">
+<img src="/images/Deloitte1.gif" alt="Deloitte" title="Deloitte" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 10%;">
 
 ### Deloitte
 **Risk and Financial Advisory Analyst**  
@@ -68,7 +68,7 @@ I’m really just a dude who is passionate about helping business owners and emp
 - Led internal transformation initiatives to restructure legacy Microsoft suite reliance to Power Query/SQL.
 - Provided guidance on Federal Reserve decision making and forecasts in comparison to economic data trends.
 
-<img src="/BMW1.gif" alt="BMW" title="BMW" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 10%;">
+<img src="/images/BMW1.gif" alt="BMW" title="BMW" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 10%;">
 
 ### BMW Manufacturing
 **Supply Chain Planning Co-op**  
@@ -111,4 +111,4 @@ I’m really just a dude who is passionate about helping business owners and emp
 Outside of my professional life, I dedicate my time to researching complex options trading strategies, focusing on automating brokerage APIs with machine learning concepts. I actively contribute to online forums like Discord, where I teach retail traders how to apply risk management and discipline to achieve financial independence through options and futures strategies. I also thoroughly enjoy reading whenever I get the chance. The subjects I am most interested in are current and historical economics/geopolitics, code developing, business & trading psychology, and evolutionary biology. When I'm not immersed in these activities, I enjoy spending time with my loving fiancé and our three cats in our cozy apartment. I also love mountain overlanding, hiking, exploring new local hangout spots -  anything that feels like an adventure!
 
 Thank you for being here, and remember,
-<img src="/Excelent1.gif" alt="Thanks!" title="Thanks!" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 100%;">
+<img src="/images/Excelent1.gif" alt="Thanks!" title="Thanks!" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 100%;">

@@ -15,14 +15,14 @@ The answer is simple: embed SQL scripts within your Power Query advanced editor 
 ## 1. Extract:
 - In this method, you are actually combining the Extract and Transform methods into a single seamless query structure. Microsoft Power Query provides users of Excel and Power BI with a powerful 'Advanced Editor' capability. Many people believe Power Query is reliant on linear steps that proceed one after another, but this is not true. **The 'Advanced Editor' button within the Power Query view is the secret to unlocking masterful code-like scripting for combining the Extraction and Transformation steps for your data.**
 
-    <img src="/PowerQuery1.png" alt="Advanced Editor Button" title="Advanced Editor Button" style="border: 10px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 100%;">
+    <img src="/images//PowerQuery1.png" alt="Advanced Editor Button" title="Advanced Editor Button" style="border: 10px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 100%;">
 
 
     - You can even create set defined variables or set variables to equal a defined NamedRange value from the front-end of the Excel worksheet/report and integrate that value directly into the query.
 
 - This stage involves connecting to a database server hosted on Azure, AWS, etc. Executing a well-defined query to fetch necessary data efficiently, and ensuring the data is accurately captured for further steps.
 
-<img src="/Excel1.png" alt="Excel Data Example" title="Excel Data Example" style="border: 10px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 100%;"/>
+<img src="/images/Excel1.png" alt="Excel Data Example" title="Excel Data Example" style="border: 10px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 100%;"/>
 
 
 
