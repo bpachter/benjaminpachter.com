@@ -8,70 +8,68 @@ permalink: /skillset/
 
 - **Data Analytics & Visualization**:
     - I have advanced experience in **Excel Modeling**, **Power Query**, and **Power BI** for ETL data flows, primarily for creating sophisticated financial models and interactive dashboards that assist in quick and clear strategic decision-making. With proficiency in **SQL**, **DAX**, and **M scripting**, I can move and transform data effectively in a clean and centralized manner that provides maximum transparency and data refresh speed.
-    - For some basic economic examples, check out the 'Macro' and 'Micro' tabs!
-    - I am also capable within **Tableau**, **QlikView**, and **SAS**.
-    - Additionally, I have leveraged **Apache** technologies such as **Spark**, **Kafka**, **Storm**, **Hadoop**, **Cassandra**, **NiFi**, and **Hive** for big data processing, real-time data streaming, and distributed computing.
+    - I am also highly capable within, **Tableau**, **SAS**, **Dynamics**, and **Apache** technologies such as **Spark**, **Airflow**, **Kafka**, **Storm**, **Hadoop**, **Cassandra**, **NiFi**, and **Hive** for big data processing, real-time data streaming, and distributed computing.
+    - Additionally, I have operated within many cloud platforms such as **Salesforce**, **Google BigQuery**, **Amazon Redshit**, and **Azure Synapse**. 
 
 - **Programming**:
-    - I simply love to code! I find researching new fintech concepts extraordinarily entertaining; I spend lots of time on public academic websites such as Quant Stack Exchange, SSRN, IMF, and Coursera to stay on the frontlines of newly developed ideas and technologies. I have extensive experience pushing complex data combinations into the above visualization tools to tell interesting stories.
+    - I love to code! I find researching new fintech concepts extraordinarily entertaining; I spend lots of time on public academic websites such as Quant Stack Exchange, SSRN, IMF, and Coursera to stay on the frontlines of newly developed ideas and technologies. I have extensive experience pushing complex data combinations into the above visualization tools to tell interesting stories.
     - My favorite and most commonly utilized technologies are **Python** and **R**, but I have aggregated my total code/scripting experience below:
 
-        ```
-        Python
-        R
-        JavaScript
-        Salesforce Apex
-        SQL
-        Pine
-        C++
-        VBA
-        Java
-        C#
-        Ruby
-        PHP
-        Swift
-        Go
-        Scala
-        MATLAB
-        SAS
-        HTML
-        CSS
-        XML
-        Bash
-        Rust
-        PowerShell
-        ```
+        - Python
+        - R
+        - JavaScript
+        - Salesforce Apex
+        - SQL
+        - Pine
+        - C++
+        - C#
+        - VBA
+        - Java
+        - Ruby
+        - PHP
+        - Swift
+        - Go
+        - Scala
+        - MATLAB
+        - SAS
+        - HTML
+        - CSS
+        - XML
+        - Bash
+        - Rust
+        - PowerShell
+    
 
-    - Here are some of my favorite **Python libraries**:
-        ```
-        Pandas
-        NumPy
-        SciPy
-        PySpark
-        PyArrow
-        PyKafka
-        PyHive
-        Airflow
-        Cassandra
-        Dask
-        fredapi
-        Matplotlib
-        Seaborn
-        Plotly
-        Bokeh
-        Scikit-learn
-        XGBoost
-        TensorFlow
-        PyTorch
-        Keras
-        Django
-        Flask
-        Geopandas
-        tqdm
-        statsmodels
-        FastAPI
-        SQLAlchemy
-        ```
+    - And here are some of my favorite **Python libraries**:
+        
+        - Pandas
+        - NumPy
+        - SciPy
+        - PySpark
+        - PyArrow
+        - PyKafka
+        - PyHive
+        - Airflow
+        - Cassandra
+        - Dask
+        - fredapi
+        - Matplotlib
+        - Seaborn
+        - Plotly
+        - Bokeh
+        - Scikit-learn
+        - XGBoost
+        - TensorFlow
+        - PyTorch
+        - Keras
+        - Django
+        - Flask
+        - Geopandas
+        - tqdm
+        - statsmodels
+        - FastAPI
+        - SQLAlchemy
+     
 
 ## Financial Modeling, Data Transformation, and Dashboard Development
 I develop comprehensive financial and logistical models using **Python**, **SQL**, and **Power Query** to extract, transform, and load versatile data structures to tell compelling stories. The neutrality of raw data has always fascinated me, and when harnessed and channeled correctly, unbiased numbers can be translated into unbiased results that drive clear and confident decision-making.
