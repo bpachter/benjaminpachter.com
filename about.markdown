@@ -47,6 +47,12 @@ permalink: /skillset/
         Pandas
         NumPy
         SciPy
+        PySpark
+        PyArrow
+        PyKafka
+        PyHive
+        Airflow
+        Cassandra
         Dask
         fredapi
         Matplotlib
@@ -62,10 +68,6 @@ permalink: /skillset/
         Flask
         Geopandas
         tqdm
-        Apache Spark
-        Apache Storm
-        Apache Cassandra
-        Apache Hive
         statsmodels
         FastAPI
         SQLAlchemy
@@ -93,9 +95,9 @@ These days I am most interested in studying complex options trading strategies a
 ## Database and Cloud Server Management
 In previous roles, I have managed database and cloud infrastructure, utilizing the following technologies:
 - **SQL Server Management Studio** for testing and deploying new stored procedures and tables,
-- **Salesforce Development (SOQL, Apex, and Flow Automations)** to ensure seamless business process optimization in CRM sites,
-- and the big three **Azure**, **Google Cloud**, and **AWS**, which have allowed me to implement robust cloud solutions for scalable and secure data storage.
--  I am also capable within **Tableau**, **QlikView**, **SAS**, **Hubspot**, **Dynamics**, and **Oracle**.
+- **Salesforce Development tools** (SOQL, Apex, and Flow Automations) to ensure seamless business process optimization in CRM sites,
+- **Azure**, **Google Cloud**, and **AWS** for implementing robust cloud solutions for scalable and secure database storage,
+- **Apache Kafka** for managing rapid real-time data streams and **Apache HBase** for real-time read/write access to large datasets.
 
 ## Machine Learning and Data Science
 This is where I find myself most of the time these days, as the implications for mastering such technologies are beyond profound. My expertise in this field spans several key areas, including predictive modeling, data manipulation, statistical analysis, and data visualization, which are all integral to drawing actionable insights from complex datasets.
@@ -117,7 +119,7 @@ At NYMT, I frequently operated within **Salesforce**, both front-end and back-en
 
 Additionally, I have utilized **Go** and **Scala** for their high performance and scalability. Automation scripts written in **Bash** and **PowerShell** have streamlined repetitive tasks, and I have engaged in multicore processing projects to maximize data-churning efficiency for clients. My experience extends to **Swift** for mobile iOS development and **C#** and **Rust** for more niche development projects in the past.
 
-In various projects, I have also leveraged **Apache Kafka** for real-time data streaming, **Apache Hadoop** for large-scale data processing and storage, and **Apache Spark** for distributed data processing. These technologies have enabled me to manage and analyze large datasets efficiently, ensuring data integrity and rapid processing times.
+In various projects, I have also leveraged **Apache Kafka** for real-time data streaming, **Hadoop** for large-scale data processing and storage, and **Spark** for rapid distributed data processing for transportation and logistics systems.
 
 ## Investment Deal Making and Portfolio Management
 Though deal negotiation has not been my primary function, I have modeled and underwritten multifamily lending deals that rely on **Excel**, **Power Query**, **VBA**, **Python**, and **SQL**. It was important to understand complex credit concepts necessary for getting the numbers to line up to investment standards. A robust understanding of the capital stack structure was required for making business data decisions; over time I learned to analyze specific lending deals where specialized knowledge in underwriting CRE assets for preferred equity, mezzanine, JV, and senior lending was crucial for success.
