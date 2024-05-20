@@ -10,6 +10,7 @@ permalink: /skillset/
     - I have advanced experience in **Excel Modeling**, **Power Query**, and **Power BI** for ETL data flows, primarily for creating sophisticated financial models and interactive dashboards that assist in quick and clear strategic decision-making. With proficiency in **SQL**, **DAX**, and **M scripting**, I can move and transform data effectively in a clean and centralized manner that provides maximum transparency and data refresh speed.
     - For some basic economic examples, check out the 'Macro' and 'Micro' tabs!
     - I am also capable within **Tableau**, **QlikView**, and **SAS**.
+    - Additionally, I have leveraged **Apache** technologies such as **Spark**, **Kafka**, **Storm**, **Hadoop**, **Cassandra**, **NiFi**, and **Hive** for big data processing, real-time data streaming, and distributed computing.
 
 - **Programming**:
     - I simply love to code! I find researching new fintech concepts extraordinarily entertaining; I spend lots of time on public academic websites such as Quant Stack Exchange, SSRN, IMF, and Coursera to stay on the frontlines of newly developed ideas and technologies. I have extensive experience pushing complex data combinations into the above visualization tools to tell interesting stories.
@@ -53,11 +54,19 @@ permalink: /skillset/
         Plotly
         Bokeh
         Scikit-learn
+        XGBoost
         TensorFlow
         PyTorch
         Keras
         Django
         Flask
+        Geopandas
+        tqdm
+        Apache Spark
+        Apache Storm
+        Apache Cassandra
+        Apache Hive
+        statsmodels
         FastAPI
         SQLAlchemy
         ```
@@ -104,15 +113,14 @@ My approach to machine learning and quantitative data science utilizes a combina
 ## Web Development and Automation
 I have contributed to various web development projects utilizing frameworks such as **Django**, **Flask**, and **FastAPI**, where I worked on teams focused on integrating complex data workflows while ensuring secure data architecture transitions. My proficiency in **JavaScript** also proved invaluable here, complemented by familiarity with **HTML**/**CSS**, useful for embedding files and images into webpages.
 
-
-
 At NYMT, I frequently operated within **Salesforce**, both front-end and back-end, to support a highly customized business environment. This involved enabling deal leads through the creation of dynamic and user-friendly interfaces where the entire business operated. I combined **Power BI** and **Salesforce** layouts to create immersive and highly customizable web dashboards for stakeholders. Backend services such as **Salesforce Apex** and **Flow Automations** supported the underlying multifamily investing business where highly specialized automated processes were necessary.
 
 Additionally, I have utilized **Go** and **Scala** for their high performance and scalability. Automation scripts written in **Bash** and **PowerShell** have streamlined repetitive tasks, and I have engaged in multicore processing projects to maximize data-churning efficiency for clients. My experience extends to **Swift** for mobile iOS development and **C#** and **Rust** for more niche development projects in the past.
 
+In various projects, I have also leveraged **Apache Kafka** for real-time data streaming, **Apache Hadoop** for large-scale data processing and storage, and **Apache Spark** for distributed data processing. These technologies have enabled me to manage and analyze large datasets efficiently, ensuring data integrity and rapid processing times.
+
 ## Investment Deal Making and Portfolio Management
 Though deal negotiation has not been my primary function, I have modeled and underwritten multifamily lending deals that rely on **Excel**, **Power Query**, **VBA**, **Python**, and **SQL**. It was important to understand complex credit concepts necessary for getting the numbers to line up to investment standards. A robust understanding of the capital stack structure was required for making business data decisions; over time I learned to analyze specific lending deals where specialized knowledge in underwriting CRE assets for preferred equity, mezzanine, JV, and senior lending was crucial for success.
-
 
 ## Closing Thoughts
 Thank you for taking the time to learn more about my professional journey and the skills I've developed along the way!  I'm passionate about implementing my diverse skillset in value-add projects across all sorts of fields. Though I still have much to learn, I fully recognize my own weaknesses and gaps within my own skillset that I am determined to fill in the future. It is my purpose in life to assist others and contribute to the most intelligent teams working on the newest tech capabilities available.
