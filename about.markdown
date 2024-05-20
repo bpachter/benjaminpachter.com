@@ -45,6 +45,7 @@ permalink: /skillset/
         - Pandas
         - NumPy
         - SciPy
+        - ib_insync
         - PySpark
         - PyArrow
         - PyKafka
