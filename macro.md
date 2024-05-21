@@ -275,7 +275,7 @@ So whether or not housing and CRE prices plummit is going to largely depend on t
 
 
 
-## Japan: The black hole of global liquidity
+## Japan: The Yen Carry Trade and the black hole of liquidity
 
 <div class="tradingview-widget-container" style="height:600px; width:100%;">
   <div class="tradingview-widget-container__widget" style="height:100%; width:100%;"></div>
@@ -299,25 +299,98 @@ So whether or not housing and CRE prices plummit is going to largely depend on t
 
 Okay, okay.
 
-So options, inflation, rates, supply shock, debt maturities...
+So options, inflation, rates, supply shock, debt maturities...now Japan?!
 
-It's all madness isn't it!
+Yes, now Japan, dear reader.
+
+The inflation story above is largely true for most of the G7 economies. The main outliar that is going to end up being the key to all of this is, you guessed it, Japan! 
+
+**Japan's central role in the global financial system, particularly through a concept that is known as the yen carry trade, cannot be overstated.** This is the core of it all, the very fabric of the financial universe we have accidentally found ourselves in. This mechanism is simple, allow me to describe:
+
+Picture yourself as a US bank in 2020-2021, and you need to put your depositor funds somewhere risk-free, so you would typically put them into safe assets like US Treasuries. Suddenly, the Fed raises rates in 2022 and all of those US Treasuries you have been holding are now underwater.
+
+What you do with these treasuries as a US Bank - say they were bought at 2-3% and the US FFR is now at 5.5% - is **you take them to Japan, where their rates are between -0.1% and 1%.** They've been in a period of stagflation for decades, and are desparate for their own investors to take out money and invest into the Japanese economy, so this ultra-low interest rate environment is a unique component of Japan's economic policy.
+
+So you're the US bank and you elect to deposit these underwater US Treasuries into the Japanese banks. The Japanese banks love these US Treasuries because they are still higher than their local interest rates; this is the reason Japan (and China for sort of similar reasons) are the single largest foreign holders of US Treasuries in the world.
+
+Since you're investing into this mutual agreement that is good for both yourself and the Japanese bank, the Japanese banks are often willing to provide you leveraged margin funds in return for doing business to be able to do whatever the US banks want with, **sometimes in excess of 20-30x the initial deposit!** So you are getting an injection of new capital in return for the carry trade through these margined funds, which you can now lend out in mass through credit card loans, auto loans, really anything to anyone you can possibly lend to! After all, you need to make money against the interest differential on the yen carry trade, otherwise the benefit of going to all this trouble becomes worthless. 
+
+# So therein lies the big question, Mr/Mrs US Bank. **Where are you going to put those margined funds?**
 
 
-Given these factors, I remain skeptical about any imminent reduction in interest rates. Despite the Federal Reserve's aggressive rate hikes, inflation is likely to stay above their 2% year-over-year growth target. This persistent inflation, coupled with the added strain of geopolitical risks, suggests we might be facing a period of stagflation ahead very similar to the late 1970s and early 1980s, characterized by sluggish economic growth and high inflation, driven in part by rising oil prices. Understanding these dynamics is crucial as we navigate these uncertain times.
+Things are beginning to look a little grim here and there. The US election is approaching, and the impacts will certainly have global ramifications of all sorts, so longer-term uncertainy is about as high as it can be. The Russia-Ukraine war is well into its second year with no signs of stopping anytime soon, and Middle Eastern dynamics are only showing signs of continued escalation, potentially leaking over into a prolonged shipping and oil crisis. You don't want to invest in US treasuries, because the Fed won't fully promise to cut rates this year, and the inflation data keeps coming in hotter than expected or flat, not down. The US labor economy is still strong, but the equity indices are entirely disconnected from 90% of the actual companies in the indices, who are consistently lowering guidance for future earnings due to a slowdown in consumer spending. 
 
+The only thing you can really do is pump equities through the MAG7 giants like Microsoft and Nvidia, who are making momumental-sized promises. Do you care if these massively overstated AI claims end up becoming material or not? Do you care if generative AI is actually the future? **Of course not!**. You only care that the current narrative supports these companies as instruments of deploying your margin liquidity. 
 
+**And of course, the riskiest asset of them all, the 0-DTE index option, becomes an immediate favorite as it was convinently introduced in 2022.**  
 
-
-
-Future topics:
-
-
-
-# Breaking down the carry trade
+So yeah, full circle now.
 
 # Global Contagion
 
-## The Second Cold War
+Japan is now beginning to see the inflation it has long sought, marking a potential end to its deflationary era that began with the asset bubble collapse in the early 1990s. With inflation rising, the BOJ has already ended its 16-year yield-curve control policy and may soon shift to a fully positive interest rate environment. Even a modest rate hike, from 0.5% to 1%, represents a 100% increase, which would have significant implications for leveraged positions held by US banks.
 
-# How to not end with another economic meltdown: Basel 3
+If the BOJ raises rates even a little bit, US banks will face higher margin requirements on their yen carry trades that are largely fueling the liquidity of the US credit market. Banks have relied on the differential between US and Japanese interest rates especially since ZIRP ended to make their trades profitable. As Japanese rates rise, the cost of borrowing in yen increases, reducing the profitability of these trades. 
+
+The yen is at critically weak levels above USDJPY 150. The Ministry of Finance has hundreds of billions in reserves to stave off a total yen collapse for now, but eventually those reserves are going to run out, especially if their interventions continue to prove entirely inefective as they have for the last couple of months.
+
+<div class="tradingview-widget-container" style="height:600px; width:100%;">
+  <div class="tradingview-widget-container__widget" style="height:100%; width:100%;"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+  {
+    "autosize": true,
+    "symbol": "USDJPY",
+    "interval": "1H",
+    "timezone": "Etc/UTC",
+    "theme": "dark",
+    "style": "1",
+    "locale": "en",
+    "allow_symbol_change": true,
+    "calendar": false,
+    "height": "600",
+    "width": "100%"
+  }
+  </script>
+</div>
+
+Those huge red candles are open-market interventions by the Japanese Ministry of Finance, who has been very transparent on their intention to keep USDJPY no higher than 160. 
+
+They may not have long at all until they are forced to rasie their own rates. This would be a big problem for US bond markets, as the attractiveness of JGBs will suddenly become much higher, and the foreign sell-off of US Treasuries could be nothing short of devestating. I'm sure I don't have to spell out the seriousness of a US Treasury liquidity crisis. Let's just hope it doesn't come to this.  
+
+Regardless of what happens with US Treasuries and the FFR here, the raising of Japanese rates to combat their own inflation (which is highly dependant on oil and imports) is something Japan can not afford to ignore anymore, despite the potential negative diplomatic implications. Yellen herself has spoken out against the issue, of course because she knows all of this as well.
+
+If there is a BOJ interest rate hike, this could rapidly lead to forced asset sales to cover these margins, reminiscent of the 2006 pre-GFC scenario. During that period, the narrowing spread between US and Japanese rates led to the liquidation of MBS and related assets by hedge funds, exacerbating the financial crisis. **Today, the stakes are even higher, as major US banks are deeply engaged in this trade, using depositor funds for leverage.**
+
+The implications of a significant shift in Japan's monetary policy are the centerpeice of this entire rhetoric I have laid out today. The potential for margin calls and forced asset sales from a BOJ hike could destabilize markets that are already under pressure from geopolitical and economic uncertainties. The yen carry trade has been a crucial source of cheap funding for US banks and other global financial institutions to keep credit markets alive when local interest rates are high. A disruption in this trade could lead to a credit market liquidity crunch, and potentially a steep crash in US Treasurys, forcing institutions to sell off assets at depressed prices, further exacerbating potential market volatility ahead.
+
+
+## Conclusion
+
+Is all of this certain to happen this way? Of course not! The GSIBs and central banks alike are all obviously capabale of coordinating as much as possible to ensure there is not a global economic meltdown. And to some extent I hope they do and are legitimately successful in solving this problem, but I simply can not currently fathom how they will.
+
+The financial interplay between Japan and American banks serves as a large vulnerability in our global financial system. If there is a breakdown in the carry trade, the leverege to keep the US equity markets up is going to go poof, along with any assets sold off due to mass margin calls and asset sales.
+
+I haven't even touched on the US Regional bank risk to our own US Treasury yields increasing beyond 5% on the 10 year. Perhaps I will add that later on. But for now, I am tired, and generally disheartened by the decisions our economic policy leaders have chosen to take.
+
+I choose to carry on faithful that people much smarter than myself are working hard on this issue and are going to figure out how to avoid the consequences of ignoring tail risk, and in the meantime perhaps I can find a good job and place to settle down with my new fiance and three cats.
+
+
+It has taken me a long while to accept, but I do believe there is a strong possibility that the remainder of the 2020s decade will be characterized by stagflation. I remain skeptical about any imminent reduction in US interest rates, as the credit markets would blow up. Despite the Fed's aggressive rate hikes, inflation is likely to stay above their 2% year-over-year growth target as geo-political risks remain at large, putting inflationary pressure on broad commodities and energy. Despite any EV company's efforts to convince you, we still live in a society where oil is the main driver at the beginning of the value-chain for nearly every consumer product. We are entering a period that is taking elements from both the 1970s-1980s and the 2008 GFC, where Japan's economy has been pillaged (with consent) by outside banks who are desparate to keep equities up and loans flying off the shelves. 
+
+I really have no earthly idea how this is going to end. But I have my popcorn, and I hope you do to.
+
+If you have any questions or want to chat about any of the topics on this page, hit me up on the Contact page.
+
+
+
+<img src="/Images/Bye.gif" alt="Trepp.com" title="Trepp.com" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 100%;">
+
+Thank you for reading this article,
+
+Benjamin Pachter
+
+Future topics:
+# Basel 3
+# Regional Banks and US Interest Rate Risk:
+Check out this paper by the OFR on US bank risk to rises in US Treasury yields: [link](https://www.financialresearch.gov/briefs/files/OFRBrief-23-04-two-new-metrics-bank-securities-portfolio-risk.pdf)
