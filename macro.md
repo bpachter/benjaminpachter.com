@@ -384,7 +384,7 @@ If you have any questions or want to chat about any of the topics on this page, 
 
 
 
-<img src="/Images/Bye.gif" alt="Trepp.com" title="Trepp.com" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 100%;">
+<img src="/Bye.gif" alt="Trepp.com" title="Trepp.com" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 100%;">
 
 Thank you for reading this article,
 
