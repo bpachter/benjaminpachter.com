@@ -247,7 +247,7 @@ Consumers are experiencing sustained high prices for food and groceries, with no
 
 <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1o6Oz&width=725&height=750" scrolling="no" frameborder="0" style="overflow:hidden; width:725px; height:800px;" allowTransparency="true" loading="lazy"></iframe>
 
-So, to absolutely no one's surprise, **the Federal Resevre's incredibly limited tool of raising interest rates to combat producer-side inflation is having absolutely no effect on the high prices the consumer is facing.** While higher interest rates aim to cool the overheating economy by curbing spending and investment and thus reducing inflation, they have not succeeded in lowering the costs of essential goods and services for consumers, as this is something that is simply out of their direct control.
+So, to absolutely no one's surprise, **the Federal Reserve's incredibly limited tool of raising interest rates to combat producer-side inflation is having absolutely no effect on the high prices the consumer is facing.** While higher interest rates aim to cool the overheating economy by curbing spending and investment and thus reducing inflation, they have not succeeded in lowering the costs of essential goods and services for consumers, as this is something that is simply out of their direct control.
 
 Large corporations experience the costs of higher rates and inflation in waves, unlike the consumer. The high prices that corporations are anchoring are caused by a multitude of reasons, but primarily it is them preparing for what is ahead; the massive amount of corporate debt maturing at higher rates.
 
