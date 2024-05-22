@@ -13,18 +13,19 @@ permalink: /skillset/
 
 - **Programming**:
     - I love to code! I find researching new fintech concepts extraordinarily entertaining; I spend lots of time on public academic websites such as Quant Stack Exchange, SSRN, IMF, and Coursera to stay on the frontlines of newly developed ideas and technologies. I have extensive experience pushing complex data combinations into the above visualization tools to tell interesting stories.
-    - My favorite and most commonly utilized technologies are **Python** and **R**, but I have aggregated my total code/scripting experience below:
+    - My favorite and most commonly utilized technologies are **Python**, **R**, **C++**, and **JavaScript**, but I have aggregated my total code/scripting experience below:
 
         - Python
         - R
-        - JavaScript
-        - Salesforce Apex
-        - SQL
-        - Pine
         - C++
         - C#
-        - VBA
+        - JavaScript
         - Java
+        - Salesforce Apex
+        - SQL
+        - Go
+        - Pine
+        - VBA
         - Ruby
         - PHP
         - Swift
