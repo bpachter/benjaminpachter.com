@@ -17,21 +17,35 @@ Hey there! Welcome to my corner of the internet where I get to share tidbits of 
 
 I’m really just a dude who is passionate about helping business owners and employees alike operate their everyday activities and process-flows in a stressfree manner. Turning raw data into valuable insights is just fun to me! Whether it’s through sophisticated statistical models that make me feel smarter than I am, deep learning neural networks for prediction generation, or just plain old number crunching, I thrive on the challenge of making sense out of datasets of all kinds! Primarily using tools like Python, R, Power Query, and SQL, it has become my passion to tackle complex challenges head-on to uncover new trends and patterns that may significantly influence valuable business decision making.
 
-## Proficiencies
+## Skillset
+- see ['Skillset'](https://benjaminpachter.com/skillset/) page for further breakdown
 
-**Data Analytics & Visualization**: Expertise in advanced Excel modeling, Power Query, and Power BI for financial modeling and interactive dashboards. Skilled in SQL, DAX, and M scripting for ETL data manipulation. (See my 'ETL' page for a demonstration).
+**Data Analytics & Visualization**: 
+- Expertise in advanced Excel modeling, Power Query, and Power BI for financial modeling and interactive dashboards.
+- Skilled in SQL, DAX, and M scripting for ETL data manipulation.
+- Proficient in Tableau, SAS, Dynamics, Apache Spark, Airflow, Kafka, Storm, Hadoop, Cassandra, NiFi, Hive, Salesforce, Google BigQuery, Amazon Redshift, Azure Synapse, Matplotlib, Seaborn, Plotly, Bokeh, and Geopandas.
 
-**Database & Cloud Server Management**: Proficient in SSMS SQL, Salesforce Dev (SOQL, Apex, and Flow Automations), AWS, Google Cloud, and Azure services.
+**Database & Cloud Server Management**: 
+- Proficient in SSMS SQL, Salesforce Dev (SOQL, Apex, and Flow Automations), AWS, Google Cloud, Azure services, MySQL, MongoDB, Cassandra, Azure SQL Database, Azure Cosmos DB, Azure Data Factory, Google Cloud Storage, Google Dataflow, Amazon RDS, Amazon DynamoDB, AWS Lambda. 
+-Managed real-time data streams and processing using Apache Kafka, Spark Streaming, Apache Flink, AWS Kinesis, Apache HBase with Hadoop, and Google Cloud Pub/Sub.
 
-**Programming**: Python, R, Apex, JavaScript, Java, C++, VBA for data extraction, visualization, and statistical analysis.
+**Programming**: 
+- Python, R, Apex, JavaScript, Java, C++, VBA, C#, SQL, Go, Pine, Ruby, PHP, Swift, Scala, MATLAB, HTML, CSS, XML, Bash, Rust, PowerShell. Skilled in using Python libraries such as Pandas, NumPy, SciPy, QuantLib, ib_insync, PySpark, PyArrow, PyKafka, PyHive, Airflow, Cassandra, Dask, fredapi, Scikit-learn, XGBoost, TensorFlow, PyTorch, Keras, Django, Flask, tqdm, statsmodels, FastAPI, SQLAlchemy.
 
-**Investment Deal Making**: Adept in modeling and underwriting CRE lending deals (senior, mezz, preferred equity, JV) and performing asset-credit diligence.
+**Investment Deal Making**: 
+- Adept in modeling and underwriting CRE lending deals (senior, mezz, preferred equity, JV) and performing asset-credit diligence.
+- Proficency in regression, classification, clustering algorithms for asset selection, credit scoring, logistics pattern identification, customer segmentation, and CRE asset KPI prediction.
+- Experienced in portfolio optimization, resource allocation, time series analysis, ensemble methods, dimensionality reduction, model evaluation, and hyperparameter tuning.
 
-**Additional SaaS & Programming**: HubSpot, Dynamics 365, GitHub, SAP S/4 HANA, Pine, Bloomberg, Oracle.
+**Strategic Business Understanding**: 
+- Investment strategy optimization, proactive risk management, micro-investment opportunity identification, quantitative data science.
+
+**Additional SaaS & Programming**: 
+- HubSpot, Dynamics 365, GitHub, SAP S/4 HANA, Pine, Bloomberg, Oracle.
+- Proficient in using various cloud platforms and technologies for ETL processes and real-time data integration.
 
 
 ## Professional Experience
-
 
 <img src="/images/NYMT1.png" alt="NYMT" title="NYMT" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 15%;">
 
@@ -58,7 +72,7 @@ I’m really just a dude who is passionate about helping business owners and emp
 *Jan 2020 – Jan 2022*
 
 - Developed machine learning models to forecast client portfolio risk to interest rate hikes and bond volatility.
-- Implemented coded lean logistical processes to replace client CRM reliance for transportation optimization.
+- Implemented lean logistical processes to replace client CRM reliance for transportation optimization.
 - Modeled financial data for ERP migrations for clients in e-commerce, transportation, and banking sectors.
 - Created data dashboards with SAP S/4, Microsoft Dynamics, and Power BI for logistics and data monitoring.
 - Assisted numerous clients in software/database transfer (SAP ECC to S/4 HANA & GFIN, Excel to Azure/SQL).
