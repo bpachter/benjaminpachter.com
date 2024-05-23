@@ -8,8 +8,7 @@ permalink: /trade_algos/
 Hey there! Thanks for your patience as I build out this page and make it better with integrated Jupyter Notebooks.
 
 
-Let's dive into some basic trading algorithms and blockchain technologies!
-
+Let's dive into some basic trading algorithms and blockchain technologies, as well as more complex equity momentum simulation!
 
 
 ## Implementing a Simple Trading Strategy using C++
@@ -107,8 +106,8 @@ def trade_spx_straddle():
     ib.connect('127.0.0.1', 7497, clientId=1)
 
     # Define the SPX option contracts for a straddle at specific strike and date
-    spx_call = Option('SPX', '20230821', 5300, 'C', 'SMART')
-    spx_put = Option('SPX', '20230821', 5300, 'P', 'SMART')
+    spx_call = Option('SPX', '20240621', 5300, 'C', 'SMART')
+    spx_put = Option('SPX', '20240621', 5300, 'P', 'SMART')
 
     # Request market data for the options
     ib.reqMktData(spx_call)
@@ -456,14 +455,14 @@ model.compile(loss='mean_squared_error', optimizer='adam')
 - Compilation: The model is compiled with the mean squared error loss function and the Adam optimizer, which is commonly used for training deep learning models.
 
 #### Training the Model:
-```
+```py
 model.fit(X, Y, epochs=20, batch_size=1, verbose=2)
 ```
 
 #### Model Training:
 The model is trained using the input-output pairs (X, Y) for 20 epochs with a batch size of 1. The verbose level is set to 2 to provide detailed logs during training.
 Making Predictions:
-```
+```py
 predictions = model.predict(X)
 ```
 - Generating Predictions: The trained model is used to make predictions on the input data X. The predicted values are stored in the predictions array.

@@ -7,11 +7,13 @@ permalink: /skillset/
 ## Profile:
 
 - **Data Analytics & Visualization**:
+    - **For more detailed demonstrations, check out the [ETL](https://benjaminpachter.com/ETL/) page.**
     - I have advanced experience in **Excel Modeling**, **Power Query**, and **Power BI** for ETL data flows, primarily for creating sophisticated financial models and interactive dashboards that assist in quick and clear strategic decision-making. With proficiency in **SQL**, **DAX**, and **M scripting**, I can move and transform data effectively in a clean and centralized manner that provides maximum transparency and data refresh speed.
     - I am also highly capable within, **Tableau**, **SAS**, **Dynamics**, and **Apache** technologies such as **Spark**, **Airflow**, **Kafka**, **Storm**, **Hadoop**, **Cassandra**, **NiFi**, and **Hive** for big data processing, real-time data streaming, and distributed computing.
     - Additionally, I have operated within many cloud platforms such as **Salesforce**, **Google BigQuery**, **Amazon Redshit**, and **Azure Synapse**. 
 
 - **Programming**:
+    - **For more detailed demonstrations, check out the [Algorithms](https://benjaminpachter.com/trade_algos/) page.**
     - I love to code! I find researching new fintech concepts extraordinarily entertaining; I spend lots of time on public academic websites such as Quant Stack Exchange, SSRN, IMF, and Coursera to stay on the frontlines of newly developed ideas and technologies. I have extensive experience pushing complex data combinations into the above visualization tools to tell interesting stories.
     - My favorite and most commonly utilized technologies are **Python**, **R**, **C++**, and **JavaScript**, but I have aggregated my total code/scripting experience below:
 

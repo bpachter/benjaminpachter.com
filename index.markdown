@@ -17,6 +17,7 @@ Hello! I'm Benjamin Pachter, a passionate data scientist and programmer. This po
 - [**Macro**](https://benjaminpachter.com/macro/): Explore examples of embedding and manipulating macroeconomic data. See how I analyze economic trends and apply them to real-world scenarios.
 - [**Micro**](https://benjaminpachter.com/micro/): Delve into my microeconomic projects and detailed investment tools. Discover how I approach investment analysis and decision-making.
 - [**ETL**](https://benjaminpachter.com/ETL/): Preview my best practices with Extract, Transform, Load (ETL) processes using a combination of SQL and Power Query. See how I manage and transform data efficiently.
+- [**Algorithms**](https://benjaminpachter.com/trade_algos/): Dive deeper into C++, Python, and blockchain automation demonstrations.
 
 ## Contact Information
 
