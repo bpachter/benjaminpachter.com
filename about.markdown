@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Skillset
+title: Skills
 permalink: /skillset/
 ---
 
@@ -169,10 +169,25 @@ In past experiences, I have developed and supported many different kinds of mode
             - Created comprehensive documentation for tools and models, including user guides and technical specs.
             - Provided training and support to traders and risk managers, including workshops and tutorials.
 
+# Blockchain & Distributed Systems
+I have hands-on experience with **blockchain** technologies and **distributed systems**, developing proficiency along the way in **Rust**, **Solidity**, and **Hyperledger Fabric** to develop secure and efficient decentralized applications.
 
+- **Blockchain Development:**
+    - **Rust**: Utilized Rust for developing high-performance, memory-safe applications in blockchain projects, including building components for decentralized systems and optimizing blockchain protocols.
+    - **Solidity**: Developed smart contracts on the Ethereum blockchain using Solidity, implementing decentralized finance (DeFi) protocols and creating tokenized assets.
+    - **Hyperledger Fabric**: Deployed and managed enterprise-grade blockchain networks using Hyperledger Fabric, focusing on permissioned blockchains for secure and private business transactions.
+- **Distributed Systems:**
+    - Designed and implemented distributed systems for real-time data processing and analytics using **Apache Kafka** and **Apache Spark**.
+    - Developed microservices architecture for scalable applications using **Docker** and **Kubernetes** for container orchestration.
+- **Smart Contract Development:**
+    - Proficient in using **Truffle** and **Hardhat** frameworks for testing, deploying, and managing **Ethereum smart contracts**.
+    - Implemented secure smart contracts with libraries like **OpenZeppelin** to ensure best practices in smart contract security and functionality.
+- **Decentralized Applications (dApps):**
+    - Built interactive dApps using **React** and **ethers.js** for seamless integration with **Ethereum** blockchain.
+    - Leveraged IPFS for decentralized storage solutions in blockchain applications.
 
 Outside of my professional career,  I am most interested in backtesting complex options trading strategies and automating these through brokerage APIs, as well as building my own applications. My favorite is retail brokerage automation IBKR, as it is easy to set up a paper trading account that can be directly connected to my TradingView Pine scripts for easy and transparent backtesting.
-
+<br><br>
 ## Database and Cloud Server Management
 In previous roles, I have managed database and cloud infrastructure, utilizing the following technologies:
 
@@ -182,7 +197,7 @@ In previous roles, I have managed database and cloud infrastructure, utilizing t
   - Implementing database indexing and performance tuning to ensure efficient query execution.
   - Conducting regular database backups and recovery operations.
   - Managing both **SQL** and **NoSQL** databases for varied use cases, including **MongoDB** and **Cassandra** for NoSQL solutions.
-  - Comparison of Database Technologies:
+  - Comparison of Database Technologies:<br>
 
 | Feature           | SQL                                    | MySQL                                  | T-SQL                                      | NoSQL                                      |
 |-------------------|----------------------------------------|----------------------------------------|--------------------------------------------|--------------------------------------------|
@@ -211,11 +226,10 @@ In previous roles, I have managed database and cloud infrastructure, utilizing t
     - Managed real-time data streams and processing using **Apache Kafka**, **Spark Streaming**, **Apache Flink**, and **AWS Kinesis** for high-throughput, low-latency data handling and analytics.
     - Ensured real-time read/write access and integration with distributed storage systems using **Apache HBase** with **Hadoop**, and leveraged **Google Cloud Pub/Sub** for event-driven messaging and scalable data pipelines with **Dataflow**.
 
-
+<br>
 
 ## Closing Thoughts
-Thank you for taking the time to learn more about my professional journey and the skills I've developed along the way!  I'm passionate about implementing my diverse skillset in value-add projects across all sorts of fields. Though I still have much to learn, I fully recognize my own weaknesses and gaps within my own skillset that I am determined to fill in the future. It is my purpose in life to assist others and contribute to the most intelligent teams working on the newest tech capabilities available.
-If you have any questions or would like to discuss potential collaborations, please don't hesitate to reach out. Let's connect and see how we can work together to achieve great things!
+Thank you for taking the time to review my professional skill set and experiences! I am passionate about leveraging data analytics, programming, and cutting-edge technologies to drive strategic decision-making and optimize business processes. I am eager to apply my diverse background in financial modeling, data augmentation, algorithm development, and blockchain technologies while continuing to grow in a dynamic and challenging environment. If you have any questions or would like to discuss potential collaborations, please feel free to reach out. I look forward to the opportunity to work together and achieve great things together!!
 
 Cheers,  
 Benjamin Pachter

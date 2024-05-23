@@ -12,10 +12,16 @@ permalink: /resume/
 - **LinkedIn**: [My Profile](https://www.linkedin.com/in/benjamin-pachter-9582bb12b/)
 - **GitHub**: [benjaminpachter.com_repository](https://github.com/bpachter/benjaminpachter.com)
 
-## My Purpose
-Hey there! Welcome to my corner of the internet where I get to share tidbits of my journey thus far as a Quantitative Data Scientist. I am currently looking for a new team to divert my energy to, so if you are hiring, thank you for being here! If you happen to already have gone through my Resume word document, then you won't find anything new below other than mu comprehensive list of technologies I am skilled in. I would instead direct you to check out The 'Skillset' page and some of the other pages where I have provided deeper insights to my experience, as well as some basic demonstrations! 
+## About Me
+Hey there! Welcome to my corner of the internet where I get to share tidbits of my journey as a Quantitative Data Scientist. I am currently looking for a new team to channel my energy into, so if you are hiring, thank you for being here! If you have already gone through my resume, you won't find anything new below other than a comprehensive list of technologies I am skilled in. Instead, I would direct you to check out the 'Skillset' page and other pages where I provide deeper insights into my experience and some basic demonstrations!
 
-I’m really just a dude who is passionate about helping business owners and employees alike operate their everyday activities and process-flows in a stressfree manner. Turning raw data into valuable insights is just fun to me! Whether it’s through sophisticated statistical models that make me feel smarter than I am, deep learning neural networks for prediction generation, or just plain old number crunching, I thrive on the challenge of making sense out of datasets of all kinds! Primarily using tools like Python, R, C++, Javascript, Power Query, and SQL, it has become my passion to tackle complex challenges head-on to uncover new trends and patterns that may significantly influence valuable business decision making.
+I’m just a passionate professional who thrives on helping business owners and employees streamline their everyday activities and process flows. Turning raw data into valuable insights is exhilarating to me! Whether it’s through sophisticated statistical models, AI algorithms, financial engineering, or distributed systems, I love making sense out of datasets of all kinds.
+
+Using tools like Python, R, C++, JavaScript, Power Query, and SQL, I tackle complex challenges head-on to uncover new trends and patterns that significantly influence valuable business decision-making. I integrate cutting-edge AI and machine learning techniques, including deep learning neural networks, to generate predictive insights. Additionally, I leverage distributed systems and blockchain technologies to build scalable, secure, and efficient solutions that redefine operational efficiency.
+
+My expertise spans advanced financial engineering, using models like Black-Scholes for options pricing and Monte Carlo simulations for risk assessment. I also employ AI-driven algorithms for asset selection, credit scoring, and customer segmentation. By combining my knowledge of Apache Kafka, Spark, Hadoop, and other distributed technologies, I ensure real-time data processing and analytics.
+
+Ultimately, my purpose is to harness the power of data and technology to drive innovation and operational efficiency, creating stress-free, insightful experiences for business owners and employees alike.
 <br><br>
 
 ## Skillset
@@ -31,7 +37,7 @@ I’m really just a dude who is passionate about helping business owners and emp
 - Managed real-time data streams and processing using Apache Kafka, Spark Streaming, Apache Flink, AWS Kinesis, Apache HBase with Hadoop, and Google Cloud Pub/Sub.
 
 **Programming**: 
-- Python, R, Apex, JavaScript, Java, C++, C#, SQL, Go, Scala, MQ4/MQ5, Rust, Pine, Ruby, PHP, Swift, MATLAB, HTML, CSS, XML, VBA, DAX/M, Bash, PowerShell.
+- Python, R, Apex, JavaScript, Java, C++, C#, SQL, Go, Scala, MQ4/MQ5, Rust, Solidit Pine, Ruby, PHP, Swift, MATLAB, HTML, CSS, XML, VBA, DAX/M, Bash, PowerShell.
 - Skilled in using Python libraries such as Pandas, NumPy, SciPy, QuantLib, ib_insync, PySpark, PyArrow, PyKafka, PyHive, Airflow, Cassandra, Dask, fredapi, Scikit-learn, XGBoost, TensorFlow, PyTorch, Keras, Django, Flask, tqdm, statsmodels, FastAPI, SQLAlchemy, and many more.
 
 **Investment Deal Making**: 
@@ -39,12 +45,21 @@ I’m really just a dude who is passionate about helping business owners and emp
 - Proficency in regression, classification, clustering algorithms for asset selection, credit scoring, logistics pattern identification, customer segmentation, and CRE asset KPI prediction.
 - Experienced in portfolio optimization, resource allocation, time series analysis, ensemble methods, dimensionality reduction, model evaluation, and hyperparameter tuning.
 
+**Distributed Systems & Blockchain:**
+
+- Experience in designing distributed systems using Rust, Solidity, Hyperledger Fabric, Apache Kafka, Spark Streaming, Apache Flink, Hadoop, and others for large-scale data processing and real-time analytics.
+- Proficient in implementing blockchain solutions for secure and decentralized data management using technologies such as Ethereum, Hyperledger, and smart contracts.
+- Skilled in leveraging cloud platforms like AWS, Google Cloud, and Azure for deploying scalable and fault-tolerant distributed systems.
+- Experience in developing decentralized applications (dApps) using Solidity, Web3.js, Truffle framework, and Rust for blockchain programming.
+- Adept in using consensus algorithms, cryptographic techniques, and distributed ledger technologies to ensure data integrity, security, and transparency.
+
 **Strategic Business Understanding**: 
 - Investment strategy optimization, proactive risk management, micro-investment opportunity identification, quantitative data science.
 
 **Additional SaaS & Programming**: 
 - HubSpot, Dynamics 365, GitHub, SAP S/4 HANA, Pine, Bloomberg, Oracle.
 - Proficient in using various cloud platforms and technologies for ETL processes and real-time data integration.
+
 <br><br>
 
 ## Professional Experience
@@ -66,7 +81,7 @@ I’m really just a dude who is passionate about helping business owners and emp
 - Monitored and reported on macroeconomic developments via customized financial health indicators using public APIs for exposure risk assessment.<br><br>
 - Conducted comparative statistical analysis with R and Python to evaluate asset performance against market benchmarks, employing NumPy, Pandas, and statsmodels for quantitative research.<br><br>
 - Utilized C++ for high-performance computing tasks related to big data movement and analysis, integrating with SQL/Apache technologies for distributed big data processing through Azure cloud systems.<br><br>
-- Provided macroeconomic risk analysis to the executive team, leveraging advanced data visualization tools like Power BI, Tableau, and Matplotlib for insightful presentations.<br><br>
+- Provided macroeconomic risk analysis to the executive team, leveraging advanced data visualization tools like Power BI, Tableau, and Matplotlib for insightful presentations, and researched blockchain technologies to incorporate within the company's strategy to remain on the frontines of tech capabilities.<br><br>
 
 
 <img src="/images/Deloitte1.gif" alt="Deloitte" title="Deloitte" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 10%;">
@@ -77,6 +92,7 @@ I’m really just a dude who is passionate about helping business owners and emp
 *Jan 2020 – Jan 2022*
 
 - Developed machine learning models using Python, R, and C++ for forecasting client portfolio risks associated with interest rate hikes and bond volatility, employing algorithms such as random forests, XGBoost, and ARIMA.<br><br>
+- Implemented distributed systems and blockchain solutions using Rust, Solidity, and Hyperledger Fabric for secure and efficient financial transactions and smart contract development.<br><br>
 - Optimized Black-Scholes options pricing models using QuantLib, NumPy, SciPy, and MQ4 in combination with Python, C++, and JavaScript.<br><br>
 - Implemented lean logistical processes using SQL, Python, C++, JavaScript, and Apache technologies to optimize client CRM reliance for transportation logistics.<br><br>
 - Modeled financial data for ERP migrations using SAP S/4 HANA and Azure/SQL for clients in e-commerce, transportation, and banking sectors.<br><br>

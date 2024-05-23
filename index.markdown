@@ -6,7 +6,7 @@ permalink: /
 
 # Welcome to My Professional Portfolio
 
-Hello! I'm Benjamin Pachter, a passionate data analyst and programmer. This portfolio serves as a preview of some of my best practices and experiences with quantitative data analytics, visualization and programming. Feel free to navigate through the different pages to explore various aspects of my work.
+Hello! I'm Benjamin Pachter, a passionate data scientist and programmer. This portfolio serves as a preview of some of my best practices and experiences with quantitative data analytics, AI-driven algorithms, financial engineering, distributed systems, and blockchain technologies. Feel free to navigate through the different pages to explore various aspects of my work, including how I leverage modern tools like Python, R, C++, JavaScript, SQL, and cutting-edge AI frameworks to transform raw data into actionable insights. Discover my approaches to advanced data visualization, AI model development, and blockchain integration to drive innovation and optimize strategies in dynamic environments.
 
 **Note:** This website is still a work in progress, especially on mobile devices. I appreciate your patience as I continue to improve it, and thank you for being here!
 
@@ -25,7 +25,6 @@ I’d love to hear from you! Whether you have questions, opportunities, or just 
 - **Phone**: [980-297-8331](tel:9802978331)
 - **Email**: [ben.pachter@bellsouth.net](mailto:ben.pachter@bellsouth.net)
 - **LinkedIn**: [My Profile](https://www.linkedin.com/in/benjamin-pachter-9582bb12b/)
-- **GitHub**: [benjaminpachter.com_repository](https://github.com/bpachter/benjaminpachter.com)
 
 ## Reach out to me directly:
 
