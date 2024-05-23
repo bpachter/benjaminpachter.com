@@ -30,7 +30,8 @@ I’m really just a dude who is passionate about helping business owners and emp
 - Managed real-time data streams and processing using Apache Kafka, Spark Streaming, Apache Flink, AWS Kinesis, Apache HBase with Hadoop, and Google Cloud Pub/Sub.
 
 **Programming**: 
-- Python, R, Apex, JavaScript, Java, C++, VBA, C#, SQL, Go, Pine, Ruby, PHP, Swift, Scala, MATLAB, HTML, CSS, XML, Bash, Rust, PowerShell. Skilled in using Python libraries such as Pandas, NumPy, SciPy, QuantLib, ib_insync, PySpark, PyArrow, PyKafka, PyHive, Airflow, Cassandra, Dask, fredapi, Scikit-learn, XGBoost, TensorFlow, PyTorch, Keras, Django, Flask, tqdm, statsmodels, FastAPI, SQLAlchemy.
+- Python, R, Apex, JavaScript, Java, C++, C#, SQL, Go, Scala, Rust, Pine, Ruby, PHP, Swift, MATLAB, HTML, CSS, XML, VBA, DAX/M, Bash, PowerShell.
+- Skilled in using Python libraries such as Pandas, NumPy, SciPy, QuantLib, ib_insync, PySpark, PyArrow, PyKafka, PyHive, Airflow, Cassandra, Dask, fredapi, Scikit-learn, XGBoost, TensorFlow, PyTorch, Keras, Django, Flask, tqdm, statsmodels, FastAPI, SQLAlchemy, and many more.
 
 **Investment Deal Making**: 
 - Adept in modeling and underwriting CRE lending deals (senior, mezz, preferred equity, JV) and performing asset-credit diligence.
