@@ -27,7 +27,7 @@ I’m really just a dude who is passionate about helping business owners and emp
 
 **Database & Cloud Server Management**: 
 - Proficient in SSMS SQL, Salesforce Dev (SOQL, Apex, and Flow Automations), AWS, Google Cloud, Azure services, MySQL, MongoDB, Cassandra, Azure SQL Database, Azure Cosmos DB, Azure Data Factory, Google Cloud Storage, Google Dataflow, Amazon RDS, Amazon DynamoDB, AWS Lambda. 
--Managed real-time data streams and processing using Apache Kafka, Spark Streaming, Apache Flink, AWS Kinesis, Apache HBase with Hadoop, and Google Cloud Pub/Sub.
+- Managed real-time data streams and processing using Apache Kafka, Spark Streaming, Apache Flink, AWS Kinesis, Apache HBase with Hadoop, and Google Cloud Pub/Sub.
 
 **Programming**: 
 - Python, R, Apex, JavaScript, Java, C++, VBA, C#, SQL, Go, Pine, Ruby, PHP, Swift, Scala, MATLAB, HTML, CSS, XML, Bash, Rust, PowerShell. Skilled in using Python libraries such as Pandas, NumPy, SciPy, QuantLib, ib_insync, PySpark, PyArrow, PyKafka, PyHive, Airflow, Cassandra, Dask, fredapi, Scikit-learn, XGBoost, TensorFlow, PyTorch, Keras, Django, Flask, tqdm, statsmodels, FastAPI, SQLAlchemy.
