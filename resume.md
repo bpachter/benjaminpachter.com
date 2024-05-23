@@ -16,6 +16,7 @@ permalink: /resume/
 Hey there! Welcome to my corner of the internet where I get to share tidbits of my journey thus far as a Quantitative Data Scientist. I am currently looking for a new team to divert my energy to, so if you are hiring, thank you for being here! If you happen to already have gone through my Resume word document, then you won't find anything new below other than mu comprehensive list of technologies I am skilled in. I would instead direct you to check out The 'Skillset' page and some of the other pages where I have provided deeper insights to my experience, as well as some basic demonstrations! 
 
 I’m really just a dude who is passionate about helping business owners and employees alike operate their everyday activities and process-flows in a stressfree manner. Turning raw data into valuable insights is just fun to me! Whether it’s through sophisticated statistical models that make me feel smarter than I am, deep learning neural networks for prediction generation, or just plain old number crunching, I thrive on the challenge of making sense out of datasets of all kinds! Primarily using tools like Python, R, C++, Javascript, Power Query, and SQL, it has become my passion to tackle complex challenges head-on to uncover new trends and patterns that may significantly influence valuable business decision making.
+<br><br>
 
 ## Skillset
 - see ['Skillset'](https://benjaminpachter.com/skillset/) page for further breakdown
@@ -30,7 +31,7 @@ I’m really just a dude who is passionate about helping business owners and emp
 - Managed real-time data streams and processing using Apache Kafka, Spark Streaming, Apache Flink, AWS Kinesis, Apache HBase with Hadoop, and Google Cloud Pub/Sub.
 
 **Programming**: 
-- Python, R, Apex, JavaScript, Java, C++, C#, SQL, Go, Scala, Rust, Pine, Ruby, PHP, Swift, MATLAB, HTML, CSS, XML, VBA, DAX/M, Bash, PowerShell.
+- Python, R, Apex, JavaScript, Java, C++, C#, SQL, Go, Scala, MQ4/MQ5, Rust, Pine, Ruby, PHP, Swift, MATLAB, HTML, CSS, XML, VBA, DAX/M, Bash, PowerShell.
 - Skilled in using Python libraries such as Pandas, NumPy, SciPy, QuantLib, ib_insync, PySpark, PyArrow, PyKafka, PyHive, Airflow, Cassandra, Dask, fredapi, Scikit-learn, XGBoost, TensorFlow, PyTorch, Keras, Django, Flask, tqdm, statsmodels, FastAPI, SQLAlchemy, and many more.
 
 **Investment Deal Making**: 
@@ -44,7 +45,7 @@ I’m really just a dude who is passionate about helping business owners and emp
 **Additional SaaS & Programming**: 
 - HubSpot, Dynamics 365, GitHub, SAP S/4 HANA, Pine, Bloomberg, Oracle.
 - Proficient in using various cloud platforms and technologies for ETL processes and real-time data integration.
-
+<br><br>
 
 ## Professional Experience
 
@@ -55,15 +56,18 @@ I’m really just a dude who is passionate about helping business owners and emp
 *Charlotte, NC*  
 *Jan 2022 – May 2024*
 
-- Analyzed multifamily market trends using Yardi Matrix, RealPage, FRED, FDIC, and Census data to identify investment opportunities.
-- Supported Salesforce system administration, ensuring data consistency and addressing automation errors.
-- Developed Apex classes and automations to enhance the Acquisitions and Asset Management teams.
-- Created underwriting and portfolio models to enhance property market and demographics evaluation.
-- Implemented regression-prediction models to refine property valuation for underwriting agency (Freddie/Fannie) loans, improving predictive accuracy of proforma returns.
-- Monitored financial health of governments and banks using FDIC and FRED APIs for risk assessment.
-- Optimized multi-team database structures and created SSMS SQL Server architecture from scratch.
-- Conducted statistical analysis to compare asset performance against market benchmarks for proactive management.
-- Reported broader macroeconomic risks to the executive team and acted as the sole R&D analyst.
+- Developed multifamily market/property investment tools with Python, Power BI, JavaScript, R, SQL, and Excel for analyzing Yardi Matrix, RealPage, FRED, FDIC, and Census data to identify high-potential investment opportunities and factor risks.<br><br>
+- Supported and created underwriting, portfolio, and monte-carlo models leveraging Python, SQL, R, and other technologies to enhance strategic rate scenario analysis and investment selection.
+<br><br> 
+- Oversaw and architected scalable database solutions in SSMS SQL Server through stored prodecures to optimize legacy Excel-based process models, enhancing multi-team connectivity for cross-functional team-wide data handling.<br><br>
+- Enhanced business processes through Salesforce system administration with Apex and Flow Automations, ensuring data consistency and automating key processes for Acquisitions and Asset Management teams.
+<br><br>
+- Implemented advanced prediction models using scikit-learn, XGBoost, TensorFlow, etc. to refine property valuations for underwriting agency loans and to predict asset rent prices using time series data<br><br>
+- Monitored and reported on macroeconomic developments via customized financial health indicators using public APIs for exposure risk assessment.<br><br>
+- Conducted comparative statistical analysis with R and Python to evaluate asset performance against market benchmarks, employing NumPy, Pandas, and statsmodels for quantitative research.<br><br>
+- Utilized C++ for high-performance computing tasks related to big data movement and analysis, integrating with SQL/Apache technologies for distributed big data processing through Azure cloud systems.<br><br>
+- Provided macroeconomic risk analysis to the executive team, leveraging advanced data visualization tools like Power BI, Tableau, and Matplotlib for insightful presentations.<br><br>
+
 
 <img src="/images/Deloitte1.gif" alt="Deloitte" title="Deloitte" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 10%;">
 
@@ -72,16 +76,23 @@ I’m really just a dude who is passionate about helping business owners and emp
 *Seattle, WA*  
 *Jan 2020 – Jan 2022*
 
-- Developed machine learning models to forecast client portfolio risk to interest rate hikes and bond volatility.
-- Implemented lean logistical processes to replace client CRM reliance for transportation optimization.
-- Modeled financial data for ERP migrations for clients in e-commerce, transportation, and banking sectors.
-- Created data dashboards with SAP S/4, Microsoft Dynamics, and Power BI for logistics and data monitoring.
-- Assisted numerous clients in software/database transfer (SAP ECC to S/4 HANA & GFIN, Excel to Azure/SQL).
-- Established an international Chart-of-Accounts for consistent global financial reporting.
-- Coordinated with contractors to map data elements for Customer Information Models.
-- Developed commercial real estate analysis reports, providing internal market insights and trend forecasts.
-- Led internal transformation initiatives to restructure legacy Microsoft suite reliance to Power Query/SQL.
-- Provided guidance on Federal Reserve decision making and forecasts in comparison to economic data trends.
+- Developed machine learning models using Python, R, and C++ for forecasting client portfolio risks associated with interest rate hikes and bond volatility, employing algorithms such as random forests, XGBoost, and ARIMA.<br><br>
+- Optimized Black-Scholes options pricing models using QuantLib, NumPy, SciPy, and MQ4 in combination with Python, C++, and JavaScript.<br><br>
+- Implemented lean logistical processes using SQL, Python, C++, JavaScript, and Apache technologies to optimize client CRM reliance for transportation logistics.<br><br>
+- Modeled financial data for ERP migrations using SAP S/4 HANA and Azure/SQL for clients in e-commerce, transportation, and banking sectors.<br><br>
+- Created interactive data dashboards with SAP S/4, Microsoft Dynamics, and Power BI for logistics and data monitoring.<br><br>
+- Assisted clients in database migrations (SAP ECC to S/4 HANA & CFIN, Excel to Azure/SQL), ensuring seamless transitions and data integrity.<br><br>
+- Established a global Chart-of-Accounts for consistent international financial reporting.<br><br>
+- Coordinated data mapping for Customer Information Models with external contractors.<br><br>
+- Developed commercial real estate analysis reports using Python, R, and Power BI, providing insights and trend forecasts.<br><br>
+- Led transformation initiatives to transition from legacy Microsoft suites to Power Query/SQL.<br><br>
+- Provided strategic guidance on Federal Reserve decisions and economic data trends.<br><br>
+- Enhanced and developed Black-Scholes pricing models by integrating C++/R/Python for high-performance computations and JavaScript for interactive visualizations.<br><br>
+- Employed Keras and TensorFlow for deep learning applications in financial risk modeling and predictive analytics.<br><br>
+- Developed scalable data pipelines using Apache Spark and Kafka for real-time data processing and analytics.<br><br>
+- Conducted backtesting and validation of financial models using historical data with Python, C++, and R.<br><br>
+- Developed comprehensive documentation and user guides for financial models and tools, ensuring ease of use and accessibility for clients.
+<br><br>
 
 <img src="/images/BMW1.gif" alt="BMW" title="BMW" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 10%;">
 
@@ -90,10 +101,25 @@ I’m really just a dude who is passionate about helping business owners and emp
 *Greer, SC*  
 *May 2018 – Dec 2018*
 
-- Analyzed part-family supply route data within SAP S/4 HANA and private internal software to enhance supply chain visibility and rapid decision making by the executive team.
-- Led a large sprint initiative to restructure supplier reorder processes, improving departmental collaboration; reduced transportation expenses by $13 million per vehicle model over a seven-year forecast period.
+- Analyzed supply route data using SAP S/4 HANA and internal software, enhancing supply chain visibility and decision-making for the executive team.
+<br><br>
+- Led a sprint initiative to restructure supplier reorder processes, reducing transportation expenses by $13 million per vehicle model over a seven-year forecast period through improved departmental collaboration.<br><br>
 - Managed daily supply chain operations, focusing on materials flow, packaging, and transportation.
-- Executed data mining and predictive analytics with Python and Excel modeling to support planners in integrating new logistics operations for BMW G05 X5, G06 X6, G07 X7, and G09 XM models.
+<br><br>
+- Executed data mining and predictive analytics with Python, Bash, and PowerShell, supporting planners in integrating new logistics operations for BMW models G05 X5, G06 X6, G07 X7, and G09 XM.
+<br><br>
+- Utilized Apache Kafka for real-time data streaming and Spark for big data processing, enhancing supply chain analytics.
+<br><br>
+- Developed advanced data visualizations and interactive dashboards using JavaScript (D3.js, Node.js, React) and Power BI for executive reporting.
+<br><br>
+- Implemented statistical analysis and predictive modeling using SAS to optimize supply chain operations and forecast demand.
+<br><br>
+- Deployed PySpark for large-scale data processing and Airflow for orchestrating complex data workflows.
+<br><br>
+- Utilized Hadoop and Hive for distributed data storage and querying, improving data accessibility and processing speed.
+<br><br>
+- Employed Scala and Cassandra for handling high-velocity data streams and ensuring efficient data management across distributed systems.
+<br><br>
 
 ## Education
 **University of North Carolina at Charlotte**  

@@ -24,20 +24,20 @@ permalink: /skillset/
         - Salesforce Apex
         - SQL
         - Go
+        - MQ4/MQ5
+        - Scala
         - Pine
+        - Rust
         - VBA
         - Ruby
         - PHP
         - Swift
-        - Go
-        - Scala
         - MATLAB
         - SAS
         - HTML
         - CSS
         - XML
-        - Bash
-        - Rust
+        - Bash        
         - PowerShell
     
 
@@ -47,7 +47,13 @@ permalink: /skillset/
         - NumPy
         - SciPy
         - QuantLib
+        - Scikit-learn
         - ib_insync
+        - XGBoost
+        - TensorFlow
+        - PyTorch
+        - Keras
+        - Django
         - PySpark
         - PyArrow
         - PyKafka
@@ -60,12 +66,6 @@ permalink: /skillset/
         - Seaborn
         - Plotly
         - Bokeh
-        - Scikit-learn
-        - XGBoost
-        - TensorFlow
-        - PyTorch
-        - Keras
-        - Django
         - Flask
         - Geopandas
         - tqdm
