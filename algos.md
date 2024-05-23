@@ -3,14 +3,19 @@ layout: page
 title: Algorithms
 permalink: /trade_algos/
 ---
+<img src="/john.gif" alt="GBM" title="GBM" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 100%;">
 
-Please be patient with me, as I am still constructing this page and integrating Jupyter Notebooks!
+Hey there! Thanks for your patience as I build out this page and make it better with integrated Jupyter Notebooks.
+
+
+Let's dive into some basic trading algorithms and blockchain technologies!
 
 
 
 ## Implementing a Simple Trading Strategy using C++
 
-This example demonstrates a simple moving average crossover strategy in C++. The strategy generates buy/sell signals based on the short-term and long-term moving averages of stock prices. Moving averages are commonly used in trading to smooth out price data and identify trends over a specific period.
+Let's start with a simple trading strategy using C++. This example demonstrates a moving average crossover strategy, which generates buy/sell signals based on short-term and long-term moving averages of stock prices. Moving averages help smooth out price data and identify trends over a specific period.
+
 
 ### Code
 
@@ -361,10 +366,15 @@ Financial institutions use simulations to test how their portfolios would perfor
 
 ## Advanced AI Algorithms in Finance
 
-# Predictive Modeling and Machine Learning
-Machine learning algorithms are essential for predictive modeling in finance. Techniques such as regression, classification, clustering, and time series analysis can forecast market trends, asset prices, and financial risks.
+### Predictive Modeling and Machine Learning
+Machine learning algorithms are essential for predictive modeling in finance. Techniques such as regression, classification, clustering, and time series analysis can forecast market trends, asset prices, and financial risks. These models help in making informed decisions by analyzing historical data and identifying patterns that can predict future movements.
 
-Example: Time Series Forecasting with LSTMs
+#### Example: Time Series Forecasting with LSTMs
+
+Long Short-Term Memory (LSTM) networks are a type of recurrent neural network (RNN) capable of learning long-term dependencies, making them suitable for time series forecasting. In finance, LSTMs can be used to predict stock prices, market trends, and other financial metrics based on historical data.
+
+### Code
+
 ```python
 import numpy as np
 import pandas as pd
@@ -400,6 +410,84 @@ model.fit(X, Y, epochs=20, batch_size=1, verbose=2)
 # Make predictions
 predictions = model.predict(X)
 ```
+### Explanation
+
+Loading the data with a csv as an example:
+```py
+data = pd.read_csv('financial_data.csv')
+prices = data['price'].values
+```
+#### Data Source:
+The financial data is loaded from a CSV file named financial_data.csv. The data contains historical price information.
+
+#### Extracting Prices:
+The prices are extracted from the 'price' column and stored in the prices array.
+
+#### Preparing Data for LSTM:
+
+```py
+def create_dataset(dataset, look_back=1):
+    X, Y = [], []
+    for i in range(len(dataset) - look_back - 1):
+        a = dataset[i:(i + look_back), 0]
+        X.append(a)
+        Y.append(dataset[i + look_back, 0])
+    return np.array(X), np.array(Y)
+
+look_back = 3
+X, Y = create_dataset(prices.reshape(-1, 1), look_back)
+X = np.reshape(X, (X.shape[0], X.shape[1], 1))
+```
+- Function Definition: The `create_dataset` function transforms the time series data into a format suitable for LSTM. It creates input-output pairs where the input is a sequence of prices and the output is the price at the next time step.
+- Look-back Period: The `look_back` variable defines the number of previous time steps to use as input for predicting the next value. In this case, it is set to 3.
+- Reshaping Data: The input data X is reshaped to be compatible with the LSTM layer's expected input shape.
+
+#### Building the LSTM Model:
+
+```py
+model = Sequential()
+model.add(LSTM(50, input_shape=(look_back, 1)))
+model.add(Dense(1))
+model.compile(loss='mean_squared_error', optimizer='adam')
+```
+#### Sequential Model Initialization:
+- LSTM Layer: An LSTM layer with 50 units is added to the model. The input shape is specified as (look_back, 1), indicating the model expects sequences of 3 time steps with 1 feature per step.
+- Dense Layer: A dense layer with a single unit is added, which will output the predicted price.
+- Compilation: The model is compiled with the mean squared error loss function and the Adam optimizer, which is commonly used for training deep learning models.
+
+#### Training the Model:
+```
+model.fit(X, Y, epochs=20, batch_size=1, verbose=2)
+```
+
+#### Model Training:
+The model is trained using the input-output pairs (X, Y) for 20 epochs with a batch size of 1. The verbose level is set to 2 to provide detailed logs during training.
+Making Predictions:
+```
+predictions = model.predict(X)
+```
+- Generating Predictions: The trained model is used to make predictions on the input data X. The predicted values are stored in the predictions array.
+
+### Practical Applications
+
+#### Stock Price Prediction:
+
+LSTM models can predict future stock prices based on historical data, helping traders and investors make informed decisions.
+
+#### Market Trend Analysis:
+
+By analyzing historical market data, LSTM models can identify trends and potential turning points in the market.
+
+#### Risk Management:
+
+Predictive models can assess potential risks and returns, enabling better risk management strategies for investment portfolios.
+
+#### Algorithmic Trading:
+
+Integrating LSTM models into trading algorithms can automate trading strategies based on predicted market movements.
+<br><br>
+By leveraging advanced AI algorithms like LSTMs, financial institutions and traders can enhance their predictive modeling capabilities, leading to more accurate forecasts and improved decision-making in the financial markets.
+
 <br><br><br>
 More to Come!
 Stay tuned for more demonstrations and code examples showcasing various algorithms and technologies. From advanced trading strategies and AI models to distributed systems and blockchain implementations, this page will be continually updated with cutting-edge solutions and insights.
