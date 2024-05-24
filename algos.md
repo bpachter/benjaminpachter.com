@@ -5,7 +5,7 @@ permalink: /trade_algos/
 ---
 <img src="/john.gif" alt="GBM" title="GBM" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 100%;">
 
-Hey there! Thanks for your patience as I build out this page and make it better with integrated Jupyter Notebooks.
+Hey there! Thanks for your patience as I build out this page and make it more interactive with integrated Jupyter Notebooks.
 
 
 Let's dive into some basic trading algorithms and blockchain technologies, as well as more complex equity momentum simulation!
@@ -15,8 +15,6 @@ Let's dive into some basic trading algorithms and blockchain technologies, as we
 
 Let's start with a simple trading strategy using C++. This example demonstrates a moving average crossover strategy, which generates buy/sell signals based on short-term and long-term moving averages of stock prices. Moving averages help smooth out price data and identify trends over a specific period.
 
-
-### Code
 
 ```cpp
 #include <iostream>
@@ -35,8 +33,8 @@ double calculateMovingAverage(const std::vector<double>& prices, int period) {
 int main() {
     // Sample stock prices (example data)
     std::vector<double> prices = {234.56, 230.12, 240.00, 245.67, 250.89, 255.45, 260.00};
-    int shortPeriod = 3; // Short-term moving average period (e.g., 3 days)
-    int longPeriod = 5;  // Long-term moving average period (e.g., 5 days)
+    int shortPeriod = 9; // 9 day moving average
+    int longPeriod = 21;  // 21 day moving average
 
     // Loop through the prices to generate buy/sell signals based on moving averages
     for (int i = longPeriod; i <= prices.size(); ++i) {
@@ -61,93 +59,358 @@ int main() {
 <br>
 
 ### Explanation
-
+In this code, we are utilizing the *iostream* and *vector* libraries for access to the standard operations such as `std::cin` and `std:cout`, as well as the container class `std::vector`
 #### Moving Average Calculation:
-The `calculateMovingAverage` function computes the average of stock prices over a specified period.
+First, the `calculateMovingAverage` function is declared. This takes two parameters: a cpmstamt referemce tp a vextor of doubles (`prices`) and an integer (`period`). The function then computes and returns the average prices of the underlying over a specified period, or the moving average.
+
+The `if` line checks if the size of the prices vector is less than the specified period. If true, it returns 0.0 because there are not enough data points to calculate the moving average. Then, after declaring the `sum` double variable, we use the `for` loop to start from `prices.size() - period` and runs until `prices.size() - 1`. It iterates through the last `period` number of elements in the `prices` vector. Within the loop, the `+=` operator is used to add the `prices[i]` current price to the `sum`.
+After the loop completes, the function returns the average by dividing `sum` by the `period`.
+
+#### Initializing MAs:
+Once the moving average for the particular period is calculated, the `main` function initializes stock prices through a vector declaration (this would be loaded from real-time data in a real application, perhaps daily closing candle prices) and defines our MA periods as the 9- and 21-day MAs. The `main` function then iterates through the prices with another `for` loop and utilizes the `calculateMovingAverage` function we defined to calculate the MAs, generating buy/sell signals based on their comparison.
+
+```cpp
+double shortMA = calculateMovingAverage(std::vector<double>(prices.begin(), prices.begin() + i), shortPeriod);
+double longMA = calculateMovingAverage(std::vector<double>(prices.begin(), prices.begin() + i), longPeriod);
+```
+
+The usage of these lines calculates the short- and long-term MA by calling the `calculateMovingAverage` function with a subvector of prices from the beginning to the i-th element and the Period length. Typically though, moving averages are only very reliable on the longer dated time frames; the further out the chart, the higher impact a cross of the MAs would indicate.
+
 #### Trading Logic:
-The `main` function initializes stock prices and periods for short-term and long-term moving averages. It then iterates through the prices, calculating moving averages and generating buy/sell signals based on their comparison.
+
+<div class="tradingview-widget-container" style="height:600px; width:100%;">
+  <div class="tradingview-widget-container__widget" style="height:100%; width:100%;"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+  {
+  "autosize": true,
+  "symbol": "NASDAQ:NVDA",
+  "interval": "D",
+  "timezone": "Etc/UTC",
+  "theme": "dark",
+  "style": "1",
+  "locale": "en",
+  "allow_symbol_change": true,
+  "calendar": false,
+  "height": "600",
+  "width": "100%",
+  "studies": [
+    "STD;MA%1Cross"
+  ],
+  "support_host": "https://www.tradingview.com"
+}
+  </script>
+</div>
+
+See the green and orange lines in the NVDA daily TradingView chart above. You should be able to play with this chart for viewing different time frames, as the MAs on this particular chart are locked in by the selected timeframe.
+
+The if-statement within the for-loop is simulating the crossover of these MA lines on the chart.
+
+```cpp
+        // Generate trading signals based on moving average comparison
+        if (shortMA > longMA) {
+            std::cout << "Buy signal at price: $" << prices[i - 1] << std::endl;
+        } else if (shortMA < longMA) {
+            std::cout << "Sell signal at price: $" << prices[i - 1] << std::endl;
+        } else {
+            std::cout << "Hold at price: $" << prices[i - 1] << std::endl;
+        }
+
+```
+`if (shortMA > longMA):` This condition checks if the short-term moving average is greater than the long-term moving average.
+- `std::cout << "Buy signal at price: $" << prices[i - 1] << std::endl;`: If the condition is true, it prints a "Buy signal" with the current price.
+
+`else if (shortMA < longMA)`: This condition checks if the short-term moving average is less than the long-term moving average.
+- `std::cout << "Sell signal at price: $" << prices[i - 1] << std::endl;`: If the condition is true, it prints a "Sell signal" with the current price.
+
+`else`: This condition is met if the short-term and long-term moving averages are equal, which should practically be almost never, but we still need to factor it in as a possible outcome to prevent the script from breaking.
+- `std::cout << "Hold at price: $" << prices[i - 1] << std::endl;`: If the condition is true, it prints a "Hold" signal with the current price.
 
 <br>
+This is a basic strategy that relies on the moving averages for generating buy/sell signals in C++. Only relying on MAs, especially on the longer-dated time frames, means you will miss out on the first-half or so of most directional runs, and is far from a reliable strategy. Implementing this code with a combination of previous resistance/support levels could be a better solution to try out.
+
+<br><br>
 
 ## Automated Trading with Interactive Brokers (IBKR) through Python
-For retail traders like myself, Interactive Brokers (IBKR) offers an awesome and powerful platform for automated trading, enabling us to *almost* compete with institutional investors to execute advanced trading strategies using real-time data and historical pricing (okay I'm joking). But regardless, implementing automated trading through IBKR can be a fantastic method of understanding complex option stategies.
+For retail traders like myself, **Interactive Brokers (IBKR)** offers an awesome and powerful platform for automated trading within Python, enabling us to *almost* compete with institutional investors to execute advanced trading strategies using real-time data and historical pricing (okay I'm joking). But regardless, implementing automated options trading through IBKR can be a fantastic method of generating alpha through mean-reversion methods, which I will detail below. **Warning: this is heavier material.**
 
-I usually implement my personal projects using the **ib_insync** library in Python, which provides an intuitive way to work with the IBKR API. This approach allows for the development of strategies ranging from simple moving average crossovers to more complex algorithmic trading strategies involving machine learning predictions.
+I usually implement my personal projects using the **ib_insync** library in Python, which provides an intuitive way to work with the IBKR API, allowing you to directly connect your python scripts to your brokerage - real accounts and paper alike! This approach allows for the development of strategies ranging from simple moving average crossovers like the above C++ strategy to more complex strategies involving machine learning predictions. Sometimes I also use the **tradingview_ta** package to leverage TradingView's powerful and highly customizable technical analysis indicators generated in **Pine** script. By integrating these tools, I can automate my trading strategies effectively, making real-time decisions based on market conditions.
 
-# Automated Straddle Trading on SPX with Interactive Brokers (IBKR)
-Automated trading strategies using Interactive Brokers (IBKR) can be highly effective for options trading, particularly for neutral strategies like straddles that benefit from large directional market moves or spreads where your risk is defined.
+In this example, we will explore an automated trading strategy that combines the power of Python, TradingView, and QuantLib to trade options spreads on the S&P 500 Index (SPX). The strategy utilizes VWAP (Volume Weighted Average Price) levels to generate buy and sell signals. We will fetch live price data from TradingView, use these signals to determine market conditions, and calculate theoretical option prices with QuantLib.
 
-In this example, I am showcasing a straddle, which involves buying a call and a put option with the same strike price and expiration date, anticipating high volatility that will move the stock price significantly in either direction. This particular strategy is useful if a large move is expected in the underlying, for example, a CPI/GDP print or Federal Reserve FOMC meeting.
+To implement the VWAP indicators, we will integrate custom Pine scripts within TradingView. These scripts will generate the necessary buy and sell signals based on VWAP levels, which our Python script will then fetch and use to execute trades. By setting up these indicators in TradingView and connecting to IBKR, we can automate the execution of bull call spreads and bear put spreads based on real-time market data.
 
-Example: Straddle Trading Strategy
+This tutorial will guide you through the entire process: connecting to Interactive Brokers, fetching live market data, integrating Pine script indicators in TradingView, calculating options prices, and executing trades automatically. Whether you're a retail trader looking to enhance your trading capabilities or an aspiring quant eager to dive into algorithmic trading, this example provides a robust framework for developing and implementing sophisticated trading strategies.
+
+# Automated Bull Call and Bear Put Spreads on SPX with Interactive Brokers (IBKR)
+Automated trading strategies using Interactive Brokers (IBKR) can be highly effective for options trading, particularly for spread strategies where your risk is defined.
+
+In this example, I am showcasing **bull call spreads** and **bear put spreads**, which are useful for directional strategies.
+
+Example: Bull Call and Bear Put Spreads Trading Strategy
 ```py
 from ib_insync import *
+import time
+from tradingview_ta import TA_Handler, Interval, Exchange
+import QuantLib as ql
 
-# Function to simulate fetching EMA data from TradingView or another source
+# Function to fetch VWAP signal from TradingView
+def get_vwap_signals():
+    handler = TA_Handler(
+        symbol="SPX",            # Symbol for SPX
+        screener="america",      # Screener region
+        exchange="SPX",          # Exchange name
+        interval=Interval.INTERVAL_1_DAY  # Data interval (daily)
+    )
+    analysis = handler.get_analysis()  # Fetch analysis from TradingView
+    buy_signal = analysis.summary['RECOMMENDATION'] == 'BUY'  # Check for buy signal
+    sell_signal = analysis.summary['RECOMMENDATION'] == 'SELL'  # Check for sell signal
+    return buy_signal, sell_signal  # Return signals
 
-def get_ema_values():
-    ema30 = 3000
-    ema50 = 3050
-    ema200 = 3100
-    return ema30, ema50, ema200
+# Function to fetch the current price of SPX from TradingView
+def get_current_price():
+    handler = TA_Handler(
+        symbol="SPX",            # Symbol for SPX
+        screener="america",      # Screener region
+        exchange="SPX",          # Exchange name
+        interval=Interval.INTERVAL_1_DAY  # Data interval (daily)
+    )
+    analysis = handler.get_analysis()  # Fetch analysis from TradingView
+    current_price = analysis.indicators['close']  # Extract the closing price
+    return current_price  # Return the current price
 
-# Function to determine trade signal based on key EMA crossovers
-def check_ema_signals(ema30, ema50, ema200):
-    if ema30 > ema200:
-        return 'call'  # Bullish signal
-    elif ema30 < ema200:
-        return 'put'   # Bearish signal
-    else:
-        return 'neutral'
+# Function to determine the strike prices for the spreads
+def get_strike_prices(current_price, step=50):
+    # Assuming option strikes are in increments of 50
+    next_otm_strike = ((current_price // step) + 1) * step  # Calculate the next OTM strike
+    third_otm_strike = ((current_price // step) + 3) * step  # Calculate the third OTM strike
+    return next_otm_strike, third_otm_strike  # Return the calculated strike prices
+
+# Function to determine exit signal based on VWAP bands
+def check_exit_signals(price, upper_band, lower_band):
+    if price >= upper_band or price <= lower_band:  # Check if price hits VWAP bands
+        return 'exit'  # Return exit signal
+    return 'hold'  # Return hold signal
+
+# Function to calculate the theoretical option price using QuantLib
+def calculate_option_price(spot_price, strike_price, maturity_date, option_type='call'):
+    # Market data
+    risk_free_rate = 0.01  # Risk-free rate
+    dividend_yield = 0.0   # Dividend yield
+    volatility = 0.20      # Volatility
+
+    # QuantLib setup
+    calculation_date = ql.Date.todaysDate()
+    ql.Settings.instance().evaluationDate = calculation_date
+    maturity = ql.Date(maturity_date.day, maturity_date.month, maturity_date.year)
+
+    # Option details
+    payoff = ql.PlainVanillaPayoff(ql.Option.Call if option_type == 'call' else ql.Option.Put, strike_price)
+    exercise = ql.EuropeanExercise(maturity)
+
+    # Construct the option
+    european_option = ql.VanillaOption(payoff, exercise)
+
+    # Construct the market environment
+    spot_handle = ql.QuoteHandle(ql.SimpleQuote(spot_price))
+    flat_ts = ql.YieldTermStructureHandle(ql.FlatForward(calculation_date, risk_free_rate, ql.Actual360()))
+    dividend_yield = ql.YieldTermStructureHandle(ql.FlatForward(calculation_date, dividend_yield, ql.Actual360()))
+    vol_handle = ql.BlackVolTermStructureHandle(ql.BlackConstantVol(calculation_date, ql.NullCalendar(), volatility, ql.Actual360()))
+
+    # Black-Scholes-Merton Process
+    bsm_process = ql.BlackScholesMertonProcess(spot_handle, dividend_yield, flat_ts, vol_handle)
+
+    # Pricing the option
+    european_option.setPricingEngine(ql.AnalyticEuropeanEngine(bsm_process))
+    price = european_option.NPV()
+
+    return price
 
 # Main trading logic
-def trade_spx_straddle():
-    ib = IB()
-    ib.connect('127.0.0.1', 7497, clientId=1)
+def trade_spx_spreads():
+    ib = IB()  # Initialize IBKR connection
+    ib.connect('127.0.0.1', 7497, clientId=1)  # Connect to IBKR TWS or Gateway
 
-    # Define the SPX option contracts for a straddle at specific strike and date
-    spx_call = Option('SPX', '20240621', 5300, 'C', 'SMART')
-    spx_put = Option('SPX', '20240621', 5300, 'P', 'SMART')
+    while True:
+        # Fetch VWAP signals
+        buy_signal, sell_signal = get_vwap_signals()
+        
+        # Fetch the current SPX price
+        current_price = get_current_price()
 
-    # Request market data for the options
-    ib.reqMktData(spx_call)
-    ib.reqMktData(spx_put)
-    ib.sleep(2)  # Sleep to allow time for data retrieval
+        # Determine the strike prices for the spreads
+        next_otm_strike, third_otm_strike = get_strike_prices(current_price)
 
-    # Place the straddle order
-    call_order = MarketOrder('BUY', 1)
-    put_order = MarketOrder('BUY', 1)
-    call_trade = ib.placeOrder(spx_call, call_order)
-    put_trade = ib.placeOrder(spx_put, put_order)
+        # Define the expiration date
+        expiration_date = ql.Date(21, 6, 2024)  # 21st June 2024
 
-    # Fetch EMA values
-    ema30, ema50, ema200 = get_ema_values()
+        # Calculate theoretical option prices using QuantLib
+        call_price1 = calculate_option_price(current_price, next_otm_strike, expiration_date, option_type='call')
+        call_price2 = calculate_option_price(current_price, third_otm_strike, expiration_date, option_type='call')
+        put_price1 = calculate_option_price(current_price, next_otm_strike, expiration_date, option_type='put')
+        put_price2 = calculate_option_price(current_price, third_otm_strike, expiration_date, option_type='put')
 
-    # Determine signal based on EMA crossovers
-    signal = check_ema_signals(ema30, ema50, ema200)
-    if signal == 'call':
-        print("Closing put leg, market bullish")
-        close_put = MarketOrder('SELL', 1)
-        ib.placeOrder(spx_put, close_put)
-    elif signal == 'put':
-        print("Closing call leg, market bearish")
-        close_call = MarketOrder('SELL', 1)
-        ib.placeOrder(spx_call, close_call)
+        # Print theoretical prices for debugging
+        print(f"Call Option {next_otm_strike}: {call_price1}")
+        print(f"Call Option {third_otm_strike}: {call_price2}")
+        print(f"Put Option {next_otm_strike}: {put_price1}")
+        print(f"Put Option {third_otm_strike}: {put_price2}")
+
+        # Define the SPX option contracts for spreads at specific strike and date
+        spx_call1 = Option('SPX', '20240621', next_otm_strike, 'C', 'SMART')  # Next OTM call option
+        spx_call2 = Option('SPX', '20240621', third_otm_strike, 'C', 'SMART')  # Third OTM call option
+        spx_put1 = Option('SPX', '20240621', next_otm_strike, 'P', 'SMART')  # Next OTM put option
+        spx_put2 = Option('SPX', '20240621', third_otm_strike, 'P', 'SMART')  # Third OTM put option
+
+        # Request market data for the options
+        ib.reqMktData(spx_call1)
+        ib.reqMktData(spx_call2)
+        ib.reqMktData(spx_put1)
+        ib.reqMktData(spx_put2)
+        ib.sleep(2)  # Sleep to allow time for data retrieval
+
+        # Execute trades based on VWAP signals
+        if buy_signal:
+            print("Entering bull call spread, market bullish")
+            buy_call = MarketOrder('BUY', 1)
+            sell_call = MarketOrder('SELL', 1)
+            ib.placeOrder(spx_call1, buy_call)  # Buy next OTM call
+            ib.placeOrder(spx_call2, sell_call)  # Sell third OTM call
+        elif sell_signal:
+            print("Entering bear put spread, market bearish")
+            buy_put = MarketOrder('BUY', 1)
+            sell_put = MarketOrder('SELL', 1)
+            ib.placeOrder(spx_put1, buy_put)  # Buy next OTM put
+            ib.placeOrder(spx_put2, sell_put)  # Sell third OTM put
+        else:
+            print("No trade signal")
+
+        time.sleep(60)  # Wait for a minute before checking signals again
+
+        # Simulate market data updates (in real scenario, this would be a continuous process)
+        print(f"Current price: {current_price}")
+
+        # Check for exit signals
+        vwap, upper_band, lower_band = get_vwap_bands()
+        exit_signal = check_exit_signals(current_price, upper_band, lower_band)
+        if exit_signal == 'exit':
+            print("Exiting position, price hit VWAP band")
+            if buy_signal:
+                close_call1 = MarketOrder('SELL', 1)
+                close_call2 = MarketOrder('BUY', 1)
+                ib.placeOrder(spx_call1, close_call1)
+                ib.placeOrder(spx_call2, close_call2)
+            elif sell_signal:
+                close_put1 = MarketOrder('SELL', 1)
+                close_put2 = MarketOrder('BUY', 1)
+                ib.placeOrder(spx_put1, close_put1)
+                ib.placeOrder(spx_put2, close_put2)
+            break  # Exit loop after closing position
 
     # Disconnect from IB after trades
     ib.disconnect()
 
 # Assuming this script runs within a trading environment setup
-trade_spx_straddle()
+trade_spx_spreads()
+
 ```
+
 ### Explanation
 
-#### Fetching EMA Data:
-The `get_ema_values` function simulates fetching Exponential Moving Average (EMA) values.
-#### EMA Signals:
-The `check_ema_signals` function determines the trading signal (call, put, neutral) based on EMA crossovers.
+#### Fetching VWAP Data:
+The `get_vwap_bands` function simulates fetching **Volume Weighted Average Price (VWAP)** data along with upper and lower bands. In my implementation within the custom Pine script, we are using the 0.5, 1, and 2 standard deviations for our potential buy/sell signals depending on the price direction. 
+
+
+<div class="tradingview-widget-container" style="height:600px; width:100%;">
+  <div class="tradingview-widget-container__widget" style="height:100%; width:100%;"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+  {
+  "autosize": true,
+  "symbol": "NYSE:LMT",
+  "interval": "5",
+  "timezone": "Etc/UTC",
+  "theme": "dark",
+  "style": "1",
+  "locale": "en",
+  "allow_symbol_change": true,
+  "calendar": false,
+  "studies": [
+    "STD;VWAP"
+  ],
+  "support_host": "https://www.tradingview.com",
+  "height": "600",
+  "width": "100%"
+}
+  </script>
+</div>
+
+#### VWAP Signals:
+The `check_vwap_signals` function determines the trading signal (bull call spread, bear put spread, neutral) based on the current price relative to the VWAP bands. As implemented here, we are only getting the first standard deviation, but this can be created with 2nd and 3rd standard deviation bands as well.
+
 #### Trading Logic:
-The `trade_spx_straddl`e function connects to IBKR, defines SPX options for a straddle, fetches market data, places orders, and determines signals to adjust the strategy based on EMA crossovers.
+The `trade_spx_spreads` function connects to IBKR, defines SPX options for bull call and bear put spreads, fetches market data, places orders based on the VWAP signals, and then disconnects from IBKR.
+
+
+### Integrating Pine Script with Python for Automated Trading
+The integration of Pine Script with Python for automated trading allows for a seamless connection between TradingView's powerful charting tools and IBKR for executing complex trading strategies like this one. The Pine Script below is responsible for generating the buy and sell signals in the Python trade execution script above based on specific conditions derived from the chart data.
+
+#### Pine custom indicator script within TradingView:
+```javascript
+//@version=5
+indicator("Bull Call Spread Signals", shorttitle="Bull Call Signals", overlay=true, timeframe="15")
+
+// Input Parameters
+length = input.int(20, title="Standard Deviation Length")
+multiplier1 = input.float(0.5, title="1st Standard Deviation Multiplier")
+multiplier2 = input.float(1.0, title="2nd Standard Deviation Multiplier")
+timeframe_input = input.timeframe("15", title="Timeframe")
+
+// Calculate VWAP and standard deviation
+vwap = request.security(syminfo.tickerid, timeframe_input, ta.vwap(close))
+stdev = request.security(syminfo.tickerid, timeframe_input, ta.stdev(close, length))
+
+// Calculate bands
+upper_band1 = vwap + stdev * multiplier1
+lower_band1 = vwap - stdev * multiplier1
+upper_band2 = vwap + stdev * multiplier2
+lower_band2 = vwap - stdev * multiplier2
+upper_band3 = vwap + stdev * 1.5
+lower_band3 = vwap - stdev * 1.5
+
+// Plot VWAP and bands
+plot(vwap, color=color.blue, linewidth=2, title="VWAP")
+plot(upper_band1, color=color.green, linewidth=2, title="Upper Band 1st SD")
+plot(lower_band1, color=color.red, linewidth=2, title="Lower Band 1st SD")
+plot(upper_band2, color=color.green, linewidth=1, title="Upper Band 2nd SD")
+plot(lower_band2, color=color.red, linewidth=1, title="Lower Band 2nd SD")
+plot(upper_band3, color=color.green, linewidth=1, title="Upper Band 3rd SD")
+plot(lower_band3, color=color.red, linewidth=1, title="Lower Band 3rd SD")
+
+// Generate buy/sell signals for Bull Call Spread
+buy_signal = ta.crossover(close, lower_band1) or ta.crossover(close, vwap)
+sell_signal_stop = ta.crossunder(close, lower_band1)
+sell_signal_profit = ta.crossunder(close, upper_band1)
+
+// Plot signals on chart
+plotshape(series=buy_signal, location=location.belowbar, color=color.green, style=shape.labelup, text="BUY CALL SPREAD")
+plotshape(series=sell_signal_stop, location=location.abovebar, color=color.red, style=shape.labeldown, text="SELL CALL SPREAD (Stop)")
+plotshape(series=sell_signal_profit, location=location.abovebar, color=color.red, style=shape.labeldown, text="SELL CALL SPREAD (Profit)")
+
+// Output signals for Python script to fetch
+bgcolor(buy_signal ? color.new(color.green, 90) : na, title="Buy Call Spread Background")
+bgcolor(sell_signal_stop ? color.new(color.red, 90) : na, title="Sell Call Spread Background (Stop)")
+bgcolor(sell_signal_profit ? color.new(color.red, 90) : na, title="Sell Call Spread Background (Profit)")
+
+```
+In this setup, the Pine Script calculates the **VWAP (Volume Weighted Average Price)** and its associated standard deviation bands. It then generates buy and sell signals when certain conditions are met, such as when the price crosses the VWAP line or specific bands. These signals are then used by the Python script, which continuously fetches the latest signals and price data from TradingView, calculates theoretical option prices using **QuantLib**, and executes trades based on the received signals.
+
+The Python script fetches VWAP signals from TradingView using the **tradingview_ta** package and places option spread trades based on the signals. The script checks for entry and exit conditions to manage the trades, ensuring that the strategy is followed accurately. This combination of Pine Script for signal generation and Python for trade execution creates a theoretical automated spread trading system where your risk is fixed.
+
+The end result looks something like this, where the bull call spread is bought on the crossing of VWAP and sold when there is a clear rejection on the 0.5 standard deviation band. This is, of course, just a rough concept and would need to be optimized for better alpha generation.
+
+<img src="/TR1.png" alt="GBM" title="TR" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 100%;">
+
 <br><br><br>
 
 ## Distributed Systems and Blockchain
