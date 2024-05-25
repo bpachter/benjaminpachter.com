@@ -5,15 +5,22 @@ permalink: /trade_algos/
 ---
 <img src="/john.gif" alt="GBM" title="GBM" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 100%;">
 
-Hey there! Thanks for your patience as I build out this page and make it more interactive with integrated Jupyter Notebooks.
+Hey there! Thanks for your patience as I build out this page and make it a vastly more interactive experience with integrated Jupyter Notebooks.
 
+Below are some blocks of code that demonstrate some basic capabilities of mine. Consider these fun side-projects; unfortunately I am not allowed to share any of my previous work experience, as most of it contains highly sensitive information and trade secrets. But I can still demonstrate basic functionality in hypothetical environments!
 
-Let's dive into some basic trading algorithms and blockchain technologies, as well as more complex equity momentum simulation!
+With that being said, let's dive into some trading algorithms and blockchain technologies, as well as more complex equity momentum simulation!
 
 
 ## Implementing a Simple Trading Strategy using C++
 
-Let's start with a simple trading strategy using C++. This example demonstrates a moving average crossover strategy, which generates buy/sell signals based on short-term and long-term moving averages of stock prices. Moving averages help smooth out price data and identify trends over a specific period.
+If you have ever been curious on how much code is required for automating a trading strategy, then you have come to the right place! It is actually quite easy to implement a basic solution on your own, even as a retail trader without access to the expensive mega-live-data packages that instituional clients get. 
+
+But of course, it is a vastly scalable technology, and to achieve a real competitive edge that can generate significant alpha, you will need to fine-tune these concepts across a wide range of technical considerations. Then of course, you would need to bring them all together to form what is what I like to call a *trading organism*; a highly-systematic workspace that contains functional objects and classes that talk to each other to form a comprehensive trading system. 
+
+But to get to the point where you have a multitude of scripts working for you - your little trading robot army - we need to understand the basic components of our frontline soldier.
+
+Let's start with a simple trading strategy using C++. This example demonstrates a moving average crossover strategy, which generates buy/sell signals based on short-term and long-term moving averages of stock prices. Moving averages help smooth out price data and identify trends over a specific period. 
 
 
 ```cpp
@@ -56,10 +63,9 @@ int main() {
 }
 
 ```
-<br>
 
 ### Explanation
-In this code, we are utilizing the *iostream* and *vector* libraries for access to the standard operations such as `std::cin` and `std:cout`, as well as the container class `std::vector`
+In this generalized script, we are utilizing the *iostream* and *vector* libraries for access to the standard operations such as `std::cin` and `std:cout`, as well as the container class `std::vector`. This is mostly just for providing the standard format, where we are defining a function that makes a specific calculation, and making the trade within the main class loop. We are taking a lot of assumptions here, but it's important to digest what the basic trading code looks like.
 #### Moving Average Calculation:
 First, the `calculateMovingAverage` function is declared. This takes two parameters: a cpmstamt referemce tp a vextor of doubles (`prices`) and an integer (`period`). The function then computes and returns the average prices of the underlying over a specified period, or the moving average.
 
@@ -132,7 +138,7 @@ This is a basic strategy that relies on the moving averages for generating buy/s
 <br><br>
 
 ## Automated Trading with Interactive Brokers (IBKR) through Python
-For retail traders like myself, **Interactive Brokers (IBKR)** offers an awesome and powerful platform for automated trading within Python, enabling us to *almost* compete with institutional investors to execute advanced trading strategies using real-time data and historical pricing (okay I'm joking). But regardless, implementing automated options trading through IBKR can be a fantastic method of generating alpha through mean-reversion methods, which I will detail below. **Warning: this is heavier material.**
+For retail traders like myself, **Interactive Brokers (IBKR)** offers an awesome and powerful platform for automated trading within Python, enabling us to *almost* compete with institutional investors to execute advanced trading strategies using real-time data and historical pricing (okay I'm joking). But regardless, implementing automated options trading through IBKR can be a fantastic method of generating alpha through mean-reversion methods, which I will detail below. Warning: this section is a bit more dense, but I have provided comments on every functional line of code for added context.
 
 I usually implement my personal projects using the **ib_insync** library in Python, which provides an intuitive way to work with the IBKR API, allowing you to directly connect your python scripts to your brokerage - real accounts and paper alike! This approach allows for the development of strategies ranging from simple moving average crossovers like the above C++ strategy to more complex strategies involving machine learning predictions. Sometimes I also use the **tradingview_ta** package to leverage TradingView's powerful and highly customizable technical analysis indicators generated in **Pine** script. By integrating these tools, I can automate my trading strategies effectively, making real-time decisions based on market conditions.
 
@@ -353,7 +359,9 @@ The `trade_spx_spreads` function connects to IBKR, defines SPX options for bull 
 
 
 ### Integrating Pine Script with Python for Automated Trading
-The integration of Pine Script with Python for automated trading allows for a seamless connection between TradingView's powerful charting tools and IBKR for executing complex trading strategies like this one. The Pine Script below is responsible for generating the buy and sell signals in the Python trade execution script above based on specific conditions derived from the chart data.
+The integration of Pine Script with Python for automated trading allows for a seamless connection between TradingView's powerful charting tools and IBKR for executing complex trading strategies like this one. For anyone interested in developing their own trading indicators, I highly reccomend TradingView, as the underlying Pine language is quite streamlined, deriving from basic JavaScript concepts. TradingView is also directly integratable with many different brokerages, making is a dynamic interactive experience.
+
+The Pine Script below is responsible for generating the buy and sell signals in the Python trade execution script above based on specific conditions derived from the chart data.
 
 #### Pine custom indicator script within TradingView:
 ```javascript
@@ -403,15 +411,21 @@ bgcolor(sell_signal_stop ? color.new(color.red, 90) : na, title="Sell Call Sprea
 bgcolor(sell_signal_profit ? color.new(color.red, 90) : na, title="Sell Call Spread Background (Profit)")
 
 ```
-In this setup, the Pine Script calculates the **VWAP (Volume Weighted Average Price)** and its associated standard deviation bands. It then generates buy and sell signals when certain conditions are met, such as when the price crosses the VWAP line or specific bands. These signals are then used by the Python script, which continuously fetches the latest signals and price data from TradingView, calculates theoretical option prices using **QuantLib**, and executes trades based on the received signals.
+This Pine indicator calculates the **VWAP (Volume Weighted Average Price)** and its associated standard deviation bands. As it is currently calibrated, this script is shorter term with the timeframe initialized as the 15 minute chart. This can obviously be changed to fit the time scale of your preferred trading strategy, and is more reliable on longer-dated signal generation.
 
-The Python script fetches VWAP signals from TradingView using the **tradingview_ta** package and places option spread trades based on the signals. The script checks for entry and exit conditions to manage the trades, ensuring that the strategy is followed accurately. This combination of Pine Script for signal generation and Python for trade execution creates a theoretical automated spread trading system where your risk is fixed.
+It then generates buy and sell signals when certain conditions are met, such as when the price crosses the VWAP line or specific bands. These signals are then used by the Python script, which continuously fetches the latest signals and price data from TradingView, calculates theoretical option prices using **QuantLib**, and executes trades based on the received signals.
 
-The end result looks something like this, where the bull call spread is bought on the crossing of VWAP and sold when there is a clear rejection on the 0.5 standard deviation band. This is, of course, just a rough concept and would need to be optimized for better alpha generation.
+The Python script fetches VWAP signals from TradingView using the **tradingview_ta** package and places option spread trades based on the signals. The script checks for entry and exit conditions to manage the trades, ensuring that the strategy is followed accurately.
 
+This combination of Pine for signal generation and Python for trade execution creates a theoretical automated spread trading system where your risk is fixed to the debit transaction. It can also be set up for credit spreads of course!
 <img src="/TR1.png" alt="GBM" title="TR" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 100%;">
+The end result of the indiactor on TradingView looks something like this, where the bull call spread is bought on the crossing of VWAP and sold when there is a clear rejection on the 0.5 standard deviation band. This is, of course, just a rough concept and would need to be optimized for legitimate alpha generation.
 
-<br><br><br>
+This particular strategy and demonstration, even though it would have resulted in profitability in this instance, is quite dangerous without more stop triggers set in place. VWAP acts as a gravitational anchor that the price is typically pulled to; while volumetric breakouts and crossovers can sometimes extend all the way out to 3 standard deviations, it is far more common for the price to break above VWAP, fail to reach the first sell-signal band, and then fall back down to VWAP.
+
+As long as you are lazer-focused on implementing proper risk management, with a good amount of fine-tuning, practice, and evaluation, this concept can indeed be transformed into a highly-lucrative strategy.
+
+<br><br>
 
 ## Distributed Systems and Blockchain
 
