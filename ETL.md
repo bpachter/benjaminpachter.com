@@ -17,18 +17,21 @@ In the below examples, I showcase how different technologies such as **Python**,
 ## ETL Using SAS, Python, and AWS Cloud
 
 ### Scenario:
-You need to process sales data stored in an AWS S3 bucket. The data will be extracted using Python, transformed and statistically analyzed in SAS, and then visualized back in Python. For simplicity sake, I will demonstrate using a csv read, but understand this can be highly automated into a much cleaner and faster process depending on the technologies available.
+You need to process sales data stored in an AWS S3 bucket. The data will be extracted using Python, a basic machine learning model will be applied using scikit-learn, and the results will then be statistically analyzed in SAS. Finally, we'll visualize the results back in Python.
 
-### Step 1: Extract Data from AWS S3 Using Python
-
-First, we'll use Python to extract the sales data from an AWS S3 bucket.
+### Step 1: Extract Data from AWS S3 and Apply Machine Learning in Python
+In this example, we'll use Python to extract sales data from an AWS S3 bucket, preprocess the data, and apply a machine learning model to predict sales revenue. We'll use boto3 for S3 interaction, pandas for data manipulation, and scikit-learn for the machine learning model. The workflow includes cross-validation to evaluate the model's performance and saves the prediction results to a CSV file for further analysis in SAS. This demonstrates how to integrate cloud data storage and machine learning in Python.
 
 ```python
 import boto3
 import pandas as pd
 from io import BytesIO
+from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+import numpy as np
 
-# Initialize a session using Amazon S3 credentials
+# Initialize a session using Amazon S3 credentials as a cloud data warehouse example
 s3 = boto3.client('s3')
 bucket_name = 's3bucketname'
 file_key = 'path/to/your/data.csv'
@@ -37,39 +40,79 @@ file_key = 'path/to/your/data.csv'
 response = s3.get_object(Bucket=bucket_name, Key=file_key)
 sales_data = pd.read_csv(BytesIO(response['Body'].read()))
 
-# Save the data to a local CSV file for processing in SAS
-sales_data.to_csv('sales_data_local.csv', index=False)
+# Preprocessing, dropping missing values
+sales_data = sales_data.dropna() 
+
+# Define features and target variable
+X = sales_data[['Quantity', 'UnitPrice']]
+y = sales_data['TotalRevenue']
+
+# Split data into standard training and testing sets for cross validation
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Initialize the model
+model = LinearRegression()
+
+# Perform cross-validation
+cv_scores = cross_val_score(model, X_train, y_train, cv=5, scoring='neg_mean_squared_error')
+
+# Calculate the mean and standard deviation of the cross-validation scores
+mean_cv_mse = np.mean(-cv_scores)
+std_cv_mse = np.std(-cv_scores)
+print(f'Cross-Validation Mean Squared Error: {mean_cv_mse:.2f} ± {std_cv_mse:.2f}')
+
+# Train the model on the full training data
+model.fit(X_train, y_train)
+
+# Make predictions
+predictions = model.predict(X_test)
+
+# Evaluate the model on the test data
+mse = mean_squared_error(y_test, predictions)
+print(f'Test Mean Squared Error: {mse:.2f}')
+
+# Save the results for SAS processing
+sales_data['PredictedRevenue'] = model.predict(X)
+sales_data.to_csv('sales_data_with_predictions.csv', index=False)
 ```
 
 ### Step 2: Transform and Analyze Data in SAS
-Next, we'll use SAS to perform data transformation and statistical analysis on the extracted sales data.
+Next, we use SAS to import the sales data with predictions from the Python above and perform descriptive statistics, conduct correlation analysis, and run a regression analysis to gain deeper insights into the sales data.
 
 ```sas
-/* Import the data from the local CSV file */
-proc import datafile='/path/to/sales_data_local.csv' 
-    out=work.sales_data 
-    dbms=csv 
-    replace;
-    getnames=yes;
-run;
-
-/* Data transformation: Calculate total revenue */
-data work.transformed_data;
-    set work.sales_data;
-    TotalRevenue = Quantity * UnitPrice;
+/* Import the data from the python output CSV file */
+proc import datafile='/path/to/sales_data_with_predictions.csv' 
+    out=work.sales_data  /* Output dataset location in the WORK library */
+    dbms=csv  /* Specify the type of file being imported */
+    replace;  /* Replace the existing dataset if it already exists */
+    getnames=yes;  /* Use the first row of the file as variable names */
 run;
 
 /* Perform descriptive statistics */
-proc means data=work.transformed_data n mean std min max;
-    var TotalRevenue;
+proc means data=work.sales_data n mean std min max;
+    /* Specify the dataset to analyze */
+    var Quantity UnitPrice TotalRevenue PredictedRevenue;
+    /* List of variables to include in the analysis */
+run;
+
+/* Perform correlation analysis */
+proc corr data=work.sales_data;
+    /* Specify the dataset to analyze */
+    var Quantity UnitPrice TotalRevenue PredictedRevenue;
+    /* List of variables to include in the correlation analysis */
 run;
 
 /* Regression analysis */
-proc reg data=work.transformed_data;
+proc reg data=work.sales_data;
+    /* Specify the dataset to analyze */
     model TotalRevenue = Quantity UnitPrice;
-    output out=work.regression_results p=PredictedRevenue;
+    /* Define the regression model with TotalRevenue as the dependent variable
+       and Quantity and UnitPrice as independent variables */
+    output out=work.regression_results p=PredictedTotalRevenue;
+    /* Output the results to a new dataset, including predicted values (p=PredictedTotalRevenue) */
 run;
 quit;
+
 ```
 
 ### Step 3: Visualize Results in Python
@@ -80,7 +123,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from saspy import SASsession
 
-# Start a SAS session
+# Start a SAS session using saspy SASsession
 sas = SASsession()
 
 # Retrieve the regression results from SAS
@@ -92,7 +135,7 @@ df_results = regression_results.to_df()
 # Visualize the results
 plt.figure(figsize=(10, 6))
 plt.scatter(df_results['Quantity'], df_results['TotalRevenue'], label='Actual Revenue')
-plt.plot(df_results['Quantity'], df_results['PredictedRevenue'], color='red', label='Predicted Revenue')
+plt.plot(df_results['Quantity'], df_results['PredictedTotalRevenue'], color='red', label='Predicted Revenue')
 plt.xlabel('Quantity')
 plt.ylabel('Revenue')
 plt.title('Regression Analysis of Total Revenue')
@@ -102,11 +145,14 @@ plt.show()
 # End the SAS session
 sas.endsas()
 
+
 ```
 ### Benefits of Combining SAS, Python, and AWS:
 - *Scalability*: AWS provides scalable storage solutions with S3, making it especially easy to handle large datasets with Python extraction. AWS can of course be swapped with Azure, Google, Snowflake, or SQL Server data warehouse solutions in this context.
 - *Flexibility*: Using Python for both the initial data extraction and final visualization allows for a seamless and flexible workflow that dips into SAS only for the regression calculations and uses Plotly for in-house charting.
-
+<br><br>
+The visualization output from Python would look something like the below chart. Keep in mind this is only conceptual.
+<img src="/Regex.png" alt="Output Example" title="Output Example" style="border: 10px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 100%;">
 <br><br>
 
 ## Basic Power Query ETL Process
