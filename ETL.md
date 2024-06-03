@@ -99,10 +99,11 @@ plt.show()
 sas.endsas()
 
 ```
-## Benefits of Combining SAS, Python, and AWS:
+### Benefits of Combining SAS, Python, and AWS:
 - *Scalability*: AWS provides scalable storage solutions with S3, making it especially easy to handle large datasets with Python extraction. AWS can of course be swapped with Azure, Google, Snowflake, or SQL Server data warehouse solutions in this context.
 - *Flexibility*: Using Python for both the initial data extraction and final visualization allows for a seamless and flexible workflow that dips into SAS only for the regression calculations and uses Plotly for in-house charting.
 
+<br><br>
 ## Basic Power Query ETL Process
 
 ### 1. Extract:
@@ -367,10 +368,141 @@ You get the idea!
 
 Through these methods, you can use a single source query to centralize numerous Extract and Transform components together, and then quickly call the end-result steps in a new query for Loading! All of this is a good reason for me to keep the 'Blank Query' button handy on my quick access tool bars. So you can quickly spring up a call to one of these objects.
 
-## Summary
+### Power Query ETL Summary
 
 This ETL process is essential for situations when you need to extract multiple data sources and merge them together in a manner that keeps your reporting files lean and mean! **Whether you are working within cloud platforms (Azure, AWS), traditional SQL databases, or any other data sources that are callable from Power Query (even PDFs and websites!), Microsoft's Advanced Editor feature allows easy SQL integration directly within your queries, optimizing the extraction process and ensuring that heavy data processing tasks are handled with maxium speed and efficiency.** If you happen to be working with terabytes of data, you will need to skip Power Query altogether and go directly into multicore-processing concepts within Python machine learning libraries (and of course, some fancy GPUs).
 
 By consolidating data sources and transformations into a single centralized query, you enhance the scalability and maintainability of your file that relies on heavy calculated business logic for shaping up your end reports. This ensures you are running on optimized performance and efficiency, providing a solid foundation for scaling up your reporting and business data. **All that is required is getting familiar with that Advanced Editor button!**
 
 Thank you for reading my ETL process page! If you are interested in learning more about this concept or others, feel free to drop a message on the Home page! I am also actively looking for a new role, so if your team is hiring, let's chat!
+
+
+<br><br>
+
+## Alteryx and SAS for Multifamily Data Analysis
+
+Here is a more complex example that demonstrates how to use Alteryx and SAS together for a hypothetical investment bank that needs to aggregate underwriting and demographic data on a particular multifamily property asset.
+
+The workflow involves extracting data from a SQL server using Alteryx, performing transformations within the Alteryx workflow, and then using SAS to provide statistical analysis against a wider dataset with comparable properties.
+
+### Step 1: Extract, Transform, and Load Data from SQL Server Using Alteryx
+
+First, we will use Alteryx to connect to the SQL server and extract underwriting and Yardi data. Since I do not have access to an Alteryx platform currently, I will showcase the hypothetical linear workflow steps below: 
+
+```
+1. Input Data Tool: Connect to SQL Server
+   - Server: your_sql_server
+   - Database: multifamily_db
+   - Table: underwriting_data, yardi_matrix_data
+2. Select Tool: Choose necessary columns
+   - underwriting_data: PropertyID, UnderwritingValue, NOI, CapRate
+   - yardi_data: PropertyID, OccupancyRate, RentPerUnit
+   ```
+
+Next, we perform transformations in Alteryx to clean and prepare the data for analysis.
+```
+3. Join Tool: Merge underwriting_data and yardi_data on PropertyID
+   - Join Fields: PropertyID
+4. Formula Tool: Calculate additional metrics
+   - CashFlow = [NOI] - ([UnderwritingValue] * [CapRate])
+5. Filter Tool: Filter properties with OccupancyRate > 90%
+   - Expression: [OccupancyRate] > 0.90
+6. Summarize Tool: Aggregate data by PropertyID
+   - Group By: PropertyID
+   - Sum: CashFlow, RentPerUnit
+```
+
+Export the cleaned and transformed data from Alteryx to a CSV file for further analysis in SAS.
+```
+7. Output Data Tool: Save the transformed data to a CSV file
+   - File Path: /path/to/transformed_multifamily_data.csv
+```
+
+### Step 2: Perform Statistical Analysis in SAS and Upload Results to SQL Server
+Finally, we use SAS to analyze the transformed multifamily data and compare it against a wider dataset with comparable properties. This example demonstrates importing data from the Alteryx csv output file, performing extra data transformations, conducting advanced statistical analysis, and exporting the results back up into a new SQL Server table.
+```sas
+/* Import the transformed multifamily data from the CSV file */
+proc import datafile='/path/to/transformed_multifamily_data.csv' 
+    out=work.transformed_data 
+    dbms=csv 
+    replace;
+    getnames=yes;
+run;
+
+/* Import a wider dataset with comparable properties from another CSV file */
+proc import datafile='/path/to/comparable_properties_data.csv' 
+    out=work.comps_data 
+    dbms=csv 
+    replace;
+    getnames=yes;
+run;
+
+/* Merge the transformed multifamily data with the comparable properties data */
+data work.merged_data;
+    merge work.transformed_data (in=a) work.comps_data (in=b);
+    by PropertyID;
+    /* Keep only the rows that are present in both datasets */
+    if a and b;
+run;
+
+/* Perform data transformation and create new variables */
+data work.analysis_data;
+    set work.merged_data;
+    /* Calculate Price per Unit */
+    PricePerUnit = UnderwritingValue / Units;
+    /* Calculate Rent to Value Ratio */
+    RentToValueRatio = RentPerUnit / UnderwritingValue;
+    /* Flag properties with high occupancy rate */
+    HighOccupancy = (OccupancyRate > 0.90);
+run;
+
+/* Generate descriptive statistics for the transformed variables */
+proc means data=work.analysis_data n mean std min max;
+    var CashFlow RentPerUnit PricePerUnit RentToValueRatio;
+run;
+
+/* Perform correlation analysis to understand relationships between variables */
+proc corr data=work.analysis_data;
+    var CashFlow RentPerUnit PricePerUnit RentToValueRatio OccupancyRate;
+run;
+
+/* Conduct multiple regression analysis to model CashFlow */
+proc reg data=work.analysis_data;
+    model CashFlow = RentPerUnit OccupancyRate CapRate PricePerUnit RentToValueRatio;
+    /* Output predicted values and residuals */
+    output out=work.regression_results p=PredictedCashFlow r=Residuals;
+run;
+quit;
+
+/* Identify properties with significant deviations from predicted cash flow */
+data work.outliers;
+    set work.regression_results;
+    if abs(Residuals) > 2 * std(Residuals) then Outlier = 1;
+    else Outlier = 0;
+run;
+
+/* Define the connection to the new SQL server */
+libname mydblib odbc dsn='NewSQLServerDSN' user='your_username' password='your_password';
+
+/* Upload the regression results to the new SQL server */
+proc sql;
+    create table mydblib.regression_results as
+    select * from work.regression_results;
+quit;
+
+/* Upload the outliers to the new SQL server */
+proc sql;
+    create table mydblib.outliers as
+    select * from work.outliers;
+quit;
+
+```
+
+### Alteryx and SAS Summary
+In this example, we showcased the transformative power of Alteryx for ETL processes used in combination with SQL Server and SAS for data extraction, transformation, statistical analysis, and insertion. In Alteryx, we connected to a SQL server and extracted critical underwriting and demographics data for a prospective multifamily property. While we used Alteryx, this process can also be seamlessly executed with Power Query for those deeply integrated with Microsoft Power products.
+
+Once the transformed Alteryx data was exported to a CSV file, SAS took center stage to perform some more advanced statistical analysis. We delved into descriptive statistics to understand the data's core characteristics, explored correlation analysis to uncover relationships between variables, and executed regression analysis to compare our property against a broader dataset of comparable properties. Finally, the regression results and identified outliers were uploaded back into a new SQL server location for further use and reporting if necessary.
+
+This workflow showcases the dynamic duo of Alteryx for efficient ETL processes and SAS for robust statistical analysis. Together, they provide comprehensive and actionable insights in a highly efficient manner, providing well-equipped financial professions with the data-driven intelligence needed to make informed decisions about multifamily property investments.
+
+Alteryx is specifically one of my favorite technologies to use, as it provides a transparent no-code developer structure that any data professional can learn to use. Unfortunately I can not include specific Alteryx screenshots, as my free-trial ran out years ago when I got certified, so sorry about that!   
