@@ -4,11 +4,15 @@ title: ETL
 permalink: /ETL/
 ---
 
-# SQL/Power Query Best Practices
-
 This page serves as the foundation for my preferred **Extract, Transform, Load (ETL)** query structures I have developed over the years and recommend for maximum load efficiency. Sometimes loading millions of rows can be memory-intensive on computers without high-powered GPUs and can take eons to refresh. Many organizations that use Power Query understand the pains of loading data from a cloud platform into Power BI/Excel and find themselves frustrated by the bulky lag times they face.
 
-The answer is simple: embed SQL scripts within your Power Query advanced editor screen wherever possible! Additionally, leveraging powerful ETL tools like SAS and Alteryx, along with cloud services like AWS, can significantly improve the efficiency and speed of your data processing workflows. This ensures that the heavy data processing you need to execute to get your reports refreshed takes place on the server-side or cloud as much as possible. This isn't just limited to SQL!
+The answer is simple: embed SQL scripts within your Power Query advanced editor screen wherever possible! Additionally, leveraging powerful ETL tools like SAS and Alteryx, along with cloud services like AWS or SQL Server, can significantly improve the efficiency and speed of your data processing workflows. This ensures that the heavy data processing you need to execute to get your reports refreshed takes place on the server-side or cloud as much as possible. 
+
+In the below examples, I showcase how different technologies such as **Python**, **SAS**, **SQL**, **Power Query** (Excel/PowerBI), **Alteryx**, **Apache**, **Google**, **Azure**, and **AWS** can all be similarly used and combined together for data extraction, transformation, and publishing that provides maximum efficiency on your machine! With that, let's dive in!
+
+<div class="tenor-gif-embed" data-postid="20497912" data-share-method="host" data-aspect-ratio="1.77778" data-width="50%"><a href="https://tenor.com/view/sucked-up-by-the-television-mono-little-nightmares2-going-inside-the-television-enter-gif-20497912">Sucked Up By The Television Mono GIF</a>from <a href="https://tenor.com/search/sucked+up+by+the+television-gifs">Sucked Up By The Television GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+<br>
 
 ## ETL Using SAS, Python, and AWS Cloud
 
@@ -104,6 +108,7 @@ sas.endsas()
 - *Flexibility*: Using Python for both the initial data extraction and final visualization allows for a seamless and flexible workflow that dips into SAS only for the regression calculations and uses Plotly for in-house charting.
 
 <br><br>
+
 ## Basic Power Query ETL Process
 
 ### 1. Extract:
@@ -506,3 +511,17 @@ Once the transformed Alteryx data was exported to a CSV file, SAS took center st
 This workflow showcases the dynamic duo of Alteryx for efficient ETL processes and SAS for robust statistical analysis. Together, they provide comprehensive and actionable insights in a highly efficient manner, providing well-equipped financial professions with the data-driven intelligence needed to make informed decisions about multifamily property investments.
 
 Alteryx is specifically one of my favorite technologies to use, as it provides a transparent no-code developer structure that any data professional can learn to use. Unfortunately I can not include specific Alteryx screenshots, as my free-trial ran out years ago when I got certified, so sorry about that!   
+<br><br>
+
+## Closing
+
+In this page, we've explored a variety of powerful ETL methodologies using tools like Power Query, Python, SAS, Alteryx, and cloud services like AWS and SQL Server. By embedding SQL scripts within Power Query, we streamline data processing in Excel and Power BI. We also demonstrated how Python and SAS can be combined for efficient data extraction, transformation, and statistical analysis.
+
+Additionally, we showcased a complex workflow using Alteryx and SAS to handle multifamily property data, highlighting how to extract and transform data from SQL servers, perform advanced analysis, and upload results back to SQL servers. This example emphasized the synergy between Alteryx's user-friendly interface and SAS's robust analytics.
+
+Overall, the discussed techniques provide a solid foundation for optimizing ETL processes, ensuring efficient data processing and insightful analysis. Whether using cloud platforms, traditional databases, or advanced analytical tools, these strategies help achieve maximum efficiency and scalability in data workflows.
+
+Thank you for exploring these ETL concepts with me. If you have any questions or are interested in learning more, feel free to reach out. I'm also actively seeking new opportunities, so if your team is hiring, let's connect!
+
+Best, <br>
+Benjamin Pachter 
