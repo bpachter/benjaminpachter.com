@@ -8,7 +8,7 @@ permalink: /skillset/
 
 - **Data Analytics & Visualization**:
     - **For more detailed demonstrations, check out the [ETL](https://benjaminpachter.com/ETL/) page.**
-    - I have advanced experience in **Excel Modeling**, **Power Query**, and **Power BI** for ETL data flows, primarily for creating sophisticated financial models and interactive dashboards that assist in quick and clear strategic decision-making. With proficiency in **SQL**, **DAX**, and **M scripting**, I can move and transform data effectively in a clean and centralized manner that provides maximum transparency and data refresh speed.
+    - I have advanced experience in **Excel Modeling**, **Power Query**, **Alteryx**, and **Power BI** for ETL data flows, primarily for creating sophisticated financial models and interactive dashboards that assist in quick and clear strategic decision-making. With proficiency in **SQL**, **DAX**, and **M scripting**, I can move and transform data effectively in a clean and centralized manner that provides maximum transparency and data refresh speed.
     - I am also highly capable within, **Tableau**, **SAS**, **Dynamics**, and **Apache** technologies such as **Spark**, **Airflow**, **Kafka**, **Storm**, **Hadoop**, **Cassandra**, **NiFi**, and **Hive** for big data processing, real-time data streaming, and distributed computing.
     - Additionally, I have operated within many cloud platforms such as **Salesforce**, **Google BigQuery**, **Amazon Redshit**, and **Azure Synapse**. 
 
@@ -23,6 +23,7 @@ permalink: /skillset/
         - C#
         - JavaScript
         - Java
+        - SAS
         - Salesforce Apex
         - SQL
         - Go
@@ -34,14 +35,14 @@ permalink: /skillset/
         - Ruby
         - PHP
         - Swift
-        - MATLAB
-        - SAS
+        - MATLAB        
         - HTML
         - CSS
         - XML
         - Bash        
-        - PowerShell
+        - PowerShell<br><br>
     
+
 
     - And here are some of my favorite **Python libraries**:
         
@@ -50,6 +51,7 @@ permalink: /skillset/
         - SciPy
         - QuantLib
         - Scikit-learn
+        - SASsession
         - ib_insync
         - XGBoost
         - TensorFlow
@@ -73,11 +75,11 @@ permalink: /skillset/
         - tqdm
         - statsmodels
         - FastAPI
-        - SQLAlchemy
+        - SQLAlchemy<br><br>
      
 
 ## Financial Modeling, Data Transformation, and Dashboard Development
-I develop comprehensive financial and logistical models using **Python**, **SQL**, and **Power Query** to extract, transform, and load versatile data structures to tell compelling stories. The neutrality of raw data has always fascinated me, and when harnessed and channeled correctly, unbiased numbers can be translated into unbiased results that drive clear and confident decision-making.
+I develop comprehensive financial and logistical models using **Python**, **SQL**, **Power Query**, and **Alteryx** to extract, transform, and load versatile data structures to tell compelling stories. The neutrality of raw data has always fascinated me, and when harnessed and channeled correctly, unbiased numbers can be translated into unbiased results that drive clear and confident decision-making.
 
 Initializing business and economic narratives through data transformations and coding has become my hobby these days; I am personally motivated to consistently increase my tech capabilities through my own trading and investing decision optimization. Plus, it is clear that the future is filled with robots; leveraging code is the single most important tool we have available to drive into this reality!
 

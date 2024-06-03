@@ -8,11 +8,104 @@ permalink: /ETL/
 
 This page serves as the foundation for my preferred **Extract, Transform, Load (ETL)** query structures I have developed over the years and recommend for maximum load efficiency. Sometimes loading millions of rows can be memory-intensive on computers without high-powered GPUs and can take eons to refresh. Many organizations that use Power Query understand the pains of loading data from a cloud platform into Power BI/Excel and find themselves frustrated by the bulky lag times they face.
 
-The answer is simple: embed SQL scripts within your Power Query advanced editor screen wherever possible! This ensures that the heavy data processing you need to execute to get your reports refreshed takes place on the server-side as much as possible. This isn't just limited to SQL!
+The answer is simple: embed SQL scripts within your Power Query advanced editor screen wherever possible! Additionally, leveraging powerful ETL tools like SAS and Alteryx, along with cloud services like AWS, can significantly improve the efficiency and speed of your data processing workflows. This ensures that the heavy data processing you need to execute to get your reports refreshed takes place on the server-side or cloud as much as possible. This isn't just limited to SQL!
 
-### Basic ETL Process
+## ETL Using SAS, Python, and AWS Cloud
 
-## 1. Extract:
+### Scenario:
+You need to process sales data stored in an AWS S3 bucket. The data will be extracted using Python, transformed and statistically analyzed in SAS, and then visualized back in Python. For simplicity sake, I will demonstrate using a csv read, but understand this can be highly automated into a much cleaner and faster process depending on the technologies available.
+
+### Step 1: Extract Data from AWS S3 Using Python
+
+First, we'll use Python to extract the sales data from an AWS S3 bucket.
+
+```python
+import boto3
+import pandas as pd
+from io import BytesIO
+
+# Initialize a session using Amazon S3 credentials
+s3 = boto3.client('s3')
+bucket_name = 's3bucketname'
+file_key = 'path/to/your/data.csv'
+
+# Download the CSV file from S3 into a pandas dataframe
+response = s3.get_object(Bucket=bucket_name, Key=file_key)
+sales_data = pd.read_csv(BytesIO(response['Body'].read()))
+
+# Save the data to a local CSV file for processing in SAS
+sales_data.to_csv('sales_data_local.csv', index=False)
+```
+
+### Step 2: Transform and Analyze Data in SAS
+Next, we'll use SAS to perform data transformation and statistical analysis on the extracted sales data.
+
+```sas
+/* Import the data from the local CSV file */
+proc import datafile='/path/to/sales_data_local.csv' 
+    out=work.sales_data 
+    dbms=csv 
+    replace;
+    getnames=yes;
+run;
+
+/* Data transformation: Calculate total revenue */
+data work.transformed_data;
+    set work.sales_data;
+    TotalRevenue = Quantity * UnitPrice;
+run;
+
+/* Perform descriptive statistics */
+proc means data=work.transformed_data n mean std min max;
+    var TotalRevenue;
+run;
+
+/* Regression analysis */
+proc reg data=work.transformed_data;
+    model TotalRevenue = Quantity UnitPrice;
+    output out=work.regression_results p=PredictedRevenue;
+run;
+quit;
+```
+
+### Step 3: Visualize Results in Python
+Finally, we'll retrieve the results from SAS and visualize them back in Python. This can obviously be switched out for whatever interface you need to use for your data visualization, such as Power Query, R, C++, or you can just keep the end result in SAS if that is your preferred method!
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+from saspy import SASsession
+
+# Start a SAS session
+sas = SASsession()
+
+# Retrieve the regression results from SAS
+regression_results = sas.sasdata('regression_results', 'work')
+
+# Convert the SAS dataset to a Pandas DataFrame
+df_results = regression_results.to_df()
+
+# Visualize the results
+plt.figure(figsize=(10, 6))
+plt.scatter(df_results['Quantity'], df_results['TotalRevenue'], label='Actual Revenue')
+plt.plot(df_results['Quantity'], df_results['PredictedRevenue'], color='red', label='Predicted Revenue')
+plt.xlabel('Quantity')
+plt.ylabel('Revenue')
+plt.title('Regression Analysis of Total Revenue')
+plt.legend()
+plt.show()
+
+# End the SAS session
+sas.endsas()
+
+```
+## Benefits of Combining SAS, Python, and AWS:
+- *Scalability*: AWS provides scalable storage solutions with S3, making it especially easy to handle large datasets with Python extraction. AWS can of course be swapped with Azure, Google, Snowflake, or SQL Server data warehouse solutions in this context.
+- *Flexibility*: Using Python for both the initial data extraction and final visualization allows for a seamless and flexible workflow that dips into SAS only for the regression calculations and uses Plotly for in-house charting.
+
+## Basic Power Query ETL Process
+
+### 1. Extract:
 - In this method, you are actually combining the Extract and Transform methods into a single seamless query structure. Microsoft Power Query provides users of Excel and Power BI with a powerful 'Advanced Editor' capability. Many people believe Power Query is reliant on linear steps that proceed one after another, but this is not true. **The 'Advanced Editor' button within the Power Query view is the secret to unlocking masterful code-like scripting for combining the Extraction and Transformation steps for your data.**
 
     <img src="/images//PowerQuery1.png" alt="Advanced Editor Button" title="Advanced Editor Button" style="border: 10px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 100%;">
@@ -26,7 +119,7 @@ The answer is simple: embed SQL scripts within your Power Query advanced editor 
 
 
 
-## 2. Transform:
+### 2. Transform:
 - The raw data is transformed into a more meaningful format. Transformations include cleaning data, selecting only certain columns to load, merging data from multiple sources, converting data types, and applying business logic. This step is crucial for preparing the data for analysis and ensuring its quality and accuracy.
 - Here is an example SQL query embedded within the Power Query 'Source' step. This query utilizes SQL Server's capabilities to handle complex data operations, like window functions for data partitioning and row numbering to isolate the most recent records based on specific criteria.
 
@@ -179,7 +272,7 @@ Rather than relying on bulky M and DAX, these more streamlined examples illustra
 
 
 
-## 3. Load:
+### 3. Load:
 - Typically, now that we have combined the E and T components of ETL data flows, we would go ahead and load the result of this query into our Excel/Power BI file. **However, I want to take this opportunity to showcase how you can centralize multiple queries together for even more powerful leverage within your file.**
 - Another amazing component of the Advanced Editor view within Power Query is the fact that you can store a multitude of sources that you will need to reference within your Excel/Power BI file **in a single centralized query**.
 

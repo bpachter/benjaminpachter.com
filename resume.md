@@ -15,30 +15,30 @@ permalink: /resume/
 ## About Me
 Hey there! Welcome to my corner of the internet where I get to share tidbits of my journey as a Quantitative Data Scientist. I am currently looking for a new team to channel my energy into, so if you are hiring, thank you for being here! If you have already gone through my resume, you won't find anything new below other than a comprehensive list of technologies I am skilled in. Instead, I would direct you to check out the 'Skillset' page and other pages where I provide deeper insights into my experience and some basic demonstrations!
 
-I’m just a passionate professional who thrives on helping business owners and employees streamline their everyday activities and process flows. Turning raw data into valuable insights is exhilarating to me! Whether it’s through sophisticated statistical models, AI algorithms, financial engineering, or distributed systems, I love making sense out of datasets of all kinds.
+I’m just a passionate professional who thrives on helping business owners and employees streamline their everyday activities and process flows. Turning raw data into valuable insights is exhilarating to me (when it works)! Whether it’s through sophisticated statistical models, AI algorithms, financial engineering, or distributed systems, I love making sense out of datasets of all kinds.
 
-Using tools like Python, R, C++, JavaScript, Power Query, and SQL, I tackle complex challenges head-on to uncover new trends and patterns that significantly influence valuable business decision-making. I integrate cutting-edge AI and machine learning techniques, including deep learning neural networks, to generate predictive insights. Additionally, I leverage distributed systems and blockchain technologies to build scalable, secure, and efficient solutions that redefine operational efficiency.
+Using tools like Python, R, C++, JavaScript, Power Query, SAS, and SQL, I reguarly tackle complex challenges head-on to uncover new trends and patterns that significantly influence valuable business decision-making. I integrate cutting-edge AI and machine learning techniques, including deep learning neural networks, to generate predictive insights. Additionally, I leverage distributed systems and blockchain technologies to build scalable, secure, and efficient solutions that redefine operational efficiency.
 
 My expertise spans advanced financial engineering, using models like Black-Scholes for options pricing and Monte Carlo simulations for risk assessment. I also employ AI-driven algorithms for asset selection, credit scoring, and customer segmentation. By combining my knowledge of Apache Kafka, Spark, Hadoop, and other distributed technologies, I ensure real-time data processing and analytics.
 
-Ultimately, my purpose is to harness the power of data and technology to drive innovation and operational efficiency, creating stress-free, insightful experiences for business owners and employees alike.
+Ultimately, my purpose is to harness the power of data and frontline technologies to drive innovation and operational efficiency, creating stress-free, insightful experiences for business owners and employees alike.
 <br><br>
 
 ## Skillset
 - see ['Skillset'](https://benjaminpachter.com/skillset/) page for further breakdown
 
 **Data Analytics & Visualization**: 
-- Expertise in advanced Excel modeling, Power Query, and Power BI for financial modeling and interactive dashboards.
+- Strong expertise in advanced Excel modeling, Power Query, Power BI, and Alteryx for data augmentation, modeling and interactive dashboard development.
 - Skilled in SQL, DAX, and M scripting for ETL data manipulation.
-- Proficient in Tableau, SAS, Dynamics, Apache Spark, Airflow, Kafka, Storm, Hadoop, Cassandra, NiFi, Hive, Salesforce, Google BigQuery, Amazon Redshift, Azure Synapse, Matplotlib, Seaborn, Plotly, Bokeh, and Geopandas.
+- Other technologies I am familiar with include Salesforce, Tableau, Dynamics 365, Apache Spark, Airflow, Kafka, Storm, Hadoop, Cassandra, NiFi, Hive, Google BigQuery, Amazon Redshift, Azure Synapse, Matplotlib, Seaborn, Plotly, etc. But this list is always growing!
 
 **Database & Cloud Server Management**: 
-- Proficient in SSMS SQL, Salesforce Dev (SOQL, Apex, and Flow Automations), AWS, Google Cloud, Azure services, MySQL, MongoDB, Cassandra, Azure SQL Database, Azure Cosmos DB, Azure Data Factory, Google Cloud Storage, Google Dataflow, Amazon RDS, Amazon DynamoDB, AWS Lambda. 
+- Proficient in SSMS SQL, Salesforce Dev (SOQL, Apex, and Flow Automations), Snowflake, AWS, Google Cloud, Azure services, MySQL, MongoDB, Cassandra, Azure SQL Database, Azure Cosmos DB, Azure Data Factory, Google Cloud Storage, Google Dataflow, Amazon RDS, Amazon DynamoDB, AWS Lambda. 
 - Managed real-time data streams and processing using Apache Kafka, Spark Streaming, Apache Flink, AWS Kinesis, Apache HBase with Hadoop, and Google Cloud Pub/Sub.
 
 **Programming**: 
-- Python, R, Apex, JavaScript, Java, C++, C#, SQL, Go, Scala, MQ4/MQ5, Rust, Solidit Pine, Ruby, PHP, Swift, MATLAB, HTML, CSS, XML, VBA, DAX/M, Bash, PowerShell.
-- Skilled in using Python libraries such as Pandas, NumPy, SciPy, QuantLib, ib_insync, PySpark, PyArrow, PyKafka, PyHive, Airflow, Cassandra, Dask, fredapi, Scikit-learn, XGBoost, TensorFlow, PyTorch, Keras, Django, Flask, tqdm, statsmodels, FastAPI, SQLAlchemy, and many more.
+- Python, R, Apex, JavaScript, SAS, Java, C++, C#, SQL, Go, Scala, MQ4/MQ5, Rust, Solidit Pine, Ruby, PHP, Swift, MATLAB, HTML, CSS, XML, VBA, DAX/M, Bash, PowerShell.
+- Skilled in using Python libraries such as Pandas, NumPy, SciPy, QuantLib, SASsession, ib_insync, PySpark, PyArrow, PyKafka, PyHive, Airflow, Cassandra, Dask, fredapi, Scikit-learn, XGBoost, TensorFlow, PyTorch, Keras, Django, Flask, tqdm, statsmodels, FastAPI, SQLAlchemy, and many more.
 
 **Investment Deal Making**: 
 - Adept in modeling and underwriting CRE lending deals (senior, mezz, preferred equity, JV) and performing asset-credit diligence.
@@ -117,25 +117,14 @@ Ultimately, my purpose is to harness the power of data and technology to drive i
 *Greer, SC*  
 *May 2018 – Dec 2018*
 
-- Analyzed supply route data using SAP S/4 HANA and internal software, enhancing supply chain visibility and decision-making for the executive team.
-<br><br>
-- Led a sprint initiative to restructure supplier reorder processes, reducing transportation expenses by $13 million per vehicle model over a seven-year forecast period through improved departmental collaboration.<br><br>
-- Managed daily supply chain operations, focusing on materials flow, packaging, and transportation.
-<br><br>
-- Executed data mining and predictive analytics with Python, Bash, and PowerShell, supporting planners in integrating new logistics operations for BMW models G05 X5, G06 X6, G07 X7, and G09 XM.
-<br><br>
-- Utilized Apache Kafka for real-time data streaming and Spark for big data processing, enhancing supply chain analytics.
-<br><br>
-- Developed advanced data visualizations and interactive dashboards using JavaScript (D3.js, Node.js, React) and Power BI for executive reporting.
-<br><br>
-- Implemented statistical analysis and predictive modeling using SAS to optimize supply chain operations and forecast demand.
-<br><br>
-- Deployed PySpark for large-scale data processing and Airflow for orchestrating complex data workflows.
-<br><br>
-- Utilized Hadoop and Hive for distributed data storage and querying, improving data accessibility and processing speed.
-<br><br>
-- Employed Scala and Cassandra for handling high-velocity data streams and ensuring efficient data management across distributed systems.
-<br><br>
+- Led a major initiative to restructure supplier reorder processes with integrated SAS and Alteryx ETL automations, utilizing statistical analysis and predictive modeling of supply chain data and reducing transportation expenses by ~ $13 million per vehicle model.<br><br>
+- Managed daily supply chain operations with Microsoft Dynamics 365 and SAP S/4, focusing on materials flow, packaging, and transportation.<br><br>
+- Created interactive data dashboards with Power BI and Tableau for real-time supply chain monitoring.<br><br>
+- Executed data mining and predictive analytics with Python and Excel modeling to support planners in integrating new logistics operations for BMW G05 X5, G06 X6, G07 X7, and G09 XM models.<br><br>
+- Developed proactive machine learning models to forecast chain disruptions using Python, SAS, and C++.<br><br>
+- Implemented new SQL and Apache technologies for supplemental data processing and analysis.<br><br>
+- Automated client data augmentation workflows with Bash and PowerShell.<br><br>
+
 
 ## Education
 **University of North Carolina at Charlotte**  
