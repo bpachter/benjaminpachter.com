@@ -843,7 +843,7 @@ The function generateRandomNumber uses the `random` library to generate random n
 The function `simulateDefaultProbability` performs the core of the Monte Carlo simulation. It runs a loop for a specified number of simulations (numSimulations), generating a random default probability in each iteration. The generated default probability is then compared to a threshold (0.5 in this case) to determine if a default has occurred. The number of defaults is counted and used to calculate the proportion of defaults over the total number of simulations, providing an estimated default probability.
 
 #### Main Function
-In the main function, we define the parameters for the simulation, including the mean and standard deviation of the default probability and the number of simulations to run. The simulateDefaultProbability function is called with these parameters, and the estimated default probability is printed to the console.
+In the main function, we define the parameters for the simulation, including the mean and standard deviation of the default probability and the number of simulations to run. The `simulateDefaultProbability` function is called with these parameters, and the estimated default probability is printed to the console.
 
 #### Conclusion
 Monte Carlo simulations offer a robust method for estimating default probabilities, especially in complex financial models where analytical solutions are challenging. By simulating numerous random scenarios, we can gain valuable insights into the likelihood of defaults and make more informed risk management decisions. This C++ implementation demonstrates how to harness the power of Monte Carlo methods for financial applications, providing a foundation for more advanced and customized simulations.
