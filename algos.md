@@ -13,7 +13,7 @@ With that being said, let's dive into some of the best financial algorithm pract
 
 
 ## Interest Rate Modeling with the Hull-White Model
-Interest rate models are crucial for pricing derivatives and managing interest rate risk to banking and credit portfolios. One of the most popular models used by quants and financial engineers is the **Hull-White Model**, with its mean-reverting property as a particuarly useful method for modeling interest rates over time.
+Interest rate models are crucial for pricing derivatives and managing interest rate risk to banking and credit portfolios. One of the most popular models used by quants and financial engineers is the **Hull-White Model**, with its mean-reverting property as a particuarly useful method for modeling interest rates over time. It captures the tendency of interest rates to revert to a long-term mean, making it suitable for valuing interest rate derivatives and managing interest rate risk.
 
 Here is the wiki page on the Hull-White Model if you would like to learn more about the fundamentals of this method:<br><br>
 [Wikipedia - Hull-White model](https://en.wikipedia.org/wiki/Hull%E2%80%93White_model)
@@ -23,24 +23,63 @@ In this section, I'll walk you through a basic implementation of the Hull-White 
 #include <iostream>
 #include <cmath>
 #include <vector>
+#include <random>
+#include <curl/curl.h>
+#include <json/json.h>
 
 // Hull-White model parameters
 const double a = 0.1; // mean reversion rate
 const double sigma = 0.01; // volatility
 
-// function to generate random number
-double generateRandomNumber() {
-    return ((double) rand() / (RAND_MAX));
+// function to fetch live interest rate data from cloud
+std::vector<double> fetchInterestRateData(const std::string& url) {
+    CURL* curl;
+    CURLcode res;
+    std::string readBuffer;
+
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+        res = curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+
+    Json::Value jsonData;
+    Json::Reader jsonReader;
+    if (jsonReader.parse(readBuffer, jsonData)) {
+        std::vector<double> rates;
+        for (const auto& rate : jsonData["rates"]) {
+            rates.push_back(rate.asDouble());
+        }
+        return rates;
+    } else {
+        throw std::runtime_error("Failed to parse JSON data");
+    }
+}
+
+// callback function for curl to write data
+size_t WriteCallback(void* contents, size_t size, size_t nmemb, void* userp) {
+    ((std::string*)userp)->append((char*)contents, size * nmemb);
+    return size * nmemb;
+}
+
+// function to generate random number from standard normal distribution
+double generateGaussianNoise() {
+    static std::default_random_engine generator;
+    static std::normal_distribution<double> distribution(0.0, 1.0);
+    return distribution(generator);
 }
 
 // function to simulate interest rate path using Hull-White model
-std::vector<double> simulateInterestRatePath(double r0, double dt, int steps) {
+std::vector<double> simulateInterestRatePath(const std::vector<double>& initialRates, double dt, int steps) {
     std::vector<double> r(steps); // vector to store interest rates
-    r[0] = r0; // initial interest rate
+    r[0] = initialRates.back(); // initial interest rate
 
     for (int i = 1; i < steps; ++i) {
         // generate random number from standard normal distribution
-        double dW = sqrt(dt) * generateRandomNumber();
+        double dW = sqrt(dt) * generateGaussianNoise();
         
         // apply Hull-White model equation
         r[i] = r[i-1] * exp(-a * dt) + (1 - exp(-a * dt)) * sigma * dW;
@@ -50,20 +89,31 @@ std::vector<double> simulateInterestRatePath(double r0, double dt, int steps) {
 }
 
 int main() {
-    double initialRate = 0.05; // initial interest rate
-    double timeStep = 0.01; // time step size
-    int numSteps = 100; // number of steps in simulation
+    // URL to fetch live interest rate data
+    std::string url = "https://api.example.com/interest-rates";
 
-    // simulate interest rate path
-    std::vector<double> rates = simulateInterestRatePath(initialRate, timeStep, numSteps);
+    try {
+        // fetch initial interest rate data
+        std::vector<double> initialRates = fetchInterestRateData(url);
+        
+        double timeStep = 0.01; // time step size
+        int numSteps = 100; // number of steps in simulation
 
-    // print the simulated interest rates
-    for (double rate : rates) {
-        std::cout << rate << std::endl;
+        // simulate interest rate path
+        std::vector<double> rates = simulateInterestRatePath(initialRates, timeStep, numSteps);
+
+        // print the simulated interest rates
+        for (double rate : rates) {
+            std::cout << rate << std::endl;
+        }
+    } catch (const std::exception& ex) {
+        std::cerr << "Error: " << ex.what() << std::endl;
+        return 1;
     }
 
     return 0;
 }
+
 ```
 
 
