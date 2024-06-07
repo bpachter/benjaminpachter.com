@@ -204,11 +204,11 @@ In this generalized script, we are utilizing the *iostream* and *vector* librari
 #### Moving Average Calculation:
 First, the `calculateMovingAverage` function is declared. This takes two parameters: a cpmstamt referemce tp a vextor of doubles (`prices`) and an integer (`period`). The function then computes and returns the average prices of the underlying over a specified period, or the moving average.
 
-The `if` line checks if the size of the prices vector is less than the specified period. If true, it returns 0.0 because there are not enough data points to calculate the moving average. Then, after declaring the `sum` double variable, we use the `for` loop to start from `prices.size() - period` and runs until `prices.size() - 1`. It iterates through the last `period` number of elements in the `prices` vector. Within the loop, the `+=` operator is used to add the `prices[i]` current price to the `sum`.
-After the loop completes, the function returns the average by dividing `sum` by the `period`.
+The if line checks if the size of the prices vector is less than the specified period. If true, it returns 0.0 because there are not enough data points to calculate the moving average. Then, after declaring the sum double variable, we use the for loop to start from `prices.size() - period` and runs until `prices.size() - 1`. It iterates through the last period number of elements in the prices vector. Within the loop, the `+=` operator is used to add the `prices[i]` current price to the sum.
+After the loop completes, the function returns the average by dividing sum by the period.
 
 #### Initializing MAs:
-Once the moving average for the particular period is calculated, the `main` function initializes stock prices through a vector declaration (this would be loaded from real-time data in a real application, perhaps daily closing candle prices) and defines our MA periods as the 9- and 21-day MAs. The `main` function then iterates through the prices with another `for` loop and utilizes the `calculateMovingAverage` function we defined to calculate the MAs, generating buy/sell signals based on their comparison.
+Once the moving average for the particular period is calculated, the main function initializes stock prices through a vector declaration (this would be loaded from real-time data in a real application, perhaps daily closing candle prices) and defines our MA periods as the 9- and 21-day MAs. The `main` function then iterates through the prices with another for loop and utilizes the `calculateMovingAverage` function we defined to calculate the MAs, generating buy/sell signals based on their comparison.
 
 ```cpp
 double shortMA = calculateMovingAverage(std::vector<double>(prices.begin(), prices.begin() + i), shortPeriod);
@@ -878,27 +878,8 @@ Making Predictions:
 ```py
 predictions = model.predict(X)
 ```
-- Generating Predictions: The trained model is used to make predictions on the input data X. The predicted values are stored in the predictions array.
-
-### Practical Applications
-
-#### Stock Price Prediction:
-
-LSTM models can predict future stock prices based on historical data, helping traders and investors make informed decisions.
-
-#### Market Trend Analysis:
-
-By analyzing historical market data, LSTM models can identify trends and potential turning points in the market.
-
-#### Risk Management:
-
-Predictive models can assess potential risks and returns, enabling better risk management strategies for investment portfolios.
-
-#### Algorithmic Trading:
-
-Integrating LSTM models into trading algorithms can automate trading strategies based on predicted market movements.
 <br><br>
-By leveraging advanced AI algorithms like LSTMs, financial institutions and traders can enhance their predictive modeling capabilities, leading to more accurate forecasts and improved decision-making in the financial markets.
+
 
 <br><br><br>
 More to Come!
