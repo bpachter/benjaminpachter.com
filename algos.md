@@ -123,14 +123,14 @@ int main() {
 
 To make the simulation more realistic, we fetch live interest rate data from a cloud data source using the **libcurl** library and parse the JSON response using the **jsoncpp** library.
 
-- fetchInterestRateData: This function takes a URL as an argument, fetches the interest rate data from the specified API, and returns a vector of interest rates.
-- WriteCallback: This is a callback function used by curl to write the data fetched from the API into a string.
+- **fetchInterestRateData**: <br> This function takes a URL as an argument, fetches the interest rate data from the specified API, and returns a vector of interest rates.
+- **WriteCallback**: <br> This is a callback function used by curl to write the data fetched from the API into a string.
 Generating Gaussian Noise
 - To simulate the randomness in interest rate movements, we use the generateGaussianNoise function, which generates random numbers from a standard normal distribution using C++'s <random> library.
 
 #### Simulating Interest Rate Paths
 
-The simulateInterestRatePath function simulates interest rate paths using the Hull-White model explained above. It takes the initial interest rates, the time step size (dt), and the number of steps (steps) as input. The function iterates over the number of steps, applying the Hull-White model equation to generate the path of interest rates.
+The **simulateInterestRatePath** function simulates interest rate paths using the Hull-White model explained above. It takes the initial interest rates, the time step size (dt), and the number of steps (steps) as input. The function iterates over the number of steps, applying the Hull-White model equation to generate the path of interest rates.
 
 #### Main Function
 
