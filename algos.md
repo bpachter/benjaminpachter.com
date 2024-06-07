@@ -9,7 +9,63 @@ Hey there! Thanks for your patience as I build out this page and make it a vastl
 
 Below are some blocks of code that demonstrate some basic capabilities of mine. Consider these fun side-projects; unfortunately I am not allowed to share any of my previous work experience, as most of it contains highly sensitive information and trade secrets. But I can still demonstrate basic functionality in hypothetical environments!
 
-With that being said, let's dive into some trading algorithms and blockchain technologies, as well as more complex equity momentum simulation!
+With that being said, let's dive into some of the best financial algorithm practices!
+
+
+## Interest Rate Modeling with the Hull-White Model
+The Hull-White model is used for pricing interest rate derivatives. Below is the C++ implementation and its detailed explanation.
+
+This C++ script simulates interest rate paths using the Hull-White model. The model is initialized with parameters such as the mean reversion rate (a), volatility (sigma), initial interest rate (r0), time step (dt), and the number of steps (steps). It then generates a path of interest rates by iterating through the number of steps, using random numbers from a standard normal distribution to add randomness to the simulation. The interest rates are printed at the end.
+```c++
+#include <iostream>
+#include <cmath>
+#include <vector>
+
+// Hull-White model parameters
+const double a = 0.1; // mean reversion rate
+const double sigma = 0.01; // volatility
+
+// function to generate random number
+double generateRandomNumber() {
+    return ((double) rand() / (RAND_MAX));
+}
+
+// function to simulate interest rate path using Hull-White model
+std::vector<double> simulateInterestRatePath(double r0, double dt, int steps) {
+    std::vector<double> r(steps); // vector to store interest rates
+    r[0] = r0; // initial interest rate
+
+    for (int i = 1; i < steps; ++i) {
+        // generate random number from standard normal distribution
+        double dW = sqrt(dt) * generateRandomNumber();
+        
+        // apply Hull-White model equation
+        r[i] = r[i-1] * exp(-a * dt) + (1 - exp(-a * dt)) * sigma * dW;
+    }
+
+    return r; // return the simulated interest rate path
+}
+
+int main() {
+    double initialRate = 0.05; // initial interest rate
+    double timeStep = 0.01; // time step size
+    int numSteps = 100; // number of steps in simulation
+
+    // simulate interest rate path
+    std::vector<double> rates = simulateInterestRatePath(initialRate, timeStep, numSteps);
+
+    // print the simulated interest rates
+    for (double rate : rates) {
+        std::cout << rate << std::endl;
+    }
+
+    return 0;
+}
+
+```
+
+
+
 
 
 ## Implementing a Simple Trading Strategy using C++
@@ -424,6 +480,7 @@ The end result of the indiactor on TradingView looks something like this, where 
 This particular strategy and demonstration, even though it would have resulted in profitability in this instance, is quite dangerous without more stop triggers set in place. VWAP acts as a gravitational anchor that the price is typically pulled to; while volumetric breakouts and crossovers can sometimes extend all the way out to 3 standard deviations, it is far more common for the price to break above VWAP, fail to reach the first sell-signal band, and then fall back down to VWAP.
 
 As long as you are lazer-focused on implementing proper risk management, with a good amount of fine-tuning, practice, and evaluation, this concept can indeed be transformed into a highly-lucrative strategy.
+
 
 <br><br>
 
