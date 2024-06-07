@@ -776,110 +776,77 @@ Simulated price paths can be used to evaluate the performance of different portf
 
 Financial institutions use simulations to test how their portfolios would perform under extreme market conditions.
 
-## Advanced AI Algorithms in Finance
+## Default Probability Simulation Using Monte Carlo Methods
 
-### Predictive Modeling and Machine Learning
-Machine learning algorithms are essential for predictive modeling in finance. Techniques such as regression, classification, clustering, and time series analysis can forecast market trends, asset prices, and financial risks. These models help in making informed decisions by analyzing historical data and identifying patterns that can predict future movements.
+In the world of finance, understanding and predicting default probabilities is crucial for proper risk management and pricing derivatives. Monte Carlo simulations are a powerful tool used to estimate these probabilities by performing numerous random simulations to predict the likelihood of different outcomes. This method is particularly useful when dealing with complex financial models where analytical solutions are not feasible.
 
-#### Example: Time Series Forecasting with LSTMs
+In this section, we will delve into how Monte Carlo simulations can be employed to estimate default probabilities. We will use C++ to implement a robust simulation model, assuming the default probability follows a normal distribution characterized by a given mean and standard deviation. The script will simulate a large number of random scenarios to determine the proportion of defaults, providing us with an estimated default probability.
 
-Long Short-Term Memory (LSTM) networks are a type of recurrent neural network (RNN) capable of learning long-term dependencies, making them suitable for time series forecasting. In finance, LSTMs can be used to predict stock prices, market trends, and other financial metrics based on historical data.
+### Introduction to Monte Carlo Simulations
+Monte Carlo simulations rely on repeated random sampling to obtain numerical results. The core idea is to use randomness to solve problems that might be deterministic in principle. In finance, Monte Carlo methods are used for various purposes, including portfolio risk management, black scholes options and derivatives pricing, and other portfolio optimizations. By simulating a large number of potential future paths (similar to the Brownian Motion Walk above), we can gain insights into the distribution of possible outcomes and make better informed decisions.
 
-### Code
+### Implementing Default Probability Simulation
+Now, let's implement the C++ script to simulate default probabilities using Monte Carlo methods. As is standard, we'll assume the default probability is normally distributed, with a specified mean and standard deviation. The script will generate random default probabilities, count how many times the simulated probability exceeds a threshold (indicating a default), and calculate the proportion of defaults over the total number of simulations.
+```c++
+#include <iostream>
+#include <cmath>
+#include <vector>
+#include <random>
 
-```python
-import numpy as np
-import pandas as pd
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense
+// function to generate random number from a normal distribution
+double generateRandomNumber(double mean, double stddev) {
+    static std::default_random_engine generator;
+    std::normal_distribution<double> distribution(mean, stddev);
+    return distribution(generator);
+}
 
-# Load data
-data = pd.read_csv('financial_data.csv')
-prices = data['price'].values
+// function to simulate default probability using Monte Carlo methods
+double simulateDefaultProbability(double mean, double stddev, int numSimulations) {
+    int defaultCount = 0; // counter for defaults
 
-# Prepare data for LSTM
-def create_dataset(dataset, look_back=1):
-    X, Y = [], []
-    for i in range(len(dataset) - look_back - 1):
-        a = dataset[i:(i + look_back), 0]
-        X.append(a)
-        Y.append(dataset[i + look_back, 0])
-    return np.array(X), np.array(Y)
+    for (int i = 0; i < numSimulations; ++i) {
+        // generate random default probability
+        double defaultProbability = generateRandomNumber(mean, stddev);
 
-look_back = 3
-X, Y = create_dataset(prices.reshape(-1, 1), look_back)
-X = np.reshape(X, (X.shape[0], X.shape[1], 1))
+        // check if default occurs
+        if (defaultProbability > 0.5) {
+            ++defaultCount;
+        }
+    }
 
-# Build LSTM model
-model = Sequential()
-model.add(LSTM(50, input_shape=(look_back, 1)))
-model.add(Dense(1))
-model.compile(loss='mean_squared_error', optimizer='adam')
+    // return estimated default probability
+    return static_cast<double>(defaultCount) / numSimulations;
+}
 
-# Train the model
-model.fit(X, Y, epochs=20, batch_size=1, verbose=2)
+int main() {
+    double mean = 0.02; // mean default probability
+    double stddev = 0.01; // standard deviation
+    int numSimulations = 10000; // number of simulations
 
-# Make predictions
-predictions = model.predict(X)
-```
-### Explanation
+    // simulate default probability
+    double defaultProbability = simulateDefaultProbability(mean, stddev, numSimulations);
 
-Loading the data with a csv as an example:
-```py
-data = pd.read_csv('financial_data.csv')
-prices = data['price'].values
-```
-#### Data Source:
-The financial data is loaded from a CSV file named financial_data.csv. The data contains historical price information.
+    // print the estimated default probability
+    std::cout << "Estimated Default Probability: " << defaultProbability << std::endl;
 
-#### Extracting Prices:
-The prices are extracted from the 'price' column and stored in the prices array.
+    return 0;
+}
 
-#### Preparing Data for LSTM:
-
-```py
-def create_dataset(dataset, look_back=1):
-    X, Y = [], []
-    for i in range(len(dataset) - look_back - 1):
-        a = dataset[i:(i + look_back), 0]
-        X.append(a)
-        Y.append(dataset[i + look_back, 0])
-    return np.array(X), np.array(Y)
-
-look_back = 3
-X, Y = create_dataset(prices.reshape(-1, 1), look_back)
-X = np.reshape(X, (X.shape[0], X.shape[1], 1))
-```
-- Function Definition: The `create_dataset` function transforms the time series data into a format suitable for LSTM. It creates input-output pairs where the input is a sequence of prices and the output is the price at the next time step.
-- Look-back Period: The `look_back` variable defines the number of previous time steps to use as input for predicting the next value. In this case, it is set to 3.
-- Reshaping Data: The input data X is reshaped to be compatible with the LSTM layer's expected input shape.
-
-#### Building the LSTM Model:
-
-```py
-model = Sequential()
-model.add(LSTM(50, input_shape=(look_back, 1)))
-model.add(Dense(1))
-model.compile(loss='mean_squared_error', optimizer='adam')
-```
-#### Sequential Model Initialization:
-- LSTM Layer: An LSTM layer with 50 units is added to the model. The input shape is specified as (look_back, 1), indicating the model expects sequences of 3 time steps with 1 feature per step.
-- Dense Layer: A dense layer with a single unit is added, which will output the predicted price.
-- Compilation: The model is compiled with the mean squared error loss function and the Adam optimizer, which is commonly used for training deep learning models.
-
-#### Training the Model:
-```py
-model.fit(X, Y, epochs=20, batch_size=1, verbose=2)
-```
-
-#### Model Training:
-The model is trained using the input-output pairs (X, Y) for 20 epochs with a batch size of 1. The verbose level is set to 2 to provide detailed logs during training.
-Making Predictions:
-```py
-predictions = model.predict(X)
 ```
 <br><br>
 
+### Explanation
+#### Generating Random Numbers
+The function generateRandomNumber uses the `random` library to generate random numbers from a normal distribution. The `std::default_random_engine` and `std::normal_distribution` classes are employed to create random numbers with a specified mean and standard deviation. This randomness simulates the uncertain nature of default probabilities in real-world scenarios.
+
+#### Simulating Default Probabilities
+The function `simulateDefaultProbability` performs the core of the Monte Carlo simulation. It runs a loop for a specified number of simulations (numSimulations), generating a random default probability in each iteration. The generated default probability is then compared to a threshold (0.5 in this case) to determine if a default has occurred. The number of defaults is counted and used to calculate the proportion of defaults over the total number of simulations, providing an estimated default probability.
+
+#### Main Function
+In the main function, we define the parameters for the simulation, including the mean and standard deviation of the default probability and the number of simulations to run. The simulateDefaultProbability function is called with these parameters, and the estimated default probability is printed to the console.
+
+#### Conclusion
+Monte Carlo simulations offer a robust method for estimating default probabilities, especially in complex financial models where analytical solutions are challenging. By simulating numerous random scenarios, we can gain valuable insights into the likelihood of defaults and make more informed risk management decisions. This C++ implementation demonstrates how to harness the power of Monte Carlo methods for financial applications, providing a foundation for more advanced and customized simulations.
 
 <br><br><br>
 More to Come!
