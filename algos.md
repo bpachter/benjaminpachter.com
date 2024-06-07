@@ -13,9 +13,12 @@ With that being said, let's dive into some of the best financial algorithm pract
 
 
 ## Interest Rate Modeling with the Hull-White Model
-The Hull-White model is used for pricing interest rate derivatives. Below is the C++ implementation and its detailed explanation.
+Interest rate models are crucial for pricing derivatives and managing interest rate risk to banking and credit portfolios. One of the most popular models used by quants and financial engineers is the **Hull-White Model**, with its mean-reverting property as a particuarly useful method for modeling interest rates over time.
 
-This C++ script simulates interest rate paths using the Hull-White model. The model is initialized with parameters such as the mean reversion rate (a), volatility (sigma), initial interest rate (r0), time step (dt), and the number of steps (steps). It then generates a path of interest rates by iterating through the number of steps, using random numbers from a standard normal distribution to add randomness to the simulation. The interest rates are printed at the end.
+Here is the wiki page on the Hull-White Model if you would like to learn more about the fundamentals of this method:<br><br>
+[Wikipedia - Hull-White model](https://en.wikipedia.org/wiki/Hull%E2%80%93White_model)
+
+In this section, I'll walk you through a basic implementation of the Hull-White model in C++ with the assumption that we are fetching live interest rate data from a cloud data source. This approach will be practical and relevant for real-world applications in a portfolio trading environment.
 ```c++
 #include <iostream>
 #include <cmath>
@@ -61,11 +64,37 @@ int main() {
 
     return 0;
 }
-
 ```
 
 
+### Explanation
 
+#### Fetching Live Interest Rate Data
+
+To make the simulation more realistic, we fetch live interest rate data from a cloud data source using the **libcurl** library and parse the JSON response using the **jsoncpp** library.
+
+- fetchInterestRateData: This function takes a URL as an argument, fetches the interest rate data from the specified API, and returns a vector of interest rates.
+- WriteCallback: This is a callback function used by curl to write the data fetched from the API into a string.
+Generating Gaussian Noise
+- To simulate the randomness in interest rate movements, we use the generateGaussianNoise function, which generates random numbers from a standard normal distribution using C++'s <random> library.
+
+#### Simulating Interest Rate Paths
+
+The simulateInterestRatePath function simulates interest rate paths using the Hull-White model explained above. It takes the initial interest rates, the time step size (dt), and the number of steps (steps) as input. The function iterates over the number of steps, applying the Hull-White model equation to generate the path of interest rates.
+
+#### Main Function
+
+In the main function, we:
+
+- Define the URL to fetch live interest rate data.
+- Fetch the initial interest rate data.
+- Define the time step size and the number of simulation steps.
+- Simulate the interest rate path using the Hull-White model.
+- Print the simulated interest rates.
+<br><br>
+We've implemented the Hull-White interest rate model in C++. By fetching live interest rate data from a theoretical cloud data source and simulating future interest rate paths, we can better manage portfolio interest rate risk and price derivatives easily. This basic approach demonstrates the practical application of quantitative rate modeling with C++! 
+
+Now, on to the retail trader!
 
 
 ## Implementing a Simple Trading Strategy using C++
