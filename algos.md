@@ -12,7 +12,7 @@ Below are some blocks of code that demonstrate some basic capabilities of mine. 
 With that being said, let's dive into some of the best financial algorithm practices!
 
 
-## Interest Rate Modeling with the Hull-White Model
+## **Interest Rate Modeling with the Hull-White Model**
 Interest rate models are crucial for pricing derivatives and managing interest rate risk to banking and credit portfolios. One of the most popular models used by quants and financial engineers is the **Hull-White Model**, with its mean-reverting property as a particuarly useful method for modeling interest rates over time. It captures the tendency of interest rates to revert to a long-term mean, making it suitable for valuing interest rate derivatives and managing interest rate risk.
 
 Here is the wiki page on the Hull-White Model if you would like to learn more about the fundamentals of this method:<br><br>
@@ -144,10 +144,52 @@ In the main function, we:
 <br><br>
 We've implemented the Hull-White interest rate model in C++. By fetching live interest rate data from a theoretical cloud data source and simulating future interest rate paths, we can better manage portfolio interest rate risk and price derivatives easily. This basic approach demonstrates the practical application of quantitative rate modeling with C++! 
 
-Now, on to the retail trader!
+
+## **SAS Regression for House Price Prediction**
+In this section, we are exploring my favorite technology for standard regression (perhaps an unpopular opinion), which is SAS. This SAS program detailed below demonstrates fitting and analyzing a multiple regression model using the procedures **GLM** (General Linear Model)and **PLM**.
+
+### Part A: Fitting the Model with PROC GLM
 
 
-## Implementing a Simple Trading Strategy using C++
+```s
+proc glm data=FOLDER.HousingData plots(only)=(contourfit);
+    model SalePrice = Basement_Area Lot_Area;
+    store out=multiple;
+    title "Model with Basement Area and Lot Area";
+run;
+quit;
+```
+- **PROC GLM** fits a general linear regression model to our data, predicting *SalePrice* using the *Basement_Area* and *Lot_Size* fields.
+- The predictor/target outcome *SalePrice* is our dependent/response variable, while *Basement_Area* and *Lot_Area* are our independent or predictive variables.
+- `store out=multiple;` saves the model results in an item store named 'multiple' that will be called in our next SAS snippet as a new table for further analysis and visualization.
+
+
+Below is the output result of the above code. The reason I love SAS so much is because it is designed to do the majority of the work for you. If you were framing this up in Python or another language, you would need a bunch of code to also handle the printing of the outputs.
+
+#### PROC GLM Output:
+<iframe src="/SASRegressResults1.html" width="100%" height="1175px" frameborder="0"></iframe>
+
+Explanation of results
+
+<br>
+ 
+
+### Part B: Visualizing the Model with PROC PLM
+
+```s
+proc plm restore=multiple plots=all;
+    effectplot contour (y=Basement_Area x=Lot_Area);
+    effectplot slicefit(x=Lot_Area sliceby=Basement_Area=250 to 1000 by 250);
+run;
+
+title;
+```
+- **PROC PLM** uses the stored model 'multiple' from the above GLM code to create some additional plots.
+- The effectplot lines simply define the formatting parameters of the Y and X axis.
+
+<iframe src="/SASRegressResults2.html" width="100%" height="1250px" frameborder="0"></iframe>
+
+## **Implementing a Simple Trading Strategy using C++**
 
 If you have ever been curious on how much code is required for automating a trading strategy, then you have come to the right place! It is actually quite easy to implement a basic solution on your own, even as a retail trader without access to the expensive mega-live-data packages that instituional clients get. 
 
@@ -272,7 +314,7 @@ This is a basic strategy that relies on the moving averages for generating buy/s
 
 <br><br>
 
-## Automated Trading with Interactive Brokers (IBKR) through Python
+## **Automated Trading with Interactive Brokers (IBKR) through Python**
 For retail traders like myself, **Interactive Brokers (IBKR)** offers an awesome and powerful platform for automated trading within Python, enabling us to *almost* compete with institutional investors to execute advanced trading strategies using real-time data and historical pricing (okay I'm joking). But regardless, implementing automated options trading through IBKR can be a fantastic method of generating alpha through mean-reversion methods, which I will detail below. Warning: this section is a bit more dense, but I have provided comments on every functional line of code for added context.
 
 I usually implement my personal projects using the **ib_insync** library in Python, which provides an intuitive way to work with the IBKR API, allowing you to directly connect your python scripts to your brokerage - real accounts and paper alike! This approach allows for the development of strategies ranging from simple moving average crossovers like the above C++ strategy to more complex strategies involving machine learning predictions. Sometimes I also use the **tradingview_ta** package to leverage TradingView's powerful and highly customizable technical analysis indicators generated in **Pine** script. By integrating these tools, I can automate my trading strategies effectively, making real-time decisions based on market conditions.
@@ -563,7 +605,7 @@ As long as you are lazer-focused on implementing proper risk management, with a 
 
 <br><br>
 
-## Distributed Systems and Blockchain
+## **Distributed Systems and Blockchain**
 
 Distributed systems are critical for handling large-scale financial data processing. Technologies like Apache Kafka, Spark, and Cassandra are used to manage, process, and analyze data in real-time, providing scalability and fault tolerance.
 
@@ -645,7 +687,7 @@ The `makePayment` function allows the payer to send the specified amount to the 
 
 <br>
 
-## Stock Price Simulation Using Geometric Brownian Motion (GBM)
+## **Stock Price Simulation Using Geometric Brownian Motion (GBM)**
 
 Geometric Brownian Motion (GBM) is a mathematical model widely used in finance to simulate the price paths of stocks and other financial assets. The GBM model incorporates both the deterministic trend and the stochastic component of asset prices, making it suitable for modeling the random behavior of stock prices over time.
 
@@ -776,7 +818,7 @@ Simulated price paths can be used to evaluate the performance of different portf
 
 Financial institutions use simulations to test how their portfolios would perform under extreme market conditions.
 
-## Default Probability Simulation Using Monte Carlo Methods
+## **Default Probability Simulation Using Monte Carlo Methods**
 
 In the world of finance, understanding and predicting default probabilities is crucial for proper risk management and pricing derivatives. Monte Carlo simulations are a powerful tool used to estimate these probabilities by performing numerous random simulations to predict the likelihood of different outcomes. This method is particularly useful when dealing with complex financial models where analytical solutions are not feasible.
 

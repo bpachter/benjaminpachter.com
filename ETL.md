@@ -14,7 +14,7 @@ In the below examples, I showcase how different technologies such as **Python**,
 
 <br>
 
-## ETL Using SAS, Python, and AWS Cloud
+## **ETL Using SAS, Python, and AWS Cloud together**
 
 ### Scenario:
 You need to process sales data stored in an AWS S3 bucket. The data will be extracted using Python, a basic machine learning model will be applied using scikit-learn, and the results will then be statistically analyzed in SAS. Finally, we'll visualize the results back in Python.
@@ -155,7 +155,7 @@ The visualization output from Python would look something like the below chart. 
 <img src="/Regex.png" alt="Output Example" title="Output Example" style="border: 10px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 100%;">
 <br><br>
 
-## Basic Power Query ETL Process
+## **Basic Power Query ETL Process**
 
 ### 1. Extract:
 - In this method, you are actually combining the Extract and Transform methods into a single seamless query structure. Microsoft Power Query provides users of Excel and Power BI with a powerful 'Advanced Editor' capability. Many people believe Power Query is reliant on linear steps that proceed one after another, but this is not true. **The 'Advanced Editor' button within the Power Query view is the secret to unlocking masterful code-like scripting for combining the Extraction and Transformation steps for your data.**
@@ -430,7 +430,7 @@ Thank you for reading my ETL process page! If you are interested in learning mor
 
 <br><br>
 
-## Alteryx and SAS for Multifamily Data Analysis
+## **Alteryx and SAS for Multifamily Data Analysis**
 
 Here is a more complex example that demonstrates how to use Alteryx and SAS together for a hypothetical investment bank that needs to aggregate underwriting and demographic data on a particular multifamily property asset.
 

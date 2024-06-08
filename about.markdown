@@ -4,7 +4,7 @@ title: Skills
 permalink: /skillset/
 ---
 
-## Profile:
+## **Profile:**
 
 - **Data Analytics & Visualization**:
     - **For more detailed demonstrations, check out the [ETL](https://benjaminpachter.com/ETL/) page.**
@@ -78,7 +78,7 @@ permalink: /skillset/
         - SQLAlchemy<br><br>
      
 
-## Financial Modeling, Data Transformation, and Dashboard Development
+## **Financial Modeling, Data Transformation, and Dashboard Development**
 I develop comprehensive financial and logistical models using **Python**, **SQL**, **Power Query**, and **Alteryx** to extract, transform, and load versatile data structures to tell compelling stories. The neutrality of raw data has always fascinated me, and when harnessed and channeled correctly, unbiased numbers can be translated into unbiased results that drive clear and confident decision-making.
 
 Initializing business and economic narratives through data transformations and coding has become my hobby these days; I am personally motivated to consistently increase my tech capabilities through my own trading and investing decision optimization. Plus, it is clear that the future is filled with robots; leveraging code is the single most important tool we have available to drive into this reality!
@@ -192,7 +192,8 @@ I have hands-on experience with **blockchain** technologies and **distributed sy
 
 Outside of my professional career,  I am most interested in backtesting complex options trading strategies and automating these through brokerage APIs, as well as building my own applications. My favorite is retail brokerage automation IBKR, as it is easy to set up a paper trading account that can be directly connected to my TradingView Pine scripts for easy and transparent backtesting.
 <br><br>
-## Database and Cloud Server Management
+
+## **Database and Cloud Server Management**
 In previous roles, I have managed database and cloud infrastructure, utilizing the following technologies:
 
 - **SQL Server Management Studio (SSMS)**:
