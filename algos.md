@@ -11,8 +11,19 @@ Below are some blocks of code that demonstrate some basic capabilities of mine. 
 
 With that being said, let's dive into some of the best financial algorithm practices!
 
+## Table of Contents
 
-## **Interest Rate Modeling with the Hull-White Model**
+1. [Interest Rate Modeling with the Hull-White Model](#interest-rate-modeling)
+2. [SAS Regression for House Price Prediction](#sas-regression)
+3. [Implementing a Simple Trading Strategy using C++](#trading-strategy-cpp)
+4. [Automated Trading with Interactive Brokers (IBKR) through Python](#automated-trading-ibkr)
+5. [Distributed Systems and Blockchain](#distributed-systems)
+6. [Stock Price Simulation Using Geometric Brownian Motion (GBM)](#stock-price-simulation)
+7. [Default Probability Simulation Using Monte Carlo Methods](#default-probability-simulation)
+
+
+
+## <a name="interest-rate-modeling"></a> **Interest Rate Modeling with the Hull-White Model**
 Interest rate models are crucial for pricing derivatives and managing interest rate risk to banking and credit portfolios. One of the most popular models used by quants and financial engineers is the **Hull-White Model**, with its mean-reverting property as a particuarly useful method for modeling interest rates over time. It captures the tendency of interest rates to revert to a long-term mean, making it suitable for valuing interest rate derivatives and managing interest rate risk.
 
 Here is the wiki page on the Hull-White Model if you would like to learn more about the fundamentals of this method:<br><br>
@@ -145,11 +156,43 @@ In the main function, we:
 We've implemented the Hull-White interest rate model in C++. By fetching live interest rate data from a theoretical cloud data source and simulating future interest rate paths, we can better manage portfolio interest rate risk and price derivatives easily. This basic approach demonstrates the practical application of quantitative rate modeling with C++! 
 
 
-## **SAS Regression for House Price Prediction**
-In this section, we are exploring my favorite technology for standard regression (perhaps an unpopular opinion), which is SAS. This SAS program detailed below demonstrates fitting and analyzing a multiple regression model using the procedures **GLM** (General Linear Model)and **PLM**.
+## <a name="sas-regression"></a> **SAS Regression for House Price Prediction**
 
-### Part A: Fitting the Model with PROC GLM
+In this section, we are exploring my favorite technology for standard regression (perhaps an unpopular opinion), which is SAS. This SAS program detailed below demonstrates fitting and analyzing a multiple regression model using the procedures **REG**, **GLM** (General Linear Model) and **PLM** (Post Linear Model).
 
+We'll use PROC REG to run a linear regression model with two predictors and then use PROC GLM to fit the same model to show additional plots. We'll save the analysis results in an item store and use PROC PLM for further analysis. 
+
+Let's assume we have a table of data in SAS, called HousingData in the FOLDER folder (I know, I'm extensively creative). See the screenshot below for what some of our data may look like. A real database such as YardiMatrix or CoStar would have many fields/columns here that we would be able to choose from in our model, but we will keep things simple for this demonstration and only use the *SalePrice*, *Basement_Area*, and *Lot_area* fields.
+
+<img src="/Table1.png" alt="SASHousingTable" title="SASHousingTable" style="border: 0px solid #ddd; padding: 10px; margin: 20px 0; display: block; max-width: 100%;">
+
+
+### Part A: Fitting the Model with PROC REG
+
+In the below code, we specify *SalePrice* as the response variable, and *Basement_Area* and *Lot_Area* as predictors. In the output, the **Analysis of Variance** table shows that the model is statistically significant with an R-square of 0.4802, indicating that 48% of the variability in *SalePrice* is explained by *Basement_Area* and *Lot_Area*.
+
+```s
+proc reg data=FOLDER.HousingData ;
+    model SalePrice=Basement_Area Lot_Area;
+    title "Model with Basement Area and Lot Area";
+run;
+```
+Here are is the resulting output of the above code (yes, this entire output is the result of the above 4 lines of code!):
+<iframe src="/SASRegressTest3.html" width="100%" height="1675px" frameborder="0"></iframe>
+<br>
+
+The **Analysis of Variance** table shows that this model is statistically significant at the 0.05 alpha level, with a p-value of less than the alpha at <.0001. However, if you look at *Lot_Area* specifically, it does not have statistical significance, as its p-value of 0.1032 is more than our alpha of 0.05, showcasing that the lot size is not a significant predictor of the house's sale price when we are already controlling for the basement.
+
+That is an interesting detail! In plain english, this means that *Lot_Area* and *Basement_Area* are correlated, and *Lot_Area* does not explain significant variation in *SalePrice* over and above *Basement_Area*. If these were our only predictors, we'd consider removing *Lot_Area* from the model, but we might decide to add other predictors instead. The additional predictors might change the p-values for *Lot_Area* and *Basement_Area*, so it's best to wait to see the full model before discarding non-significant terms. 
+
+The residuals plotted against predicted values give us a relatively random scatter around 0. They provide evidence that we have constant variance. In the Q-Q plot, the residuals fall along the diagonal line, and they look approximately normal in the histogram. This indicates that there are no problems with an assumption of normally distributed error.
+
+Next, we see the residuals plotted against the predictor variables. Patterns in these plots are indications of an inadequate model. The residuals show no pattern, although lot size does show a few outliers. 
+
+
+### Part B: Further analysis with PROC GLM
+
+In this step, we'll run the same model in PROC GLM, requesting a contour plot and an item store named multiple to be further analyzed later.
 
 ```s
 proc glm data=FOLDER.HousingData plots(only)=(contourfit);
@@ -159,22 +202,25 @@ proc glm data=FOLDER.HousingData plots(only)=(contourfit);
 run;
 quit;
 ```
+
 - **PROC GLM** fits a general linear regression model to our data, predicting *SalePrice* using the *Basement_Area* and *Lot_Size* fields.
 - The predictor/target outcome *SalePrice* is our dependent/response variable, while *Basement_Area* and *Lot_Area* are our independent or predictive variables.
 - `store out=multiple;` saves the model results in an item store named 'multiple' that will be called in our next SAS snippet as a new table for further analysis and visualization.
-
 
 Below is the output result of the above code. The reason I love SAS so much is because it is designed to do the majority of the work for you. If you were framing this up in Python or another language, you would need a bunch of code to also handle the printing of the outputs.
 
 #### PROC GLM Output:
 <iframe src="/SASRegressResults1.html" width="100%" height="1175px" frameborder="0"></iframe>
 
-Explanation of results
+In the results, we see that the values in the ANOVA table are the same as in PROC REG. The parameter estimates table gives the same results (within rounding error) as in PROC REG. We can use this contour fit plot with the overlaid scatter plot to see how well the model predicts observed values.
 
-<br>
+The plot shows predicted values of SalePrice as gradations of the background color from blue, representing low values, to red, representing high values. The dots are similarly colored, and represent the actual data. Observations that are perfectly fit would show the same color within the circle as outside the circle. The lines on the graph help you read the actual predictions at even intervals. For example, this point near the upper right represents an observation with a basement area of approximately 1,500 square feet, a lot size of approximately 17,000 square feet, and a predicted value of more than $180,000 for sale price. However, the dot's color shows that its observed sale price is actually closer to $160,000.
+
  
 
-### Part B: Visualizing the Model with PROC PLM
+### Part C: Visualizing the Model with PROC PLM
+
+Now, we'll use PROC PLM to process the item store created by PROC GLM and create additional plots. The *EFFECTPLOT* statement produces a display of the fitted model and provides options for changing and enhancing the displays. The *EFFECTPLOT* option, *CONTOUR*, requests a contour plot of predicted values against two continuous predictors. We want *Basement_Area* plotted on the Y axis, and *Lot_Area* on the X axis. The *SLICEFIT* option displays a curve of predicted values versus a continuous variable grouped by the levels of another effect. We want to see the *Lot_Area* effect at different values of *Basement_Area*. with tick marks ranging from 250 to 1000, in increments of 250. 
 
 ```s
 proc plm restore=multiple plots=all;
@@ -184,12 +230,20 @@ run;
 
 title;
 ```
-- **PROC PLM** uses the stored model 'multiple' from the above GLM code to create some additional plots.
-- The effectplot lines simply define the formatting parameters of the Y and X axis.
-
 <iframe src="/SASRegressResults2.html" width="100%" height="1250px" frameborder="0"></iframe>
 
-## **Implementing a Simple Trading Strategy using C++**
+Notice that the lines in the contour fit plot are oriented differently than the plot from PROC GLM. The item store doesn't contain the original data, so PROC PLM can show only the predicted values, not the individual observed values. Clearly, the PROC GLM contour fit plot from Part B is more useful, but if you don't have access to the original data, and you can run PROC PLM on the item store, which gives you an idea of the relationship between the predictor variables and predicted values.
+
+The last plot, a slice plot, is another way to display the results of a two-predictor regression model. This plot displays *SalePrice* by *Lot_Area*, categorized by *Basement_Area*. The regression lines represent the slices of *Basement_Area* that we specified in the code. As you can see, you have several options for visualizing and communicating the results of your analyses in SAS!
+<br><br>
+ We've created a multiple regression model with two predictors, so what's next?
+ 
+ From here, we would move on to test the remainder of our predictors in a larger multiple regression model. Data tables that have been pre-cleaned for machine learning formatting (no nulls, consistent data types) can provide each column as a predictor variable. There are many possible models that we could explore, but for now, I will move away from SAS and switch it up by going into automated trading algorithms!
+
+<br>
+
+
+## <a name="trading-strategy-cpp"></a> **Implementing a Simple Trading Strategy using C++**
 
 If you have ever been curious on how much code is required for automating a trading strategy, then you have come to the right place! It is actually quite easy to implement a basic solution on your own, even as a retail trader without access to the expensive mega-live-data packages that instituional clients get. 
 
@@ -314,7 +368,7 @@ This is a basic strategy that relies on the moving averages for generating buy/s
 
 <br><br>
 
-## **Automated Trading with Interactive Brokers (IBKR) through Python**
+## <a name="automated-trading-ibkr"></a> **Automated Trading with Interactive Brokers (IBKR) through Python**
 For retail traders like myself, **Interactive Brokers (IBKR)** offers an awesome and powerful platform for automated trading within Python, enabling us to *almost* compete with institutional investors to execute advanced trading strategies using real-time data and historical pricing (okay I'm joking). But regardless, implementing automated options trading through IBKR can be a fantastic method of generating alpha through mean-reversion methods, which I will detail below. Warning: this section is a bit more dense, but I have provided comments on every functional line of code for added context.
 
 I usually implement my personal projects using the **ib_insync** library in Python, which provides an intuitive way to work with the IBKR API, allowing you to directly connect your python scripts to your brokerage - real accounts and paper alike! This approach allows for the development of strategies ranging from simple moving average crossovers like the above C++ strategy to more complex strategies involving machine learning predictions. Sometimes I also use the **tradingview_ta** package to leverage TradingView's powerful and highly customizable technical analysis indicators generated in **Pine** script. By integrating these tools, I can automate my trading strategies effectively, making real-time decisions based on market conditions.
@@ -605,7 +659,7 @@ As long as you are lazer-focused on implementing proper risk management, with a 
 
 <br><br>
 
-## **Distributed Systems and Blockchain**
+## <a name="distributed-systems"></a> **Distributed Systems and Blockchain**
 
 Distributed systems are critical for handling large-scale financial data processing. Technologies like Apache Kafka, Spark, and Cassandra are used to manage, process, and analyze data in real-time, providing scalability and fault tolerance.
 
@@ -687,7 +741,7 @@ The `makePayment` function allows the payer to send the specified amount to the 
 
 <br>
 
-## **Stock Price Simulation Using Geometric Brownian Motion (GBM)**
+## <a name="stock-price-simulation"></a> **Stock Price Simulation Using Geometric Brownian Motion (GBM)**
 
 Geometric Brownian Motion (GBM) is a mathematical model widely used in finance to simulate the price paths of stocks and other financial assets. The GBM model incorporates both the deterministic trend and the stochastic component of asset prices, making it suitable for modeling the random behavior of stock prices over time.
 
@@ -818,7 +872,7 @@ Simulated price paths can be used to evaluate the performance of different portf
 
 Financial institutions use simulations to test how their portfolios would perform under extreme market conditions.
 
-## **Default Probability Simulation Using Monte Carlo Methods**
+## <a name="default-probability-simulation"></a> **Default Probability Simulation Using Monte Carlo Methods**
 
 In the world of finance, understanding and predicting default probabilities is crucial for proper risk management and pricing derivatives. Monte Carlo simulations are a powerful tool used to estimate these probabilities by performing numerous random simulations to predict the likelihood of different outcomes. This method is particularly useful when dealing with complex financial models where analytical solutions are not feasible.
 
