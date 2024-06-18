@@ -37,7 +37,7 @@ Ultimately, my purpose is to harness the power of data and frontline technologie
 - Managed real-time data streams and processing using Apache Kafka, Spark Streaming, Apache Flink, AWS Kinesis, Apache HBase with Hadoop, and Google Cloud Pub/Sub.
 
 **Programming**: 
-- Python, R, Apex, JavaScript, SAS, Java, C++, C#, SQL, Go, Scala, MQ4/MQ5, Rust, Solidit Pine, Ruby, PHP, Swift, MATLAB, HTML, CSS, XML, VBA, DAX/M, Bash, PowerShell.
+- Python, SAS, R, Apex, JavaScript, Java, C++, C#, SQL, Go, Scala, MQ4/MQ5, Rust, Solidit Pine, Ruby, PHP, Swift, MATLAB, HTML, CSS, XML, VBA, DAX/M, Bash, PowerShell.
 - Skilled in using Python libraries such as Pandas, NumPy, SciPy, QuantLib, SASsession, ib_insync, PySpark, PyArrow, PyKafka, PyHive, Airflow, Cassandra, Dask, fredapi, Scikit-learn, XGBoost, TensorFlow, PyTorch, Keras, Django, Flask, tqdm, statsmodels, FastAPI, SQLAlchemy, and many more.
 
 **Investment Deal Making**: 
@@ -91,8 +91,10 @@ Ultimately, my purpose is to harness the power of data and frontline technologie
 *Seattle, WA*  
 *Jan 2020 – Jan 2022*
 
-- Developed machine learning models using Python, R, and C++ for forecasting client portfolio risks associated with interest rate hikes and bond volatility, employing algorithms such as random forests, XGBoost, and ARIMA.<br><br>
+- Streamlined client ETL workflows by integrating Python, SAS, SQL, Alteryx, AWS, and Apache technologies for an automated suite of combined technologies for maximum efficiency in financial, defense, and logistics data augmentation processes for financial risk assessment. <br><br>
+- Developed advanced ML models/algorithms for clients using Python libraries and SAS to forecast client portfolio risks associated with interest rate hikes and bond volatility such as random forests, gradient boosting, ARIMA, GARCH, LSTM networks, and Monte Carlo simulations to enhance predictive accuracy.<br><br>
 - Implemented distributed systems and blockchain solutions using Rust, Solidity, and Hyperledger Fabric for secure and efficient financial transactions and smart contract development.<br><br>
+- Utilized neural networks in conjunction with LLM/NLP techniques to develop sentiment analysis tools for predicting market movements and product growth based on the analysis of social media and news feeds. <br> <br>
 - Optimized Black-Scholes options pricing models using QuantLib, NumPy, SciPy, and MQ4 in combination with Python, C++, and JavaScript.<br><br>
 - Implemented lean logistical processes using SQL, Python, C++, JavaScript, and Apache technologies to optimize client CRM reliance for transportation logistics.<br><br>
 - Modeled financial data for ERP migrations using SAP S/4 HANA and Azure/SQL for clients in e-commerce, transportation, and banking sectors.<br><br>
@@ -133,8 +135,24 @@ Ultimately, my purpose is to harness the power of data and frontline technologie
 *Aug 2015 – Dec 2019*
 
 ## Certifications (Coursera)
-**Deeplearning.AI & Stanford Online**  
-*Unsupervised Learning, Recommenders, Reinforcement Learning*  
+
+### SAS Statistical Business Analyst
+
+**Hypothesis Testing**
+*Cred ID: NNX5EBR8RJAS*  
+*Jun 2024*
+
+**Regression Modeling Fundamentals**
+*Cred ID: YTJSYGEC8JQ5*  
+*Jun 2024*
+
+**Predictive Modeling with Logistic Regression**
+*Cred ID: 7CR4ZZHA5U4R*  
+*Jun 2024*
+
+### Deeplearning.AI & Stanford Online**
+
+**Unsupervised Learning, Recommenders, Reinforcement Learning**
 *Cred ID: TG577TSS94PL8*  
 *Apr 2024*
 
